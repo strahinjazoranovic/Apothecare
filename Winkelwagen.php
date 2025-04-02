@@ -13,23 +13,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Winkelwagen</title>
     <link rel="shortcut icon" type="x-icon" href="icons/cart.svg">
-    <link rel="stylesheet" href="css/over.css">
 </head>
 <body>
-    <header>
-        <div class="logo"><img src="" class="header-logo" alt="Logo"></div>
-        <nav>
-            <ul>
-                <li><a href="#">Producten</a></li>
-                <li><a href="#">Over</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="icons">
-            <a href="#" aria-label="Shopping Cart">🛒</a>
-            <a href="#" aria-label="User Account">👤</a>
-            <a href="#" aria-label="Search">🔍</a>
-        </div>
-    </header>
+
 </body>
 </html>
