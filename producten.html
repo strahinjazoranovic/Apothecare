@@ -1,27 +1,70 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Apothecare</title>
     <link rel="stylesheet" href="css/product.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">Apothe<span>care</span></div>
-            <nav>
-                <ul>
-                    <a href="producten.html">Product</li></a>
-                    <a href="over.html">Over</li></a>
-                    <a href="contact.html">Contact</a></li></a>
-                </ul>
-            </nav>
-            <div class="icons">
-                <a href="#" aria-label="Shopping Cart">🛒</a>
-                <a href="#" aria-label="User Account">👤</a>
-                <a href="#" aria-label="Search">🔍</a>
-            </div>
-        </header>
+    <header>
+        <div class="logo">Apothe<span>care</span></div>
+        <nav>
+            <ul>
+                <li><a href="producten.html">Product</a></li>
+                <li><a href="over.html">Over</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="icons">
+            <a href="#" aria-label="Shopping Cart">🛒</a>
+            <a href="#" aria-label="User Account">👤</a>
+            <a href="#" aria-label="Search">🔍</a>
         </div>
+    </header>
+
+    <main>
+        <h1 class="page-title">Producten</h1>
+        
+        <div class="filter">
+            <button class="filter-btn">Filteren</button>
+        </div>
+
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="image.png" alt="Product afbeelding">
+                <div class="content">
+                    <h2>Lorem ipsum dolor sit amet</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna sapien, volutpat ac dapibus ut, porttitor quis odio.</p>
+                    <span class="price">€19.99</span>
+                </div>
+                <a href="#" class="button">Toevoegen aan winkelmand</a>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="image.png" alt="Product afbeelding">
+                <div class="content">
+                    <h2>Lorem ipsum dolor sit amet</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna sapien, volutpat ac dapibus ut, porttitor quis odio.</p>
+                    <span class="price">€24.99</span>
+                </div>
+                <a href="#" class="button">Toevoegen aan winkelmand</a>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="image.png" alt="Product afbeelding">
+                <div class="content">
+                    <h2>Lorem ipsum dolor sit amet</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna sapien, volutpat ac dapibus ut, porttitor quis odio.</p>
+                    <span class="price">€29.99</span>
+                </div>
+                <a href="#" class="button">Toevoegen aan winkelmand</a>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
