@@ -1,4 +1,3 @@
-/* CSS voor de cart */
 * {
     margin: 0;
     padding: 0;
@@ -64,4 +63,105 @@ nav ul li a {
 a {
     text-decoration: none;
     color: black;
+}
+.account-content {
+    display: flex;
+    max-width: 1200px;
+    margin: 30px auto;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.account-section {
+    flex: 1;
+}
+
+.bestellingen-section {
+    flex: 1;
+}
+
+.account-gegevens {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.account-gegevens h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.bestellingen-container {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 61px;
+}
+
+.bestellingtext h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.bestelling {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.bestelling-id {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.bestelling-beschrijving {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.bestelling-prijs {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    text-align: right;
+}
+
+.divider {
+    height: 1px;
+    background-color: #ddd;
+    margin: 15px 0;
 }
