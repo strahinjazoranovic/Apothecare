@@ -17,7 +17,7 @@
 </head>
 <body>
     <header>
-        <div class="logo">Apothe<span>care</span></div>
+        <div class="logo"><img src="" class="header-logo" alt="Logo"></div>
         <nav>
             <ul>
                 <li><a href="#">Producten</a></li>
