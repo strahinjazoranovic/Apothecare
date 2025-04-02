@@ -1,36 +1,55 @@
-/* Dit geldt voor alles op de website */
-body,
-html {
-  scroll-behavior: smooth;
-  margin: 0px;
-  padding: 0px;
-  background-color: white;
-  color: black;
-  font-family: "Poppins", sans-serif;
-  font-size: 20px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Navbar */
-#navbar {
+body {
+    min-height: 100vh;
+    background-color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Header Styles */
+header {
     display: flex;
-  justify-content: space-around;
-  margin: 10px;
-  border-radius: 25px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
 }
 
-/* Dit is voor alle links */
-a {
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #e63946;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
     text-decoration: none;
-    color: black;
+    color: #333;
+    font-weight: 500;
 }
 
-/* Dit is voor de grote apothecare dat je ziet rechts bovenin in de navbar */
-#title {
-    font-size: 30px;
+.icons {
+    display: flex;
+    align-items: center;
 }
 
+.icons a {
+    margin-left: 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 24px;
+}
