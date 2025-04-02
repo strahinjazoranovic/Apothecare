@@ -25,6 +25,12 @@ header {
     padding-left: 2vw;
 }
 
+.logo {
+    height: 50px;
+    width: auto;
+    padding-left: 2vw;
+}
+
 nav ul {
     display: flex;
     list-style: none;

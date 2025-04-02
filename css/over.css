@@ -17,6 +17,12 @@ body {
     padding: 0 20px;
 }
 
+.logo {
+    height: 50px;
+    width: auto;
+    padding-left: 2vw;
+}
+
 /* Header Styles */
 header {
     display: flex;
