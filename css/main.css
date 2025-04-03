@@ -93,6 +93,26 @@ nav ul li a:hover {
 }
 
 /* ======================
+     Database connection page
+     ====================== */
+
+.db_error {
+  text-align: center;
+  font-size: xx-large;
+  color: #e63946;
+}
+
+.db_connected {
+  text-align: center;
+  font-size: xx-large;
+  color: #37e674;
+}
+
+.db_error span{
+  font-weight: bold;
+}
+
+/* ======================
      ACCOUNT PAGE STYLES
      ====================== */
 .account-content {
