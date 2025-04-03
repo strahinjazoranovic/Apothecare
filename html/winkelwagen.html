@@ -6,6 +6,11 @@
     <title>Apothecare - Winkelwagen</title>
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="shortcut icon" type="x-icon" href="../images/icons/cart.svg">
+  <!-- Dit is voor de font-->
+     <link
+     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+     rel="stylesheet"
+   />
   </head>
   <body>
     <div class="container">
@@ -27,24 +32,46 @@
 
       <div class="main-container">
         <h1 class="title">Winkelwagen</h1>
-        <div class="winkel-item">
-          <img src="../images/placeholder-product-img.png" alt="Product photo" class="winkel-img"/>
-          <div class="item-text">
-            <p class="item-naam">Medicijn naam</p>
-            <p class="item-beschrijving">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-              quae sint cupiditate suscipit necessitatibus tempora harum quod
-              possimus perferendis optio. Aspernatur repudiandae optio hic
-              voluptatibus commodi deserunt perferendis, impedit eligendi qui
-              eaque possimus deleniti quam accusamus, facilis asperiores
-              suscipit laborum vero ipsam esse nihil id laudantium. Odio laborum
-              iusto enim!
-            </p>
+        <div class="winkelwagen-container">
+          <div class="cart-items">
+            <div class="winkel-item cart-item">
+              <div class="center-item">
+                <img src="../images/placeholder-product-img.png" alt="Product photo" class="winkel-img"/>
+                <h5 class="item-naam">Medicijn naam</h5>
+              </div>
+              <div class="center-item">
+                <div class="input-group number-spinner">
+                  <button id="item-minus" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                  <input id="item-number" type="number" min="1" class="form-control text-center" value="1">
+                  <button id="item-plus" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="item-text">
+                  <p class="item-beschrijving">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+                </div>
+                <div class="status">
+                  <h5>€29.99</h5>
+                </div>
+                <div class="remove">
+                  <img src="../images/remove.png" alt="Remove item" class="remove-item">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="summary">
+            <h4>Order Summary</h4>
+            <div class="total">
+              <p>Subtotal: <span id="sub-total">€29.99</span></p>
+              <p>Tax: <span id="tax-amount">€3.00</span></p>
+              <p>Total: <span id="total-price">€32.99</span></p>
+            </div>
+            <button class="check-out">Checkout</button>
           </div>
         </div>
-        <div class="winkel-item"></div>
-        <div class="winkel-item"></div>
       </div>
     </div>
+    <script src="../js/main.js"></script>
   </body>
 </html>

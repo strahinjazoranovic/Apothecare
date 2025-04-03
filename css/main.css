@@ -12,9 +12,10 @@
 body {
   min-height: 100vh; /* Ensure body takes at least full viewport height */
   background-color: white;
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #333;
   line-height: 1.6; /* Improved readability */
+  scroll-behavior: smooth;
 }
 
 /* Link styling */
@@ -48,7 +49,6 @@ header {
 .logo {
   height: 50px;
   width: auto;
-  padding-left: 2vw; /* Responsive padding */
   font-size: clamp(24px, 3vw, 32px); /* Responsive font size */
   font-weight: bold;
 }
@@ -142,12 +142,11 @@ nav ul li a:hover {
 form {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 15px;
+  gap: 8px;
 }
 
 label {
   font-weight: bold;
-  margin-bottom: 5px;
   display: block;
 }
 
@@ -159,7 +158,7 @@ input[type="password"] {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   font-size: 16px; /* Prevent zooming on mobile */
 }
 
@@ -263,7 +262,7 @@ input[type="password"] {
      ====================== */
 .login-box {
   background: white;
-  padding: clamp(20px, 3vw, 30px); /* Responsive padding */
+  padding: clamp(18px, 3vw, 25px); /* Responsive padding */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 500px;
@@ -274,31 +273,33 @@ input[type="password"] {
 .google-btn,
 .login-btn {
   width: 100%;
-  padding: 12px;
-  font-size: 1rem;
+  padding: 4px;
   border-radius: 5px;
   cursor: pointer;
   margin: 10px 0;
   transition: all 0.3s;
-}
-
-.google-btn {
+  display: flex;
+  justify-content: center;
   background: whitesmoke;
   border: 1px solid black;
 }
 
-.google-btn:hover {
+.google-btn:hover,
+.login-btn:hover {
   background: #e0e0e0;
 }
 
-.login-btn {
-  background: black;
-  color: white;
-  border: none;
+.google-text {
+  margin-top: 16px;
+  font-size: 1rem;
+  margin-right: 10px;
 }
 
-.login-btn:hover {
-  background: #333;
+/* Dit is voor de foto naast google login */
+.google-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
 }
 
 .free {
@@ -307,6 +308,7 @@ input[type="password"] {
 
 .signup {
   text-align: center;
+  margin-top: 5px;
 }
 
 #imglogo {
@@ -319,8 +321,11 @@ input[type="password"] {
   color: gray;
   text-align: right;
   cursor: pointer;
-  margin: 10px 0;
-  display: block; /* Ensure it takes full width */
+  margin: 0px;
+}
+
+.forgot:hover {
+  color: black;
 }
 
 /* ======================
@@ -375,8 +380,6 @@ input[type="password"] {
   color: #ffffff;
   cursor: pointer;
   display: inline-block;
-  font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 16px;
   font-weight: 600;
   line-height: normal;
@@ -396,35 +399,34 @@ input[type="password"] {
 }
 
 .button-filter {
-    appearance: none;
-    background-color: #000000;
-    border: 2px solid #1a1a1a;
-    border-radius: 15px;
-    box-sizing: border-box;
-    color: #ffffff;
-    cursor: pointer;
-    display: inline-block;
-    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-      Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 16px;
-    font-weight: 600;
-    line-height: normal;
-    margin: 0;
-    min-height: 60px;
-    min-width: 0;
-    outline: none;
-    padding: 16px 24px;
-    text-align: center;
-    text-decoration: none;
-    transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    width: 20%;
-    will-change: transform;
-  }
+  appearance: none;
+  background-color: #000000;
+  border: 2px solid #1a1a1a;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 15px;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 22%;
+  will-change: transform;
+}
 
-.button:hover, .button-filter:hover {
+.button:hover,
+.button-filter:hover {
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
 }
@@ -447,13 +449,56 @@ input[type="password"] {
 }
 
 /* ======================
+     Chatbot
+     ====================== */
+#chatBot {
+  background-color: whitesmoke;
+  border: 1px solid black;
+  border-radius: 12px;
+  width: 350px; /* Fixed width instead of percentage */
+  max-width: 90%; /* Won't exceed 90% of screen width on mobile */
+  padding: 15px;
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  /* Smooth appearance */
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Optional hover effect */
+#chatBot:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+#chatBotWinow {
+  background-color: whitesmoke;
+  border: 1px solid black;
+  border-radius: 12px;
+  width: 350px;
+  height: 400px;
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+  
+
+/* ======================
      RESPONSIVE BREAKPOINTS
      ====================== */
 @media (min-width: 768px) {
   /* Tablet and desktop styles */
   .winkel-item {
     flex-direction: row; /* Horizontal layout on larger screens */
-    width: 95vw;
+    width: 95%;
     height: 150px;
     margin: 0 2.5vw 1vw;
     padding: 10px;
@@ -508,7 +553,8 @@ input[type="password"] {
     gap: 15px;
   }
 
-  .button, .button-filter {
+  .button,
+  .button-filter {
     margin: 0 auto 15px;
     width: 90%; /* Slightly narrower on mobile */
   }
@@ -529,5 +575,147 @@ input[type="password"] {
   .login-box {
     padding: 15px;
     width: 95%;
+  }
+}
+/* Winkelwagen specific styles */
+.winkelwagen-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.winkel-item {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.center-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.winkel-img {
+  width: 115px;
+  height: 115px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.item-naam {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.item-beschrijving {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn-default {
+  background-color: #f6f5fa;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-control {
+  background-color: #f6f5fa;
+  border: none;
+  width: 50px;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 5px;
+}
+
+.remove-item {
+  width: 25px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.remove-item:hover {
+  opacity: 1;
+}
+
+.status h5 {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.summary {
+  background-color: #f6f5fa;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.summary h4 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.total p {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.total span {
+  font-weight: bold;
+}
+
+.check-out {
+  width: 100%;
+  padding: 12px;
+  background-color: #2FBE70;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.2s;
+}
+
+.check-out:hover {
+  background-color: #28a85f;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .center-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .winkel-item {
+    padding: 15px;
+  }
+  
+  .winkel-img {
+    width: 80px;
+    height: 80px;
   }
 }
