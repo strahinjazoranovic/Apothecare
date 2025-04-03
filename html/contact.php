@@ -6,6 +6,7 @@
 // Project		      : Apothecare
 // Datum		      : projectweek - periode 3 - 2025
 //---------------------------------------------------------------------------------------------------//
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -7,7 +7,7 @@
 // Datum		        : projectweek - periode 3 - 2025
 //---------------------------------------------------------------------------------------------------//
   session_start();
-  echo "welcome user" . $_SESSION["user_id"];
+  echo "welcome user " . $_SESSION["user_id"];
 ?>
 <!DOCTYPE html>
 <html lang="nl">

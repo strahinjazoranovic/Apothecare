@@ -6,6 +6,7 @@
 // Project		      : Apothecare
 // Datum		      : projectweek - periode 3 - 2025
 //---------------------------------------------------------------------------------------------------// 
+    session_start();
     include("../DB_connect.php");
     if(isset($_POST['register'])) {
         $voornaam = $_POST['voornaam'];
