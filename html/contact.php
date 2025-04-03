@@ -32,8 +32,8 @@ session_start();
             </ul>
         </nav>
         <div class="icons">
-            <a href="html/winkelwagen.php" aria-label="Shopping Cart"><img src="../images/icons/cart.svg" alt="cart" /></a>
-            <a href="html/account.php" aria-label="User Account"><img src="../images/icons/user.svg" alt="user" /></a>
+            <a href="winkelwagen.php" aria-label="Shopping Cart"><img src="../images/icons/cart.svg" alt="cart" /></a>
+            <a href="login.php" aria-label="User Account"><img src="../images/icons/user.svg" alt="user" /></a>
             <a href="#" aria-label="Search"><img src="../images/icons/search.svg" alt="search" /></a>
         </div>
     </header>

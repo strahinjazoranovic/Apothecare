@@ -46,25 +46,19 @@
           <h2>Gegevens</h2>
           <form action="account.php" method="post">
             <label for="voornaam">Voornaam</label>
-            <input type="text" id="voornaam" name="voornaam" required />
+            <input type="text" id="voornaam" name="voornaam" placeholder="Enter your E-mail" required />
 
             <label for="tussenvoegsel">Tussenvoegsel</label>
-            <input type="text" id="tussenvoegsel" name="tussenvoegsel" />
+            <input type="text" id="tussenvoegsel" name="tussenvoegsel" placeholder="Enter your infix" />
 
             <label for="achternaam">Achternaam</label>
-            <input type="text" id="achternaam" name="achternaam" required />
+            <input type="text" id="achternaam" name="achternaam" placeholder="Enter your last name" required />
 
             <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required />
+            <input type="email" id="email" name="email" placeholder="Enter your email" required />
 
             <label for="telefoon">Telefoonnummer</label>
-            <input type="tel" id="telefoon" name="telefoon" />
-
-            <label for="factuuradres">Factuuradres</label>
-            <input type="text" id="factuuradres" name="factuuradres" required />
-
-            <label for="adres">Bezorgadres</label>
-            <input type="text" id="adres" name="adres" required />
+            <input type="tel" id="telefoon" name="telefoon" placeholder="Enter your phonenumber" />
           </form>
           <button class="button">Sla op</button>
         </div>

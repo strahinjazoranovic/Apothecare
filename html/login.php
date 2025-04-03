@@ -17,7 +17,7 @@
     // Kijkt of de velden zijn ingevuld
     if (!empty($mail) && !empty($wachtwoord)) {
       // Kijkt voor de email in de database
-      $sql = "SELECT * FROM users WHERE email='$mail';";
+      $sql = "SELECT * FROM user WHERE email='$mail';";
       $result = mysqli_query($conn, $sql);
       $resultCheck = mysqli_num_rows($result);
   
@@ -73,19 +73,19 @@
           <a href="../index.php"><img src="../images/logo/apothecare-nobg.png" class="logo" alt="logopng"></a>
           </div>
         <form method="POST">
-          <label for="email">Email</label>
-          <input type="email" name="mail" id="email" placeholder="Enter your E-mail" required />
+          <label for="email">E-mail</label>
+          <input type="email" name="mail" id="email" placeholder="Voer uw e-mail in" required />
 
-          <label for="password">Password</label>
-          <input type="password" name="wachtwoord" id="password" placeholder="Enter your password" required />
+          <label for="password">Wachtwoord</label>
+          <input type="password" name="wachtwoord" id="password" placeholder="voer uw wachtwoord in" required />
 
           <p class="forgot">Forgot password?</p>
 
           <button type="submit" name="login" class="button">Login</button>
         </form>
         <p class="signup">
-          Don't have an account?
-          <a href="register.php"><span class="free">Sign up for free</span></a>
+          Heb je geen account?
+          <a href="register.php"><span class="free">Registreer nu gratis</span>!</a>
         </p>
       </div>
     </div>

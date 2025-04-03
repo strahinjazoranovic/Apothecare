@@ -10,11 +10,12 @@
     include("../DB_connect.php");
     if(isset($_POST['register'])) {
         $voornaam = $_POST['voornaam'];
+        $tussenvoegsel = $_POST['tussenvoegsel'];
         $achternaam = $_POST['achternaam'];
         $mail = $_POST['mail'];
         $wachtwoord = password_hash($_POST['wachtwoord'], PASSWORD_DEFAULT);
 
-        $query = mysqli_query($conn, "Insert into users (voornaam, achternaam, email, wachtwoord) Values ('$voornaam', '$achternaam', '$mail', '$wachtwoord')");
+        $query = mysqli_query($conn, "Insert into user (voornaam, tussenvoegsel, achternaam, email, wachtwoord) Values ('$voornaam', '$tussenvoegsel', '$achternaam', '$mail', '$wachtwoord')");
         if($query){
             echo"<script>window.location.href = 'login.php'; alert('Account aangemaakt');</script>";
         } else {
@@ -57,24 +58,27 @@
 
             <form onsubmit="validatePassword(event)" method="POST">  
 
-                <label for="firstname">First name</label>
-                <input type="text" name="voornaam" id="voornaam" placeholder="Enter your first name" required>
+                <label for="firstname">Voornaam</label>
+                <input type="text" name="voornaam" id="voornaam" placeholder="Voer uw naam in" required>
 
-                <label for="lastname">Last name</label>
-                <input type="text" name="achternaam" id="achternaam" placeholder="Enter your last name" required>
+                <label for="firstname">Tussenvoegsel</label>
+                <input type="text" name="tussenvoegsel" id="tussenvoegsel" placeholder="Voer uw tussenvoegsel in">
 
-                <label for="email">Email</label>
-                <input type="email" name="mail" id="email" placeholder="Enter your email" required>
+                <label for="lastname">Achternaam</label>
+                <input type="text" name="achternaam" id="achternaam" placeholder="Voer uw achternaam in" required>
 
-                <label for="password">Password</label>
-                <input type="password" name="wachtwoord" id="password" placeholder="Enter your password" required>
+                <label for="email">E-mail</label>
+                <input type="email" name="mail" id="email" placeholder="Voer uw e-mail in" required>
 
-                <label for="againpassword">Enter password again</label>
-                <input type="password" id="againpassword" placeholder="Enter your password again" required>
+                <label for="password">Wachtwoord</label>
+                <input type="password" name="wachtwoord" id="password" placeholder="Voer uw wachtwoord in" required>
 
-                <p class="forgot">Forgot password?</p>
+                <label for="againpassword">Voer wachtwoord opnieuw in</label>
+                <input type="password" id="againpassword" placeholder="Voer uw wachtwoord opnieuw in" required>
 
-                <button type="submit" name="register" class="button">Register now</button>
+                <p class="forgot">Wachtwoord vergeten?</p>
+
+                <button type="submit" name="register" class="button">Registreer nu</button>
             </form>
         </div>
     </div>
