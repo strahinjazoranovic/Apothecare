@@ -4,11 +4,11 @@
         $voornaam = $_POST['voornaam'];
         $achternaam = $_POST['achternaam'];
         $mail = $_POST['mail'];
-        $wachtwoord = $_POST['wachtwoord'];
+        $wachtwoord = password_hash($_POST['wachtwoord'], PASSWORD_DEFAULT);
 
         $query = mysqli_query($conn, "Insert into users (voornaam, achternaam, email, wachtwoord) Values ('$voornaam', '$achternaam', '$mail', '$wachtwoord')");
         if($query){
-            echo"<script>alert('Account aangemaakt'); window.location.href = 'login.php';</script>";
+            echo"<script>window.location.href = 'login.php'; alert('Account aangemaakt');</script>";
         } else {
             echo"<script>alert('Account aanmaken mislukt probeer opnieuw of zoek contact op.'); </script>";
         }
@@ -25,29 +25,29 @@
 <body>
     <div class="container">
         <header>
-                <nav>
-                    <ul>
-                        <li><a href="producten.html">Producten</a></li>
-                        <li><a href="over.html">Over</a></li>
-                        <li><a href="../index.html">Home</a></li>
-                    </ul>
-                </nav>
-                <div class="icons">
-                    <a href="winkelwagen.html" aria-label="Shopping Cart"><img src="../images/icons/cart.svg" alt="cart"></a>
-                    <a href="login.php" aria-label="Login"><img src="../images/icons/user.svg" alt="login"></a>
-                    <a href="#" aria-label="Search"><img src="../images/icons/search.svg" alt="search"></a>
-                </div>
-            </header>
+            <nav>
+                <ul>
+                    <li><a href="producten.html">Producten</a></li>
+                    <li><a href="over.html">Over</a></li>
+                    <li><a href="../index.html">Home</a></li>
+                </ul>
+            </nav>
+            <div class="icons">
+                <a href="winkelwagen.html" aria-label="Shopping Cart"><img src="../images/icons/cart.svg" alt="cart"></a>
+                <a href="login.php" aria-label="Login"><img src="../images/icons/user.svg" alt="login"></a>
+                <a href="#" aria-label="Search"><img src="../images/icons/search.svg" alt="search"></a>
+            </div>
+        </header>
     </div>
-    
+
     <div class="container1">
         <div class="login-box">
             <a href="login.php"><img src="../images/icons/back.svg"></a>
             <div id="imglogo">
                 <a href="../index.html"><img src="../images/logo/apothecare-nobg.png" class="logo" alt="logopng"></a>
-                </div>
+            </div>
             <button class="google-btn">Continue with Google</button>
-            <form method="POST">  
+            <form onsubmit="validatePassword(event)" method="POST">  
 
                 <label for="firstname">First name</label>
                 <input type="text" name="voornaam" id="voornaam" placeholder="Enter your first name" required>

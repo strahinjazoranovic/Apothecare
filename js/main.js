@@ -20,3 +20,33 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("Formulier niet gevonden!");
     }
 });
+
+
+// Zorgt ervoor dat het wachtwoord voldoet aan de vereisten
+function validatePassword(event) {
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("againpassword").value;
+    var errorMessage = "";
+
+    // Controleer of het wachtwoord hetzelfde is
+    if (password !== confirmPassword) {
+        errorMessage += "Wachtwoorden komen niet overeen!\n";
+    }
+
+    // Controleer of het wachtwoord minstens 8 tekens lang is
+    if (password.length < 8) {
+        errorMessage += "Het wachtwoord moet minstens 8 tekens lang zijn.\n";
+    }
+
+    // Controleer of het wachtwoord een speciaal teken bevat
+    var specialCharPattern = /[!@#$%^&*(),.?":{}|<>]/;
+    if (!specialCharPattern.test(password)) {
+        errorMessage += "Het wachtwoord moet minstens één speciaal teken bevatten.\n";
+    }
+
+    // Als er een fout is, toon de foutmeldingen
+    if (errorMessage) {
+        alert(errorMessage);
+        event.preventDefault(); // Voorkomt dat het formulier wordt verzonden
+    }
+}

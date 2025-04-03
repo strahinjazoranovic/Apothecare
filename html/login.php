@@ -6,16 +6,34 @@
     // Ingevulde velden in form
     $mail = $_POST['mail'];
     $wachtwoord = $_POST['wachtwoord'];
-    // kijkt voor de email en wachtwoord in de database
-    $sql = "SELECT * FROM users WHERE email='$mail' AND wachtwoord='$wachtwoord';";
-    $result = mysqli_query($conn,  $sql);
-    $resultCheck = mysqli_num_rows($result);
+
+    // Kijkt of de velden zijn ingevuld
+    if (!empty($mail) && !empty($wachtwoord)) {
+      // Kijkt voor de email in de database
+      $sql = "SELECT * FROM users WHERE email='$mail';";
+      $result = mysqli_query($conn, $sql);
+      $resultCheck = mysqli_num_rows($result);
   
-    if ($resultCheck > 0){
-      while ($row = mysqli_fetch_assoc($result)) {
-        echo $row['ID'];
+      if ($resultCheck > 0){
+        // Haal de gegevens van de gebruiker op
+        while ($row = mysqli_fetch_assoc($result)) {
+          // Vergelijk het ingevoerde wachtwoord met de hash uit de database
+          if (password_verify($wachtwoord, $row['wachtwoord'])) {
+            // Als het wachtwoord correct is sla de gebruiker ID in de sessie op
+            $_SESSION['user_id'] = $row['ID'];
+            echo "Login succesvol!";
+            // Hier kun je doorsturen naar een andere pagina
+          } else {
+            echo "Onjuist wachtwoord.";
+          }
+        }
+      } else {
+        echo "Geen gebruiker gevonden met dit e-mailadres.";
       }
-    } 
+    } else {
+      // Hier geef je geen specifieke foutmelding als de velden niet zijn ingevuld,
+      // omdat de onjuiste wachtwoordmelding pas getoond moet worden als het formulier ingevuld is.
+    }
   }
 ?>
 <html lang="en">
