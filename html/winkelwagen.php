@@ -1,3 +1,12 @@
+<?php
+//---------------------------------------------------------------------------------------------------//
+// Naam script		  : winkelwagen.php
+// Omschrijving		  : hier vind je alle items die je wilt kopen
+// Naam ontwikkelaar: Groep 7
+// Project		      : Apothecare
+// Datum		        : projectweek - periode 3 - 2025
+//---------------------------------------------------------------------------------------------------//
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>

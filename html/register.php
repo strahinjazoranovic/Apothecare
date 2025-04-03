@@ -1,4 +1,11 @@
-<?php 
+<?php
+//---------------------------------------------------------------------------------------------------//
+// Naam script		  : register.php
+// Omschrijving		  : Hier maak je een nieuw account aan
+// Naam ontwikkelaar  : Groep 7
+// Project		      : Apothecare
+// Datum		      : projectweek - periode 3 - 2025
+//---------------------------------------------------------------------------------------------------// 
     include("../DB_connect.php");
     if(isset($_POST['register'])) {
         $voornaam = $_POST['voornaam'];
@@ -24,12 +31,12 @@
 </head>
 <body>
     <div class="container">
-        <header>
+        <header class="nav-register">
             <nav>
                 <ul>
                     <li><a href="producten.php">Producten</a></li>
                     <li><a href="over.php">Over</a></li>
-                    <li><a href="../index.php">Home</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                 </ul>
             </nav>
             <div class="icons">
@@ -46,7 +53,7 @@
             <div id="imglogo">
                 <a href="../index.php"><img src="../images/logo/apothecare-nobg.png" class="logo" alt="logopng"></a>
             </div>
-            <button class="google-btn">Continue with Google</button>
+
             <form onsubmit="validatePassword(event)" method="POST">  
 
                 <label for="firstname">First name</label>

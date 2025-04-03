@@ -1,4 +1,11 @@
 <?php
+//---------------------------------------------------------------------------------------------------//
+// Naam script		  : account.php
+// Omschrijving		  : Deze file laat het account van de klant zien.
+// Naam ontwikkelaar: Groep 7
+// Project		      : Apothecare
+// Datum		        : projectweek - periode 3 - 2025
+//---------------------------------------------------------------------------------------------------//
   session_start();
   echo "welcome user" . $_SESSION["user_id"];
 ?>
@@ -10,27 +17,19 @@
     <title>Account - Apothecare</title>
     <link rel="stylesheet" href="../css/main.css" />
     <!-- Dit is voor de font-->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet"/>
   </head>
 
   <body>
     <div class="container">
       <header>
-        <a href="../index.php"
-          ><img
-            src="../images/logo/apothecare-nobg.png"
-            class="logo"
-            alt="logopng"
-        /></a>
+        <a href="../index.php"><img src="../images/logo/apothecare-nobg.png" class="logo" alt="logopng"/></a>
         <nav>
-          <ul>
-            <li><a href="producten.php">Producten</a></li>
-            <li><a href="over.php">Over</a></li>
-            <li><a href="contact.php">Contact</a></li>
-          </ul>
+            <ul>
+                <li><a href="producten.php">Producten</a></li>
+                <li><a href="over.php">Over</a></li>
+                <li><a href="contact.php">Contact</a></li>
+            </ul>
         </nav>
         <div class="icons">
           <a href="winkelwagen.php" aria-label="Shopping Cart"><img src="../images/icons/cart.svg" alt="cart"/></a>

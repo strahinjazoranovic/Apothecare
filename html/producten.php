@@ -1,3 +1,12 @@
+<?php
+//---------------------------------------------------------------------------------------------------//
+// Naam script		  : producten.php
+// Omschrijving		  : Hier kan je alle producten vinden.
+// Naam ontwikkelaar: Groep 7
+// Project		      : Apothecare
+// Datum		        : projectweek - periode 3 - 2025
+//---------------------------------------------------------------------------------------------------//
+?>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -13,10 +22,11 @@
       <header>
         <a href="../index.php"><img src="../images/logo/apothecare-nobg.png" class="logo" alt="logopng" /></a>
         <nav>
-          <ul>
-            <li><a href="producten.php">Producten</a></li>
-            <li><a href="over.php">Over</a></li>
-          </ul>
+            <ul>
+                <li><a href="producten.php">Producten</a></li>
+                <li><a href="over.php">Over</a></li>
+                <li><a href="contact.php">Contact</a></li>
+            </ul>
         </nav>
         <div class="icons">
           <a href="winkelwagen.php" aria-label="Shopping Cart" ><img src="../images/icons/cart.svg" alt="cart" /></a>

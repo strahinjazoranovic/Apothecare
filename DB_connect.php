@@ -1,5 +1,12 @@
-<link rel="stylesheet" href="css/main.css">
 <?php
+//---------------------------------------------------------------------------------------------------//
+// Naam script		: DB_connect.php
+// Omschrijving		: Deze file maakt een connectie met de database
+// Naam ontwikkelaar: Tejo Veldman
+// Project		    : Apothecare
+// Datum		    : projectweek - periode 3 - 2025
+//---------------------------------------------------------------------------------------------------//
+
     $db_server = "localhost"; // server naam
     $db_user = "root"; // usernaam (default is de naam root)
     $db_pass = ""; // wachtwoord (default is er geen wachtwoord)
@@ -26,3 +33,5 @@ if($conn){
 } 
 ?>
 
+
+<link rel="stylesheet" href="css/main.css">

@@ -1,3 +1,12 @@
+<?php
+//---------------------------------------------------------------------------------------------------//
+// Naam script		  : Index.php
+// Omschrijving		  : Deze is de landing page van de website.
+// Naam ontwikkelaar: Groep 7
+// Project		      : Apothecare
+// Datum		        : projectweek - periode 3 - 2025
+//---------------------------------------------------------------------------------------------------//
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +27,7 @@
         <ul>
         <li><a href="html/producten.php">Producten</a></li>
         <li><a href="html/over.php">Over</a></li>
+        <li><a href="html/contact.php">Contact</a></li>
         </ul>
       </nav>
       <div class="icons">

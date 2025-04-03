@@ -1,4 +1,11 @@
 <?php 
+//---------------------------------------------------------------------------------------------------//
+// Naam script		  : login.php
+// Omschrijving		  : Op deze pagina kan je inloggen
+// Naam ontwikkelaar: Groep 7
+// Project		      : Apothecare
+// Datum		        : projectweek - periode 3 - 2025
+//---------------------------------------------------------------------------------------------------//
   session_start();
   include("../DB_connect.php");
 
@@ -44,20 +51,20 @@
   </head>
   <body>
     <div class="container">
-        <header>
-                <nav>
-                    <ul>
-                        <li><a href="producten.php">Producten</a></li>
-                        <li><a href="over.php">Over</a></li>
-                        <li><a href="../index.php">Home</a></li>
-                    </ul>
-                </nav>
-                <div class="icons">
-                  <a href="winkelwagen.php" aria-label="Shopping Cart"><img src="../images/icons/cart.svg" alt="cart"></a>
-                  <a href="account.php" aria-label="Login"><img src="../images/icons/user.svg" alt="login"></a>
-                  <a href="#" aria-label="Search"><img src="../images/icons/search.svg" alt="search"></a>
-              </div>
-            </header>
+        <header class="nav-login">
+          <nav>
+            <ul>
+                <li><a href="producten.php">Producten</a></li>
+                <li><a href="over.php">Over</a></li>
+                <li><a href="contact.php">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="icons">
+            <a href="winkelwagen.php" aria-label="Shopping Cart"><img src="../images/icons/cart.svg" alt="cart"></a>
+            <a href="login.php" aria-label="Login"><img src="../images/icons/user.svg" alt="login"></a>
+            <a href="#" aria-label="Search"><img src="../images/icons/search.svg" alt="search"></a>
+          </div>
+        </header>
     </div>
 
     <div class="container1">
@@ -65,7 +72,6 @@
         <div id="imglogo">
           <a href="../index.php"><img src="../images/logo/apothecare-nobg.png" class="logo" alt="logopng"></a>
           </div>
-        <button class="google-btn">Continue with Google</button>
         <form method="POST">
           <label for="email">Email</label>
           <input type="email" name="mail" id="email" placeholder="Enter your E-mail" required />
