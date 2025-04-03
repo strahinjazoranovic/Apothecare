@@ -1,19 +1,14 @@
 <?php 
-session_start();
+  session_start();
   include("../DB_connect.php");
-  if(isset($_POST['login'])) {
-    $mailid = $_POST['mail'];
-    $wachtwoord = $_POST['wachtwoord'];
+  $sql = "SELECT email, wachtwoord FROM users;";
+  $result = mysqli_query($conn,  $sql);
+  $resultCheck = mysqli_num_rows($result);
 
-    $sql = "SELECT count(*) as total FROM `users` WHERE email = '".$mailid."' AND wachtwoord = '".$password."' ";
-    $result = $conn->query($sql);
-
-    if($result->num_rows > 0){
-      $_SESSION['email'] = $mailid;
-      header("location:account.html");
-      die;
+  if ($resultCheck > 0){
+    while ($row = mysqli_fetch_assoc($result)) {
+      echo $row['email'] . "<br>";
     }
-
   }
 ?>
 <html lang="en">

@@ -1,17 +1,22 @@
 <link rel="stylesheet" href="css/main.css">
 <?php
-    $db_server = "localhost";
-    $db_user = "root";
-    $db_pass = "";
-    $db_name = "Apothecare";
+    $db_server = "localhost"; // server naam
+    $db_user = "root"; // usernaam (default is de naam root)
+    $db_pass = ""; // wachtwoord (default is er geen wachtwoord)
+    $db_name = "Apothecare"; // naam database
     $conn = "";
 
+//connectie met database
 try{
     $conn = mysqli_connect($db_server,
                            $db_user,
                            $db_pass,
                            $db_name);
 }
+// -----------------------------------------------------------
+// bericht dat laat zien of de database gekoppelt is
+//Om connectie te testen haal de echo comando's uit de comment
+// -----------------------------------------------------------
 catch(mysqli_sql_exception){
     // echo"<p class='db_error'>Database '$db_name' could <span>not</span> connect!</p>";
 }
@@ -21,4 +26,3 @@ if($conn){
 } 
 ?>
 
-<!-- Om connectie te testen haal de echo comando's uit de comment -->
