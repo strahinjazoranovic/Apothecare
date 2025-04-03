@@ -1,6 +1,6 @@
 <?php
   session_start();
-  echo "welcome user" . $_SESSION["email"];
+  echo "welcome user" . $_SESSION["user_id"];
 ?>
 <!DOCTYPE html>
 <html lang="nl">

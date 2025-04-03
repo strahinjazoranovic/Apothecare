@@ -5,7 +5,7 @@
   if(isset($_POST['login'])) {
     // Ingevulde velden in form
     $mail = $_POST['mail'];
-    $wachtwoord = $_POST['wachtwoord'];
+    $wachtwoord = password_hash($_POST['wachtwoord'], PASSWORD_DEFAULT);
 
     // Kijkt of de velden zijn ingevuld
     if (!empty($mail) && !empty($wachtwoord)) {
@@ -18,10 +18,11 @@
         // Haal de gegevens van de gebruiker op
         while ($row = mysqli_fetch_assoc($result)) {
           // Vergelijk het ingevoerde wachtwoord met de hash uit de database
-          if (password_verify($wachtwoord, $row['wachtwoord'])) {
+          if ($wachtwoord = $row['wachtwoord']) {
             // Als het wachtwoord correct is sla de gebruiker ID in de sessie op
             $_SESSION['user_id'] = $row['ID'];
             echo "Login succesvol!";
+            echo"<script>window.location.href = 'account.php';</script>";
             // Hier kun je doorsturen naar een andere pagina
           } else {
             echo "Onjuist wachtwoord.";
@@ -30,10 +31,7 @@
       } else {
         echo "Geen gebruiker gevonden met dit e-mailadres.";
       }
-    } else {
-      // Hier geef je geen specifieke foutmelding als de velden niet zijn ingevuld,
-      // omdat de onjuiste wachtwoordmelding pas getoond moet worden als het formulier ingevuld is.
-    }
+    } 
   }
 ?>
 <html lang="en">
