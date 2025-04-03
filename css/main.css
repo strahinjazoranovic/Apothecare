@@ -48,7 +48,6 @@ header {
 .logo {
   height: 50px;
   width: auto;
-  padding-left: 2vw; /* Responsive padding */
   font-size: clamp(24px, 3vw, 32px); /* Responsive font size */
   font-weight: bold;
 }
@@ -122,12 +121,11 @@ nav ul li a:hover {
 form {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 15px;
+  gap: 8px;
 }
 
 label {
   font-weight: bold;
-  margin-bottom: 5px;
   display: block;
 }
 
@@ -139,7 +137,7 @@ input[type="password"] {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   font-size: 16px; /* Prevent zooming on mobile */
 }
 
@@ -243,7 +241,7 @@ input[type="password"] {
      ====================== */
 .login-box {
   background: white;
-  padding: clamp(20px, 3vw, 30px); /* Responsive padding */
+  padding: clamp(18px, 3vw, 25px); /* Responsive padding */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 500px;
@@ -254,32 +252,36 @@ input[type="password"] {
 .google-btn,
 .login-btn {
   width: 100%;
-  padding: 12px;
-  font-size: 1rem;
+  padding: 4px;
   border-radius: 5px;
   cursor: pointer;
   margin: 10px 0;
   transition: all 0.3s;
-}
-
-.google-btn {
+  display: flex;
+  justify-content: center;
   background: whitesmoke;
   border: 1px solid black;
 }
 
-.google-btn:hover {
+.google-btn:hover, .login-btn:hover {
   background: #e0e0e0;
 }
 
-.login-btn {
-  background: black;
-  color: white;
-  border: none;
+.google-text {
+  margin-top: 16px;
+  font-size: 1rem;
+  margin-right: 10px;
 }
 
-.login-btn:hover {
-  background: #333;
+/* Dit is voor de foto naast google login */
+.google-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
 }
+
+
+
 
 .free {
   color: purple;
@@ -287,6 +289,7 @@ input[type="password"] {
 
 .signup {
   text-align: center;
+  margin-top: 5px;
 }
 
 #imglogo {
@@ -299,8 +302,11 @@ input[type="password"] {
   color: gray;
   text-align: right;
   cursor: pointer;
-  margin: 10px 0;
-  display: block; /* Ensure it takes full width */
+  margin: 0px;
+}
+
+.forgot:hover {
+  color: black;
 }
 
 /* ======================
@@ -389,7 +395,7 @@ input[type="password"] {
     font-size: 16px;
     font-weight: 600;
     line-height: normal;
-    margin: 0;
+    margin: 15px;
     min-height: 60px;
     min-width: 0;
     outline: none;
@@ -400,7 +406,7 @@ input[type="password"] {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-    width: 20%;
+    width: 22%;
     will-change: transform;
   }
 
@@ -462,6 +468,7 @@ input[type="password"] {
   header {
     flex-wrap: wrap;
     padding: 15px 0;
+
   }
 
   nav {
