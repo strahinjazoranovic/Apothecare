@@ -19,7 +19,7 @@
   <body>
     <div class="container">
       <header>
-        <a href="../index.html"
+        <a href="../index.php"
           ><img
             src="../images/logo/apothecare-nobg.png"
             class="logo"
@@ -27,13 +27,13 @@
         /></a>
         <nav>
           <ul>
-            <li><a href="producten.html">Producten</a></li>
-            <li><a href="over.html">Over</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="producten.php">Producten</a></li>
+            <li><a href="over.php">Over</a></li>
+            <li><a href="contact.php">Contact</a></li>
           </ul>
         </nav>
         <div class="icons">
-          <a href="winkelwagen.html" aria-label="Shopping Cart"><img src="../images/icons/cart.svg" alt="cart"/></a>
+          <a href="winkelwagen.php" aria-label="Shopping Cart"><img src="../images/icons/cart.svg" alt="cart"/></a>
           <a href="login.php" aria-label="Login"><img src="../images/icons/user.svg" alt="login"/></a>
           <a href="#" aria-label="Search"><img src="../images/icons/search.svg" alt="Search"/></a>
         </div>
@@ -45,7 +45,7 @@
         <h1>Account</h1>
         <div class="account-gegevens">
           <h2>Gegevens</h2>
-          <form action="account.html" method="post">
+          <form action="account.php" method="post">
             <label for="voornaam">Voornaam</label>
             <input type="text" id="voornaam" name="voornaam" required />
 

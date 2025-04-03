@@ -4,42 +4,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Apothecare - Producten</title>
     <link rel="stylesheet" href="../css/main.css" />
-    <link
-      rel="shortcut icon"
-      type="x-icon"
-      href="../images/logo/Apothecare-minilogo-nobg.png"
-    />
+    <link rel="shortcut icon" type="x-icon" href="../images/logo/Apothecare-minilogo-nobg.png" />
     <!-- Dit is voor de font-->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div class="container">
       <header>
-        <a href="../index.html"
-          ><img
-            src="../images/logo/apothecare-nobg.png"
-            class="logo"
-            alt="logopng"
-        /></a>
+        <a href="../index.php"><img src="../images/logo/apothecare-nobg.png" class="logo" alt="logopng" /></a>
         <nav>
           <ul>
-            <li><a href="producten.html">Producten</a></li>
-            <li><a href="over.html">Over</a></li>
+            <li><a href="producten.php">Producten</a></li>
+            <li><a href="over.php">Over</a></li>
           </ul>
         </nav>
         <div class="icons">
-          <a href="winkelwagen.html" aria-label="Shopping Cart"
-            ><img src="../images/icons/cart.svg" alt="cart"
-          /></a>
-          <a href="login.php" aria-label="Login"
-            ><img src="../images/icons/user.svg" alt="login"
-          /></a>
-          <a href="#" aria-label="Search"
-            ><img src="../images/icons/search.svg" alt="search"
-          /></a>
+          <a href="winkelwagen.php" aria-label="Shopping Cart" ><img src="../images/icons/cart.svg" alt="cart" /></a>
+          <a href="login.php" aria-label="Login" ><img src="../images/icons/user.svg" alt="login" /></a>
+          <a href="#" aria-label="Search"><img src="../images/icons/search.svg" alt="search" /></a>
         </div>
       </header>
     </div>
@@ -49,7 +31,7 @@
 
     <div class="product-grid">
       <div class="product-card">
-        <img src="../images/image.png" alt="Product afbeelding" />
+        <img src="../images/placeholder-product-img.png" alt="Product afbeelding" />
         <div class="content">
           <h2>Lorem ipsum dolor sit amet</h2>
           <p>

@@ -27,13 +27,13 @@
         <header>
             <nav>
                 <ul>
-                    <li><a href="producten.html">Producten</a></li>
-                    <li><a href="over.html">Over</a></li>
-                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="producten.php">Producten</a></li>
+                    <li><a href="over.php">Over</a></li>
+                    <li><a href="../index.php">Home</a></li>
                 </ul>
             </nav>
             <div class="icons">
-                <a href="winkelwagen.html" aria-label="Shopping Cart"><img src="../images/icons/cart.svg" alt="cart"></a>
+                <a href="winkelwagen.php" aria-label="Shopping Cart"><img src="../images/icons/cart.svg" alt="cart"></a>
                 <a href="login.php" aria-label="Login"><img src="../images/icons/user.svg" alt="login"></a>
                 <a href="#" aria-label="Search"><img src="../images/icons/search.svg" alt="search"></a>
             </div>
@@ -44,7 +44,7 @@
         <div class="login-box">
             <a href="login.php"><img src="../images/icons/back.svg"></a>
             <div id="imglogo">
-                <a href="../index.html"><img src="../images/logo/apothecare-nobg.png" class="logo" alt="logopng"></a>
+                <a href="../index.php"><img src="../images/logo/apothecare-nobg.png" class="logo" alt="logopng"></a>
             </div>
             <button class="google-btn">Continue with Google</button>
             <form onsubmit="validatePassword(event)" method="POST">  

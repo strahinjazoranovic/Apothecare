@@ -8,40 +8,23 @@
     <link rel="stylesheet" href="../css/winkelwagen.css" />
     <link rel="shortcut icon" type="x-icon" href="../images/icons/cart.svg" />
     <!-- Dit is voor de font-->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   </head>
   <body>
     <div class="container">
       <header>
-        <a href="../index.html"
-          ><img
-            src="../images/logo/apothecare-nobg.png"
-            class="logo"
-            alt="Apothecare logo"
-        /></a>
+        <a href="../index.php"><img src="../images/logo/apothecare-nobg.png" class="logo" alt="Apothecare logo" /></a>
         <nav>
           <ul>
-            <li><a href="producten.html">Producten</a></li>
-            <li><a href="over.html">Over</a></li>
+            <li><a href="producten.php">Producten</a></li>
+            <li><a href="over.php">Over</a></li>
           </ul>
         </nav>
         <div class="icons">
-          <a href="winkelwagen.html" aria-label="Shopping Cart"
-            ><img src="../images/icons/cart.svg" alt="cart"
-          /></a>
-          <a href="login.php" aria-label="Login"
-            ><img src="../images/icons/user.svg" alt="login"
-          /></a>
-          <a href="#" aria-label="Search"
-            ><img src="../images/icons/search.svg" alt="Search"
-          /></a>
+          <a href="winkelwagen.php" aria-label="Shopping Cart"><img src="../images/icons/cart.svg" alt="cart" /></a>
+          <a href="login.php" aria-label="Login"><img src="../images/icons/user.svg" alt="login" /></a>
+          <a href="#" aria-label="Search"><img src="../images/icons/search.svg" alt="Search" /></a>
         </div>
       </header>
 
@@ -51,11 +34,7 @@
           <div class="cart-items">
             <div class="winkel-item cart-item">
               <div class="center-item">
-                <img
-                  src="../images/placeholder-product-img.png"
-                  alt="Product photo"
-                  class="winkel-img"
-                />
+                <img src="../images/placeholder-product-img.png" alt="Product photo" class="winkel-img" />
                 <h5 class="item-naam">Medicijn naam</h5>
               </div>
               <div class="center-item">
@@ -63,13 +42,7 @@
                   <button id="item-minus" class="btn btn-default">
                     <i class="fas fa-minus"></i>
                   </button>
-                  <input
-                    id="item-number"
-                    type="number"
-                    min="1"
-                    class="form-control text-center"
-                    value="1"
-                  />
+                  <input id="item-number" type="number" min="1" class="form-control text-center" value="1"/>
                   <button id="item-plus" class="btn btn-default">
                     <i class="fas fa-plus"></i>
                   </button>
@@ -83,11 +56,7 @@
                   <h5>€29.99</h5>
                 </div>
                 <div class="remove">
-                  <img
-                    src="../images/remove.png"
-                    alt="Remove item"
-                    class="remove-item"
-                  />
+                  <img src="../images/remove.png" alt="Remove item" class="remove-item" />
                 </div>
               </div>
             </div>
