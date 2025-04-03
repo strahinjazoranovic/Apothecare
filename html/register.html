@@ -4,6 +4,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apothecare</title>
     <link rel="stylesheet" href="../css/main.css" />
+    <!-- Dit is voor de font-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+      rel="stylesheet"
+    />
 </head>
 <body>
     <div class="container">
@@ -12,7 +17,7 @@
                     <ul>
                         <li><a href="producten.html">Producten</a></li>
                         <li><a href="over.html">Over</a></li>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="../index.html">Home</a></li>
                     </ul>
                 </nav>
                 <div class="icons">
@@ -20,7 +25,7 @@
                     <a href="account.html" aria-label="User Account"><img src="../images/icons/user.svg" alt="user"></a>
                     <a href="#" aria-label="Search"><img src="../images/icons/search.svg" alt="search"></a>
                 </div>
-            </header>
+        </header>
     </div>
     
     <div class="container1">
@@ -29,7 +34,9 @@
             <div id="imglogo">
                 <a href="../index.html"><img src="../images/logo/apothecare-nobg.png" class="logo" alt="logopng"></a>
                 </div>
-            <button class="google-btn">Continue with Google</button>
+                <div id="google-flex">
+                    <button class="google-btn"><h1 class="google-text">Contine with</h1><img src="/images/logo/googlelogo.png" class="google-logo"></button>
+                </div>
             <form>
                 <label for="email">Email</label>
                 <input type="email" id="email" placeholder="john.doe@gmail.com eg" required>
