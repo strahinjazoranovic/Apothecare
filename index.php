@@ -33,7 +33,7 @@
       </nav>
       <div class="icons">
         <a href="html/winkelwagen.php" aria-label="Shopping Cart"><img src="images/icons/cart.svg" alt="cart" /></a>
-        <a href="html/account.php" aria-label="User Account"><img src="images/icons/user.svg" alt="cart" /></a>
+        <a href="html/login.php" aria-label="User Account"><img src="images/icons/user.svg" alt="cart" /></a>
         <a href="#" aria-label="Search"><img src="images/icons/search.svg" alt="cart" /></a>
       </div>
     </header>
