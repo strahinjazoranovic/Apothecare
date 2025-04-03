@@ -1,14 +1,21 @@
 <?php 
   session_start();
   include("../DB_connect.php");
-  $sql = "SELECT email, wachtwoord FROM users;";
-  $result = mysqli_query($conn,  $sql);
-  $resultCheck = mysqli_num_rows($result);
 
-  if ($resultCheck > 0){
-    while ($row = mysqli_fetch_assoc($result)) {
-      echo $row['email'] . "<br>";
-    }
+  if(isset($_POST['login'])) {
+    // Ingevulde velden in form
+    $mail = $_POST['mail'];
+    $wachtwoord = $_POST['wachtwoord'];
+    // kijkt voor de email en wachtwoord in de database
+    $sql = "SELECT * FROM users WHERE email='$mail' AND wachtwoord='$wachtwoord';";
+    $result = mysqli_query($conn,  $sql);
+    $resultCheck = mysqli_num_rows($result);
+  
+    if ($resultCheck > 0){
+      while ($row = mysqli_fetch_assoc($result)) {
+        echo $row['ID'];
+      }
+    } 
   }
 ?>
 <html lang="en">
@@ -52,7 +59,7 @@
 
           <p class="forgot">Forgot password?</p>
 
-          <button type="submit" class="button">Login</button>
+          <button type="submit" name="login" class="button">Login</button>
         </form>
         <p class="signup">
           Don't have an account?

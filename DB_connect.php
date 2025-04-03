@@ -14,8 +14,8 @@ try{
                            $db_name);
 }
 // -----------------------------------------------------------
-// bericht dat laat zien of de database gekoppelt is
-//Om connectie te testen haal de echo comando's uit de comment
+// Berichten dat laat zien of de database wel of niet gekoppelt is
+// Om connectie te testen haal de echo comando's uit de comment (select regel en dan: ctr + /)
 // -----------------------------------------------------------
 catch(mysqli_sql_exception){
     // echo"<p class='db_error'>Database '$db_name' could <span>not</span> connect!</p>";
