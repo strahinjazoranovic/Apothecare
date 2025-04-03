@@ -7,7 +7,24 @@
 // Datum		        : projectweek - periode 3 - 2025
 //---------------------------------------------------------------------------------------------------//
   session_start();
-  echo "welcome user " . $_SESSION["user_id"];
+  include("../DB_connect.php");
+
+  $sql = "SELECT * FROM user WHERE ID='{$_SESSION["user_id"]}';";
+  $result = mysqli_query($conn, $sql);
+  $resultCheck = mysqli_num_rows($result);
+
+  if(isset ($_SESSION["user_id"])){
+    if ($resultCheck > 0){
+
+      while ($row = mysqli_fetch_assoc($result)) {
+        $voornaam = $row['voornaam'];
+        $tussenvoegsel = $row['tussenvoegsel'];
+        $achternaam = $row['achternaam'];
+        $email = $row['email'];
+        $telefoon_nr = $row['telefoon_nr'];
+      }
+    }
+  }
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -41,26 +58,26 @@
 
     <div class="account-content">
       <div class="account-section">
-        <h1>Account</h1>
+        <h1>Mijn account</h1>
         <div class="account-gegevens">
-          <h2>Gegevens</h2>
+          <h2>Gegevens van: <?php echo $voornaam . " "; echo $achternaam;?></h2>
           <form action="account.php" method="post">
             <label for="voornaam">Voornaam</label>
-            <input type="text" id="voornaam" name="voornaam" placeholder="Enter your E-mail" required />
+            <input type="text" id="voornaam" name="voornaam" placeholder="<?php echo $voornaam; ?>" required />
 
             <label for="tussenvoegsel">Tussenvoegsel</label>
-            <input type="text" id="tussenvoegsel" name="tussenvoegsel" placeholder="Enter your infix" />
+            <input type="text" id="tussenvoegsel" name="tussenvoegsel" placeholder="<?php echo $tussenvoegsel; ?>" />
 
             <label for="achternaam">Achternaam</label>
-            <input type="text" id="achternaam" name="achternaam" placeholder="Enter your last name" required />
+            <input type="text" id="achternaam" name="achternaam" placeholder="<?php echo $achternaam; ?>" required />
 
             <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required />
+            <input type="email" id="email" name="email" placeholder="<?php echo $email; ?>" required />
 
             <label for="telefoon">Telefoonnummer</label>
-            <input type="tel" id="telefoon" name="telefoon" placeholder="Enter your phonenumber" />
+            <input type="tel" id="telefoon" name="telefoon" placeholder="<?php echo $telefoon_nr; ?>" />
           </form>
-          <button class="button">Sla op</button>
+          <button class="account-edit-button">Sla op</button>
         </div>
       </div>
 

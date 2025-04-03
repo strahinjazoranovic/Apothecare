@@ -158,6 +158,27 @@
     font-size: 16px; /* Prevent zooming on mobile */
   }
 
+  .account-edit-button {
+    background-color: #000000;
+    border: 2px solid #1a1a1a;
+    border-radius: 15px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    min-height: 60px;
+    min-width: 0;
+    padding: 16px 24px;
+    text-align: center;
+    transition: 0.1s;
+    width: 100%;
+  }
+
+  .account-edit-button:hover {
+    background-color: #575757;
+  }
+
   /* ======================
       ORDER HISTORY STYLES
       ====================== */
