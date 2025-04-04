@@ -7,6 +7,12 @@
 // Datum		        : projectweek - periode 3 - 2025
 //---------------------------------------------------------------------------------------------------//
   session_start();
+  // Als de gebruiker niet is ingelogd stuur door naar inlogpagina
+  if (!isset($_SESSION['user_id'])) {
+    header("Location: inlog.php");
+    exit();
+  }
+  //database connection
   include("../DB_connect.php");
 
   $sql = "SELECT * FROM user WHERE ID='{$_SESSION["user_id"]}';";
