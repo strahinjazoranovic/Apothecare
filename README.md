@@ -15,7 +15,7 @@ To use the website, you must first set up the database. Follow these steps and t
 
       . Go to the Import tab.
 
-      . Click Choose File and select apothecare.sql from the project folder.
+      . Click Choose File and select apothecare.sql from the MySQL folder.
 
       . Scroll down and press Import.
 
