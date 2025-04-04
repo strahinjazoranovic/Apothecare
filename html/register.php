@@ -8,6 +8,14 @@
 //---------------------------------------------------------------------------------------------------// 
     session_start();
     include("../DB_connect.php");
+
+      // Controleer of de gebruiker is ingelogd
+    if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) {
+    // Als ingelogd, stuur door naar account.php
+    header('Location: account.php');
+    exit(); // Stop verdere uitvoering van de pagina
+    }
+
     if(isset($_POST['register'])) {
         $voornaam = $_POST['voornaam'];
         $tussenvoegsel = $_POST['tussenvoegsel'];

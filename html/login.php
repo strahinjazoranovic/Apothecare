@@ -8,6 +8,14 @@
 //---------------------------------------------------------------------------------------------------//
   session_start();
   include("../DB_connect.php");
+
+  // Controleer of de gebruiker is ingelogd
+  if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) {
+  // Als ingelogd, stuur door naar account.php
+  header('Location: account.php');
+  exit(); // Stop verdere uitvoering van de pagina
+  }
+
   //als er een account is aangemaakt zal er een popup komen door deze code  
   if(isset($_SESSION['account_aanmaak'])){
     $nieuw_account_popup = "block";
@@ -35,6 +43,7 @@
           if ($wachtwoord = $row['wachtwoord']) {
             // Als het wachtwoord correct is sla de gebruiker ID in de sessie op
             $_SESSION['user_id'] = $row['ID'];
+            $_SESSION['user_icon'] = true;
             echo "Login succesvol!";
             echo"<script>window.location.href = 'account.php';</script>";
             // Hier kun je doorsturen naar een andere pagina
@@ -71,7 +80,7 @@
           </nav>
           <div class="icons">
             <a href="winkelwagen.php" aria-label="Shopping Cart"><img src="../images/icons/cart.svg" alt="cart"></a>
-            <a href="login.php" aria-label="Login"><img src="../images/icons/user.svg" alt="login"></a>
+            <a href="register.php" aria-label="Login"><img src="../images/icons/user-plus.svg" alt="login"></a>
             <a href="#" aria-label="Search"><img src="../images/icons/search.svg" alt="search"></a>
           </div>
         </header>

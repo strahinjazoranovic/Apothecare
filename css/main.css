@@ -81,6 +81,14 @@
     margin-left: 20px;
     font-size: 10px;
     transition: color 0.3s;
+}
+
+.icons a img:last-child {
+  padding-left: 15px;
+}
+
+  .icons a img {
+    height: 30px;
   }
   
   .icons a:hover {
