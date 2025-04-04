@@ -8,6 +8,14 @@
 //---------------------------------------------------------------------------------------------------// 
     session_start();
     include("../DB_connect.php");
+
+      // Controleer of de gebruiker is ingelogd
+    if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) {
+    // Als ingelogd, stuur door naar account.php
+    header('Location: account.php');
+    exit(); // Stop verdere uitvoering van de pagina
+    }
+
     if(isset($_POST['register'])) {
         $voornaam = $_POST['voornaam'];
         $tussenvoegsel = $_POST['tussenvoegsel'];
@@ -17,7 +25,9 @@
 
         $query = mysqli_query($conn, "Insert into user (voornaam, tussenvoegsel, achternaam, email, wachtwoord) Values ('$voornaam', '$tussenvoegsel', '$achternaam', '$mail', '$wachtwoord')");
         if($query){
-            echo"<script>window.location.href = 'login.php'; alert('Account aangemaakt');</script>";
+            $_SESSION['account_aanmaak'] = true;
+            header("Location: login.php");
+            exit();
         } else {
             echo"<script>alert('Account aanmaken mislukt probeer opnieuw of zoek contact op.'); </script>";
         }

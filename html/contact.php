@@ -23,7 +23,7 @@ session_start();
 <body>
 <div class="container">
     <header>
-        <a href="index.php"><img src="../images/logo/apothecare-nobg.png" class="logo" alt="logopng" /></a>
+        <a href="../index.php"><img src="../images/logo/apothecare-nobg.png" class="logo" alt="logopng" /></a>
         <nav>
             <ul>
                 <li><a href="producten.php">Producten</a></li>
@@ -33,7 +33,13 @@ session_start();
         </nav>
         <div class="icons">
             <a href="winkelwagen.php" aria-label="Shopping Cart"><img src="../images/icons/cart.svg" alt="cart" /></a>
-            <a href="login.php" aria-label="User Account"><img src="../images/icons/user.svg" alt="user" /></a>
+            <a href="login.php" aria-label="User Account">
+            <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'register.php'; ?>" aria-label="User Account">
+                <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
+            <img src="../images/icons/user-found.svg" alt="user" />
+                <?php else: ?>
+            <img src="../images/icons/user.svg" alt="user" />
+                <?php endif; ?></a>
             <a href="#" aria-label="Search"><img src="../images/icons/search.svg" alt="search" /></a>
         </div>
     </header>

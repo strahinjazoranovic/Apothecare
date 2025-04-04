@@ -52,6 +52,9 @@ function validatePassword(event) {
         alert(errorMessage);
         event.preventDefault(); // Voorkomt dat het formulier wordt verzonden
     }
+
+
+// winkelwagen functie    
 }
 function initCart() {
     // Get elements

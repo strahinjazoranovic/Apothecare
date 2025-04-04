@@ -9,6 +9,21 @@
   session_start();
   include("../DB_connect.php");
 
+  // Controleer of de gebruiker is ingelogd
+  if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) {
+  // Als ingelogd, stuur door naar account.php
+  header('Location: account.php');
+  exit(); // Stop verdere uitvoering van de pagina
+  }
+
+  //als er een account is aangemaakt zal er een popup komen door deze code  
+  if(isset($_SESSION['account_aanmaak'])){
+    $nieuw_account_popup = "block";
+    unset($_SESSION['account_aanmaak']);
+  } else {
+    $nieuw_account_popup = "none";
+  }
+
   if(isset($_POST['login'])) {
     // Ingevulde velden in form
     $mail = $_POST['mail'];
@@ -28,6 +43,7 @@
           if ($wachtwoord = $row['wachtwoord']) {
             // Als het wachtwoord correct is sla de gebruiker ID in de sessie op
             $_SESSION['user_id'] = $row['ID'];
+            $_SESSION['user_icon'] = true;
             echo "Login succesvol!";
             echo"<script>window.location.href = 'account.php';</script>";
             // Hier kun je doorsturen naar een andere pagina
@@ -50,6 +66,9 @@
     <link rel="shortcut icon" type="x-icon" href="../images/logo/Apothecare-minilogo-nobg.png">
   </head>
   <body>
+<!-- ingelogd popup -->
+<div class="popup" style="display: <?php echo $nieuw_account_popup; ?>;"><p>✅ Account succesvol aangemaakt! Log nu in.</p></div>
+<!-- navbar -->
     <div class="container">
         <header class="nav-login">
           <nav>
@@ -61,23 +80,24 @@
           </nav>
           <div class="icons">
             <a href="winkelwagen.php" aria-label="Shopping Cart"><img src="../images/icons/cart.svg" alt="cart"></a>
-            <a href="login.php" aria-label="Login"><img src="../images/icons/user.svg" alt="login"></a>
+            <a href="register.php" aria-label="Login"><img src="../images/icons/user-plus.svg" alt="login"></a>
             <a href="#" aria-label="Search"><img src="../images/icons/search.svg" alt="search"></a>
           </div>
         </header>
     </div>
-
+<!-- main body -->
     <div class="container1">
       <div class="login-box">
         <div id="imglogo">
           <a href="../index.php"><img src="../images/logo/apothecare-nobg.png" class="logo" alt="logopng"></a>
           </div>
+          <!-- login -->
         <form method="POST">
           <label for="email">E-mail</label>
           <input type="email" name="mail" id="email" placeholder="Voer uw e-mail in" required />
 
           <label for="password">Wachtwoord</label>
-          <input type="password" name="wachtwoord" id="password" placeholder="voer uw wachtwoord in" required />
+          <input type="password" name="wachtwoord" id="password" placeholder="Voer uw wachtwoord in" required />
 
           <p class="forgot">Forgot password?</p>
 
@@ -89,5 +109,6 @@
         </p>
       </div>
     </div>
+    <script src="main.js"></script>
   </body>
 </html>

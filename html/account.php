@@ -9,12 +9,13 @@
   session_start();
   // Als de gebruiker niet is ingelogd stuur door naar inlogpagina
   if (!isset($_SESSION['user_id'])) {
-    header("Location: inlog.php");
+    header("Location: login.php");
     exit();
   }
   //database connection
   include("../DB_connect.php");
 
+  //haalt gegevens uit database
   $sql = "SELECT * FROM user WHERE ID='{$_SESSION["user_id"]}';";
   $result = mysqli_query($conn, $sql);
   $resultCheck = mysqli_num_rows($result);
@@ -31,6 +32,36 @@
       }
     }
   }
+// Gegevens bijwerken
+  if(isset($_POST['update-account'])) {
+    $voornaam_update = $_POST['voornaam'];
+    $tussenvoegsel_update = $_POST['tussenvoegsel'];
+    $achternaam_update = $_POST['achternaam'];
+    $mail_update = $_POST['mail'];
+    $telefoon_update = $_POST['telefoon'];
+
+    $query = mysqli_query($conn, "UPDATE user SET voornaam = '$voornaam_update', tussenvoegsel = '$tussenvoegsel_update', achternaam = '$achternaam_update', email = '$mail_update', telefoon_nr = '$telefoon_update' WHERE ID = '{$_SESSION['user_id']}'");
+    if($query){
+        $_SESSION['account_bijgewerkt'] = true;
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit();
+    } else {
+        echo"<script>alert('Account bewerken mislukt probeer opnieuw of zoek contact op.'); </script>";
+    }
+}
+
+// uitloggen
+if (isset($_POST['uitloggen'])) {
+    // Verwijder alle sessievariabelen
+    $_SESSION = [];
+
+    // Vernietig de sessie
+    session_destroy();
+
+    // Optioneel: Redirect naar de loginpagina
+    header("Location: login.php");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -38,6 +69,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Account - Apothecare</title>
+    <link rel="shortcut icon" type="x-icon" href="../images/logo/Apothecare-minilogo-nobg.png">
     <link rel="stylesheet" href="../css/main.css" />
     <!-- Dit is voor de font-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet"/>
@@ -56,7 +88,12 @@
         </nav>
         <div class="icons">
           <a href="winkelwagen.php" aria-label="Shopping Cart"><img src="../images/icons/cart.svg" alt="cart"/></a>
-          <a href="login.php" aria-label="Login"><img src="../images/icons/user.svg" alt="login"/></a>
+          <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'register.php'; ?>" aria-label="User Account">
+            <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
+          <img src="../images/icons/user-found.svg" alt="user" />
+            <?php else: ?>
+          <img src="../images/icons/user.svg" alt="user" />
+          <?php endif; ?></a>
           <a href="#" aria-label="Search"><img src="../images/icons/search.svg" alt="Search"/></a>
         </div>
       </header>
@@ -67,25 +104,31 @@
         <h1>Mijn account</h1>
         <div class="account-gegevens">
           <h2>Gegevens van: <?php echo $voornaam . " "; echo $achternaam;?></h2>
-          <form action="account.php" method="post">
-            <label for="voornaam">Voornaam</label>
-            <input type="text" id="voornaam" name="voornaam" placeholder="<?php echo $voornaam; ?>" required />
+            <form action="account.php" method="POST">
+              <label for="voornaam">Voornaam</label>
+              <input type="text" id="voornaam" name="voornaam" placeholder="Voer uw voornaam in" value="<?php echo $voornaam; ?>" required />
 
-            <label for="tussenvoegsel">Tussenvoegsel</label>
-            <input type="text" id="tussenvoegsel" name="tussenvoegsel" placeholder="<?php echo $tussenvoegsel; ?>" />
+              <label for="tussenvoegsel">Tussenvoegsel</label>
+              <input type="text" id="tussenvoegsel" name="tussenvoegsel" placeholder="Voer uw tussenvoegsel in" value="<?php echo $tussenvoegsel; ?>" />
 
-            <label for="achternaam">Achternaam</label>
-            <input type="text" id="achternaam" name="achternaam" placeholder="<?php echo $achternaam; ?>" required />
+              <label for="achternaam">Achternaam</label>
+              <input type="text" id="achternaam" name="achternaam" placeholder="Voer uw achternaam in" value="<?php echo $achternaam; ?>" required />
 
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="<?php echo $email; ?>" required />
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="mail" placeholder="Voer uw e-mail in" value="<?php echo $email; ?>" required />
 
-            <label for="telefoon">Telefoonnummer</label>
-            <input type="tel" id="telefoon" name="telefoon" placeholder="<?php echo $telefoon_nr; ?>" />
+              <label for="telefoon">Telefoonnummer</label>
+              <input type="tel" id="telefoon" name="telefoon" placeholder="Voer uw telefoonnummer in" value="<?php echo $telefoon_nr; ?>" />
+              <button type="submit" name="update-account" class="account-edit-button">Sla op</button>
+            </form>
+
+          <form method="POST" action="">
+            <button type="submit" name="uitloggen" class="uitloggen" id="uitloggen">Uitloggen</button>
           </form>
-          <button class="account-edit-button">Sla op</button>
         </div>
       </div>
+
+
 
       <div class="bestellingen-section">
         <div class="bestellingen-container">
