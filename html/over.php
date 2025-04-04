@@ -2,7 +2,7 @@
 //---------------------------------------------------------------------------------------------------//
 // Naam script		  : over.php
 // Omschrijving		  : Op deze pagina staat alle informatie over het bedrijf
-// Naam ontwikkelaar: Groep 7
+// Naam ontwikkelaar: Shiham Hammich
 // Project		      : Apothecare
 // Datum		        : projectweek - periode 3 - 2025
 //---------------------------------------------------------------------------------------------------//

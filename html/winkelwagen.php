@@ -2,7 +2,7 @@
 //---------------------------------------------------------------------------------------------------//
 // Naam script		  : winkelwagen.php
 // Omschrijving		  : hier vind je alle items die je wilt kopen
-// Naam ontwikkelaar: Groep 7
+// Naam ontwikkelaar: Saleh Saleh
 // Project		      : Apothecare
 // Datum		        : projectweek - periode 3 - 2025
 //---------------------------------------------------------------------------------------------------//

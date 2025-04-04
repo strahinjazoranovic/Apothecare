@@ -2,7 +2,7 @@
 //---------------------------------------------------------------------------------------------------//
 // Naam script		  : dashboard.php
 // Omschrijving		  : Dit is de pagina voor de developer.
-// Naam ontwikkelaar: Groep 7
+// Naam ontwikkelaar: Shiham Hammich
 // Project		      : Apothecare
 // Datum		        : projectweek - periode 3 - 2025
 //---------------------------------------------------------------------------------------------------//
