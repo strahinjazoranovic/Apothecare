@@ -8,6 +8,13 @@
 //---------------------------------------------------------------------------------------------------//
   session_start();
   include("../DB_connect.php");
+  //als er een account is aangemaakt zal er een popup komen door deze code  
+  if(isset($_SESSION['account_aanmaak'])){
+    $nieuw_account_popup = "block";
+    unset($_SESSION['account_aanmaak']);
+  } else {
+    $nieuw_account_popup = "none";
+  }
 
   if(isset($_POST['login'])) {
     // Ingevulde velden in form
@@ -50,6 +57,9 @@
     <link rel="shortcut icon" type="x-icon" href="../images/logo/Apothecare-minilogo-nobg.png">
   </head>
   <body>
+<!-- ingelogd popup -->
+<div class="popup" style="display: <?php echo $nieuw_account_popup; ?>;"><p>✅ Account succesvol aangemaakt! Log nu in.</p></div>
+<!-- navbar -->
     <div class="container">
         <header class="nav-login">
           <nav>
@@ -66,12 +76,13 @@
           </div>
         </header>
     </div>
-
+<!-- main body -->
     <div class="container1">
       <div class="login-box">
         <div id="imglogo">
           <a href="../index.php"><img src="../images/logo/apothecare-nobg.png" class="logo" alt="logopng"></a>
           </div>
+          <!-- login -->
         <form method="POST">
           <label for="email">E-mail</label>
           <input type="email" name="mail" id="email" placeholder="Voer uw e-mail in" required />
@@ -89,5 +100,6 @@
         </p>
       </div>
     </div>
+    <script src="main.js"></script>
   </body>
 </html>

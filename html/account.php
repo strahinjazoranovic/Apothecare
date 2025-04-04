@@ -9,7 +9,7 @@
   session_start();
   // Als de gebruiker niet is ingelogd stuur door naar inlogpagina
   if (!isset($_SESSION['user_id'])) {
-    header("Location: inlog.php");
+    header("Location: login.php");
     exit();
   }
   //database connection
@@ -31,6 +31,18 @@
       }
     }
   }
+// uitloggen
+if (isset($_POST['uitloggen'])) {
+    // Verwijder alle sessievariabelen
+    $_SESSION = [];
+
+    // Vernietig de sessie
+    session_destroy();
+
+    // Optioneel: Redirect naar de loginpagina
+    header("Location: login.php");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -82,10 +94,15 @@
 
             <label for="telefoon">Telefoonnummer</label>
             <input type="tel" id="telefoon" name="telefoon" placeholder="<?php echo $telefoon_nr; ?>" />
+            <button type="submit" class="account-edit-button">Sla op</button>
           </form>
-          <button class="account-edit-button">Sla op</button>
+          <form method="POST" action="">
+            <button type="submit" name="uitloggen" class="uitloggen" id="uitloggen">Uitloggen</button>
+          </form>
         </div>
       </div>
+
+
 
       <div class="bestellingen-section">
         <div class="bestellingen-container">

@@ -179,6 +179,27 @@
     background-color: #575757;
   }
 
+  .uitloggen {
+    background-color: #ff0000;
+    border: 2px solid #1a1a1a;
+    border-radius: 15px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    min-height: 60px;
+    min-width: 0;
+    padding: 16px 24px;
+    text-align: center;
+    transition: 0.1s;
+    width: 100%;
+  }
+
+  .uitloggen:hover {
+    background-color: #7c0202;
+  }
+
   /* ======================
       ORDER HISTORY STYLES
       ====================== */
@@ -352,6 +373,51 @@
   .nav-login   nav {
     justify-content: flex-start;
   }
+
+/* Stijl voor de pop-up */
+.popup {
+  left: 0;
+  right: 0;
+  margin-inline: auto; 
+  width: fit-content;
+  height: 4vw;
+  width: 40vw;
+  display: none;
+  position: absolute;
+  background-color: #36f679;
+  border: solid #2cc662 ;
+  border-width: 0 4px 4px 4px;
+  border-radius: 0 0 8px 8px ;
+  text-align: center;
+  padding: 10px;
+  animation: popup-animatie 3s ease-in-out forwards;
+  overflow: hidden;
+}
+
+.popup p {
+  font-size: 20px;
+  color: #000000;
+}
+
+@keyframes popup-animatie {
+  0% {
+      height: 0;
+      opacity: 0;
+  }
+  20% {
+      height: 4vw;
+      opacity: 1;
+  }
+  80% {
+      height: 4vw;
+      opacity: 1;
+  }
+  100% {
+      height: 0;
+      opacity: 0;
+  }
+}
+
 
   /* ======================
       PRODUCT GRID STYLES

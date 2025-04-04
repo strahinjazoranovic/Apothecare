@@ -17,8 +17,9 @@
 
         $query = mysqli_query($conn, "Insert into user (voornaam, tussenvoegsel, achternaam, email, wachtwoord) Values ('$voornaam', '$tussenvoegsel', '$achternaam', '$mail', '$wachtwoord')");
         if($query){
-            $_SESSION['account_aanmaak'] = true
-            echo"<script>window.location.href = 'login.php';</script>";
+            $_SESSION['account_aanmaak'] = true;
+            header("Location: login.php");
+            exit();
         } else {
             echo"<script>alert('Account aanmaken mislukt probeer opnieuw of zoek contact op.'); </script>";
         }
