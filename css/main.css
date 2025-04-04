@@ -156,126 +156,222 @@ a {
 /* ======================
       HEADER & NAVIGATION
       ====================== */
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-    width: 100%;  /* Ensure it takes full width */
-  }
-  
-  .logo {
-    height: 50px;
-    width: auto;
-  }
-  
-  nav {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-  }
-  
-  nav ul {
-    display: flex;
-    list-style: none;
-    justify-content: center;
-  }
-  
-  nav ul li {
-    margin: 0 15px;
-  }
-  
-  nav ul li a {
-    font-weight: 500;
-    transition: color 0.3s;
-  }
-  
-  nav ul li a:hover {
-    color: #e63946;
-  }
-  
-  .icons {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-  }
-  
-  .icons a {
-    margin-left: 20px;
-    font-size: 10px;
-    transition: color 0.3s;
-}
-
-.icons a img:last-child {
-  padding-left: 15px;
-}
-
-  .icons a img {
-    height: 30px;
-  }
-  
-  .icons a:hover {
-    color: #e63946;
-  }
-  
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
-  width: 100%; /* Ensure it takes full width */
-}
-
-.navbar-home {
-  display: none;
+  position: relative;
+  height: 80px;
+  background-color: white;
+  z-index: 10;
 }
 
 .logo {
-  height: 50px;
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.logo img {
+  max-height: 40px;
   width: auto;
 }
 
+/* Navigation centered */
 nav {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 nav ul {
   display: flex;
+  gap: 30px;
   list-style: none;
-  justify-content: center;
-}
-
-nav ul li {
-  margin: 0 15px;
 }
 
 nav ul li a {
+  font-size: 1rem;
   font-weight: 500;
-  transition: color 0.3s;
+  color: #333;
+  transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: #e63946;
+  color: #ff3131;
 }
 
+/* Icons */
 .icons {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   align-items: center;
-  margin-left: auto;
+  gap: 20px;
 }
 
-.icons a {
-  margin-left: 20px;
-  font-size: 10px;
-  transition: color 0.3s;
+.icons img {
+  width: 24px;
+  height: 24px;
 }
 
-.icons a:hover {
-  color: #e63946;
+.search {
+  position: relative;
 }
 
+#search-form {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+}
+
+#search-form input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Menu icon */
+.menu-icon {
+  display: none;
+  position: absolute;
+  right: 2rem;
+  top: 60%; /* Iets naar beneden */
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.menu-icon img {
+  width: 35px;
+  height: 35px;
+}
+
+/* Mobiel menu achtergrond met doorzichtig rood */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 49, 49, 0.85); /* Rood met transparantie */
+  backdrop-filter: blur(10px); /* Extra blur-effect */
+  z-index: 100;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem;
+}
+
+/* Active state voor mobiel menu */
+.mobile-menu.active {
+  display: flex;
+}
+
+/* Sluitknop (X icon) */
+.close-menu {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.close-menu img {
+  width: 35px;
+  height: 35px;
+}
+
+/* Mobiele menu content */
+.mobile-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 0; /* Geen extra marge bovenaan */
+  text-align: center;
+}
+
+.mobile-links a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+}
+
+.mobile-icons {
+  display: flex;
+  gap: 30px;
+  margin-top: 0; /* Geen extra marge tussen links en icons */
+}
+
+/* Grotere icons in mobiel menu */
+.mobile-icons img {
+  width: 40px; /* Groter formaat */
+  height: 40px;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  nav {
+    position: static;
+    transform: none;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+
+  .icons {
+    position: static;
+    transform: none;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .logo {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  nav,  /* Navigatie verdwijnt */
+  .icons { /* Icons verdwijnen */
+    display: none;
+    
+  }
+  
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin-top: 40px;
+  }
+
+  .menu-icon {
+    margin-top: -10px;
+    display: block;
+  }
+
+  .mobile-menu {
+    display: none; /* Standaard verborgen */
+  }
+
+  /* Wanneer menu knop geklikt wordt */
+  .mobile-menu.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Zorgt ervoor dat alles bovenaan het scherm staat */
+  }
+}
 /* ======================
      Chatbot
      ====================== */

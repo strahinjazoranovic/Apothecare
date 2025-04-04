@@ -21,29 +21,72 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="container">
-    <header>
-      <a href="index.php"><img src="images/logo/apothecare-nobg.png" class="logo" alt="logopng" /></a>
-      <nav>
-        <ul>
-        <li><a href="html/producten.php">Producten</a></li>
-        <li><a href="html/over.php">Over</a></li>
-        <li><a href="html/contact.php">Contact</a></li>
+  <header>
+    <div class="logo">
+      <a href="php/index.php"><img src="images/logo/apothecare-nobg.png" alt="Logo"></a>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="php/producten.php">Producten</a></li>
+        <li><a href="php/over.php">Over ons</a></li>
+        <li><a href="php/contact.php">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="icons">
+      <div class="search">
+        <a href="javascript:void(0)" onclick="toggleSearch()">
+          <img src="images/icons/search.svg" alt="Search Icon">
+        </a>
+        <form id="search-form" action="#" method="post" style="display:none;">
+          <input type="text" name="search" placeholder="Zoek..." onkeydown="submitSearch(event)">
+        </form>
+      </div>
+      <div class="cart">
+        <a href="winkelwagen.php">
+          <img src="images/icons/cart.svg" alt="Cart Icon">
+        </a>
+      </div>
+      <div class="profile">
+        <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'register.php'; ?>" aria-label="User Account">
+          <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
+            <img src="images/icons/user-found.svg" alt="user">
+          <?php else: ?>
+            <img src="images/icons/user.svg" alt="user">
+          <?php endif; ?>
+        </a>
+      </div>
+    </div>
+
+<!-- Menu Icon voor mobiel -->
+      <div class="menu-icon" onclick="toggleMobileMenu()">
+        <img src="images/icons/menu.png" alt="Menu Icon">
+      </div>
+
+<!-- Mobiel menu overlay -->
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="close-menu" onclick="toggleMobileMenu()">
+          <img src="images/icons/close.png" alt="Sluit menu">
+        </div>
+      <ul class="mobile-links">
+          <li><a href="#">Producten</a></li>
+          <li><a href="#">Over ons</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
-      </nav>
-      <div class="icons">
-        <a href="winkelwagen.php" aria-label="Shopping Cart"><img src="images/icons/cart.svg" alt="cart" /></a>
-        <a href="login.php" aria-label="User Account">
-        <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'html/login.php' : 'html/register.php'; ?>" aria-label="User Account">
+        <div class="mobile-icons">
+          <a href="#"><img src="images/icons/search.svg" alt="Search Icon"></a>
+          <a href="winkelwagen.php"><img src="images/icons/cart.svg" alt="Cart Icon"></a>
+          <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'register.php'; ?>">
             <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
-        <img src="images/icons/user-found.svg" alt="user" />
+              <img src="images/icons/user-found.svg" alt="user">
             <?php else: ?>
-        <img src="images/icons/user.svg" alt="user" />
-            <?php endif; ?></a>
-        <a href="#" aria-label="Search"><img src="images/icons/search.svg" alt="search" /></a>
+              <img src="images/icons/user.svg" alt="user">
+            <?php endif; ?>
+          </a>
+        </div>
       </div>
     </header>
-
     <div id="chatBotWindow"></div>
       <div id="ChatBotClose"></div>
       <div id="chatBot">
@@ -55,6 +98,7 @@
       <p class="apothecare-text">Uw online apotheek voor medicijnen en gezondheidsproducten.</p>
       <a href="html/producten.php" class="button-filter">Bekijk onze producten</a>
       <a href="html/register.php" class="button-filter">Maak een nieuwe account aan</a>
-  </div>
+
+      <script src="js/main.js"></script>            
 </body>
 </html>
