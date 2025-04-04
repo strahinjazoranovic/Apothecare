@@ -26,10 +26,11 @@
       <header>
         <a href="../index.php"><img src="../images/logo/apothecare-nobg.png" class="logo" alt="Apothecare logo" /></a>
         <nav>
-          <ul>
-            <li><a href="producten.php">Producten</a></li>
-            <li><a href="over.php">Over</a></li>
-          </ul>
+        <ul>
+                    <li><a href="producten.php">Producten</a></li>
+                    <li><a href="over.php">Over</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                </ul>
         </nav>
         <div class="icons">
           <a href="winkelwagen.php" aria-label="Shopping Cart"><img src="../images/icons/cart.svg" alt="cart" /></a>
@@ -42,48 +43,51 @@
         <h1 class="title">Winkelwagen</h1>
         <div class="winkelwagen-container">
           <div class="cart-items">
-            <div class="winkel-item cart-item">
+            <div class="winkel-item cart-item" data-price="29.99">
               <div class="center-item">
-                <img src="../images/placeholder-product-img.png" alt="Product photo" class="winkel-img" />
+                <img src="../images/placeholder-product-img.png" alt="Product photo" class="winkel-img"/>
                 <h5 class="item-naam">Medicijn naam</h5>
               </div>
               <div class="center-item">
-                <div class="input-group number-spinner">
-                  <button id="item-minus" class="btn btn-default">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <input id="item-number" type="number" min="1" class="form-control text-center" value="1"/>
-                  <button id="item-plus" class="btn btn-default">
-                    <i class="fas fa-plus"></i>
-                  </button>
+                <div class="quantity-control">
+                  <button class="quantity-btn minus-btn"><i class="fas fa-minus"></i></button>
+                  <input type="number" class="quantity-input" min="1" value="1">
+                  <button class="quantity-btn plus-btn"><i class="fas fa-plus"></i></button>
                 </div>
                 <div class="item-text">
                   <p class="item-beschrijving">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   </p>
                 </div>
-                <div class="status">
-                  <h5>€29.99</h5>
+                <div class="item-price">
+                  <span>€<span class="price-amount">29.99</span></span>
                 </div>
                 <div class="remove">
-                  <img src="../images/remove.png" alt="Remove item" class="remove-item" />
+                  <button class="remove-btn"><i class="fas fa-trash"></i></button>
                 </div>
               </div>
             </div>
           </div>
-
-          <div class="summary">
+         
+          <div class="order-summary">
             <h4>Order Summary</h4>
-            <div class="total">
-              <p>Subtotal: <span id="sub-total">€29.99</span></p>
-              <p>Tax: <span id="tax-amount">€3.00</span></p>
-              <p>Total: <span id="total-price">€32.99</span></p>
+            <div class="summary-row">
+              <span>Subtotal:</span>
+              <span class="subtotal">€29.99</span>
             </div>
-            <button class="check-out">Checkout</button>
+            <div class="summary-row">
+              <span>Tax:</span>
+              <span class="tax">€3.00</span>
+            </div>
+            <div class="summary-row total-row">
+              <span>Total:</span>
+              <span class="total-price">€32.99</span>
+            </div>
+            <button class="checkout-btn">Checkout</button>
           </div>
         </div>
       </div>
     </div>
-    <script src="../js/main.js"></script>
+    <script src="../js/cart.js"></script>
   </body>
 </html>
