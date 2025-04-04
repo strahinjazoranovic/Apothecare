@@ -23,7 +23,7 @@
 <body>
   <header>
     <div class="logo">
-      <a href="php/index.php"><img src="images/logo/apothecare-nobg.png" alt="Logo"></a>
+      <a href="index.php"><img src="images/logo/apothecare-nobg.png" alt="Logo"></a>
     </div>
 
     <nav>
@@ -39,12 +39,12 @@
         <img src="images/icons/search.svg" alt="Search Icon">
       </div>
       <div class="cart">
-        <a href="winkelwagen.php">
+        <a href="php/winkelwagen.php">
           <img src="images/icons/cart.svg" alt="Cart Icon">
         </a>
       </div>
       <div class="profile">
-        <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'register.php'; ?>" aria-label="User Account">
+        <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'php/login.php'; ?>" aria-label="User Account">
           <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
             <img src="images/icons/user-found.svg" alt="user">
           <?php else: ?>
@@ -70,13 +70,13 @@
           <li><a href="#">Contact</a></li>
         </ul>
         <div class="mobile-icons">
-          <a href="#"><img src="images/icons/search.svg" alt="Search Icon"></a>
-          <a href="winkelwagen.php"><img src="images/icons/cart.svg" alt="Cart Icon"></a>
+          <a href="#"><img src="images/icons/search-wit.svg" alt="Search Icon"></a>
+          <a href="winkelwagen.php"><img src="images/icons/cart-wit.svg" alt="Cart Icon"></a>
           <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'register.php'; ?>">
             <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
               <img src="images/icons/user-found.svg" alt="user">
             <?php else: ?>
-              <img src="images/icons/user.svg" alt="user">
+              <img src="images/icons/user-wit.svg" alt="user">
             <?php endif; ?>
           </a>
         </div>
@@ -91,8 +91,8 @@
     <div id="content">
       <h1 class="apothecare-header">Welkom bij Apothe<span class="red">care<span></h1>
       <p class="apothecare-text">Uw online apotheek voor medicijnen en gezondheidsproducten.</p>
-      <a href="html/producten.php" class="button-filter">Bekijk onze producten</a>
-      <a href="html/register.php" class="button-filter">Maak een nieuwe account aan</a>
+      <a href="php/producten.php" class="button-filter">Bekijk onze producten</a>
+      <a href="php/register.php" class="button-filter">Maak een nieuwe account aan</a>
 
       <script src="js/main.js"></script>            
 </body>

@@ -44,7 +44,7 @@ session_start();
           </a>
         </div>
         <div class="profile">
-          <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'register.php'; ?>" aria-label="User Account">
+          <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'login.php'; ?>" aria-label="User Account">
             <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
               <img src="../images/icons/user-found.svg" alt="user">
             <?php else: ?>
@@ -70,13 +70,13 @@ session_start();
           <li><a href="#">Contact</a></li>
         </ul>
         <div class="mobile-icons">
-          <a href="#"><img src="../images/icons/search.svg" alt="Search Icon"></a>
-          <a href="winkelwagen.php"><img src="../images/icons/cart.svg" alt="Cart Icon"></a>
-          <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'register.php'; ?>">
+          <a href="#"><img src="../images/icons/search-wit.svg" alt="Search Icon"></a>
+          <a href="winkelwagen.php"><img src="../images/icons/cart-wit.svg" alt="Cart Icon"></a>
+          <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'login.php'; ?>">
             <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
               <img src="../images/icons/user-found.svg" alt="user">
             <?php else: ?>
-              <img src="../images/icons/user.svg" alt="user">
+              <img src="../images/icons/user-wit.svg" alt="user">
             <?php endif; ?>
           </a>
         </div>
