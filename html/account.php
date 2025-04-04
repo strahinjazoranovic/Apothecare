@@ -2,7 +2,7 @@
 //---------------------------------------------------------------------------------------------------//
 // Naam script		  : account.php
 // Omschrijving		  : Deze file laat het account van de klant zien.
-// Naam ontwikkelaar: Groep 7
+// Naam ontwikkelaar: Tejo Veldman
 // Project		      : Apothecare
 // Datum		        : projectweek - periode 3 - 2025
 //---------------------------------------------------------------------------------------------------//

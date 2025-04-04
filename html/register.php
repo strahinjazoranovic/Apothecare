@@ -2,7 +2,7 @@
 //---------------------------------------------------------------------------------------------------//
 // Naam script		  : register.php
 // Omschrijving		  : Hier maak je een nieuw account aan
-// Naam ontwikkelaar  : Groep 7
+// Naam ontwikkelaar  : Tejo Veldman, Strahinja Zoranovic
 // Project		      : Apothecare
 // Datum		      : projectweek - periode 3 - 2025
 //---------------------------------------------------------------------------------------------------// 
@@ -37,9 +37,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apothecare</title>
+    <title>Apothecare - Register</title>
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="shortcut icon" type="x-icon" href="../images/logo/Apothecare-minilogo-nobg.png">
+    <!-- Dit is voor de font-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
     <div class="container">
