@@ -30,7 +30,7 @@
                     <li><a href="producten.php">Producten</a></li>
                     <li><a href="over.php">Over</a></li>
                     <li><a href="contact.php">Contact</a></li>
-                </ul>
+          </ul>
         </nav>
         <div class="icons">
           <a href="winkelwagen.php" aria-label="Shopping Cart"><img src="../images/icons/cart.svg" alt="cart" /></a>
