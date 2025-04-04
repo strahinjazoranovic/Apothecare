@@ -78,8 +78,8 @@
                 <input type="password" id="againpassword" placeholder="Voer uw wachtwoord opnieuw in" required>
                 
                 <p class="forgot">Wachtwoord vergeten?</p>
-                </div>
                 <button type="submit" name="register" class="button">Registreer nu</button>
+                </div>
             </form>
         </div>
     </div>
