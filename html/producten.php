@@ -2,7 +2,7 @@
 //---------------------------------------------------------------------------------------------------//
 // Naam script		  : producten.php
 // Omschrijving		  : Hier kan je alle producten vinden.
-// Naam ontwikkelaar: Groep 7
+// Naam ontwikkelaar: Ebenezer Boateng
 // Project		      : Apothecare
 // Datum		        : projectweek - periode 3 - 2025
 //---------------------------------------------------------------------------------------------------//

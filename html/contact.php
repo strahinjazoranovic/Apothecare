@@ -2,7 +2,7 @@
 //---------------------------------------------------------------------------------------------------//
 // Naam script		  : contact.php
 // Omschrijving		  : Hier can je contact opnemen met de devs.
-// Naam ontwikkelaar  : Groep 7
+// Naam ontwikkelaar  : Ebenezer Boateng
 // Project		      : Apothecare
 // Datum		      : projectweek - periode 3 - 2025
 //---------------------------------------------------------------------------------------------------//
