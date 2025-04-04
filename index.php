@@ -34,7 +34,7 @@
       <div class="icons">
         <a href="winkelwagen.php" aria-label="Shopping Cart"><img src="images/icons/cart.svg" alt="cart" /></a>
         <a href="login.php" aria-label="User Account">
-        <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'html/account.php' : 'html/register.php'; ?>" aria-label="User Account">
+        <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'html/login.php' : 'html/register.php'; ?>" aria-label="User Account">
             <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
         <img src="images/icons/user-found.svg" alt="user" />
             <?php else: ?>
