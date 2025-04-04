@@ -88,7 +88,7 @@
           <input type="email" name="mail" id="email" placeholder="Voer uw e-mail in" required />
 
           <label for="password">Wachtwoord</label>
-          <input type="password" name="wachtwoord" id="password" placeholder="voer uw wachtwoord in" required />
+          <input type="password" name="wachtwoord" id="password" placeholder="Voer uw wachtwoord in" required />
 
           <p class="forgot">Forgot password?</p>
 

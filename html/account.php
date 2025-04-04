@@ -79,23 +79,24 @@ if (isset($_POST['uitloggen'])) {
         <h1>Mijn account</h1>
         <div class="account-gegevens">
           <h2>Gegevens van: <?php echo $voornaam . " "; echo $achternaam;?></h2>
-          <form action="account.php" method="post">
-            <label for="voornaam">Voornaam</label>
-            <input type="text" id="voornaam" name="voornaam" placeholder="<?php echo $voornaam; ?>" required />
+            <form action="account.php" method="post">
+              <label for="voornaam">Voornaam</label>
+              <input type="text" id="voornaam" name="voornaam" placeholder="Voer uw voornaam in" value="<?php echo $voornaam; ?>" required />
 
-            <label for="tussenvoegsel">Tussenvoegsel</label>
-            <input type="text" id="tussenvoegsel" name="tussenvoegsel" placeholder="<?php echo $tussenvoegsel; ?>" />
+              <label for="tussenvoegsel">Tussenvoegsel</label>
+              <input type="text" id="tussenvoegsel" name="tussenvoegsel" placeholder="Voer uw tussenvoegsel in" value="<?php echo $tussenvoegsel; ?>" />
 
-            <label for="achternaam">Achternaam</label>
-            <input type="text" id="achternaam" name="achternaam" placeholder="<?php echo $achternaam; ?>" required />
+              <label for="achternaam">Achternaam</label>
+              <input type="text" id="achternaam" name="achternaam" placeholder="Voer uw achternaam in" value="<?php echo $achternaam; ?>" required />
 
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="<?php echo $email; ?>" required />
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="Voer uw e-mail in" value="<?php echo $email; ?>" required />
 
-            <label for="telefoon">Telefoonnummer</label>
-            <input type="tel" id="telefoon" name="telefoon" placeholder="<?php echo $telefoon_nr; ?>" />
-            <button type="submit" class="account-edit-button">Sla op</button>
-          </form>
+              <label for="telefoon">Telefoonnummer</label>
+              <input type="tel" id="telefoon" name="telefoon" placeholder="Voer uw telefoonnummer in" value="<?php echo $telefoon_nr; ?>" />
+              <button type="submit" class="account-edit-button">Sla op</button>
+            </form>
+
           <form method="POST" action="">
             <button type="submit" name="uitloggen" class="uitloggen" id="uitloggen">Uitloggen</button>
           </form>
