@@ -15,6 +15,7 @@
   //database connection
   include("../DB_connect.php");
 
+  //haalt gegevens uit database
   $sql = "SELECT * FROM user WHERE ID='{$_SESSION["user_id"]}';";
   $result = mysqli_query($conn, $sql);
   $resultCheck = mysqli_num_rows($result);
@@ -31,6 +32,24 @@
       }
     }
   }
+// Gegevens bijwerken
+  if(isset($_POST['update-account'])) {
+    $voornaam_update = $_POST['voornaam'];
+    $tussenvoegsel_update = $_POST['tussenvoegsel'];
+    $achternaam_update = $_POST['achternaam'];
+    $mail_update = $_POST['mail'];
+    $telefoon_update = $_POST['telefoon'];
+
+    $query = mysqli_query($conn, "UPDATE user SET voornaam = '$voornaam_update', tussenvoegsel = '$tussenvoegsel_update', achternaam = '$achternaam_update', email = '$mail_update', telefoon_nr = '$telefoon_update' WHERE ID = '{$_SESSION['user_id']}'");
+    if($query){
+        $_SESSION['account_bijgewerkt'] = true;
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit();
+    } else {
+        echo"<script>alert('Account bewerken mislukt probeer opnieuw of zoek contact op.'); </script>";
+    }
+}
+
 // uitloggen
 if (isset($_POST['uitloggen'])) {
     // Verwijder alle sessievariabelen
@@ -50,6 +69,7 @@ if (isset($_POST['uitloggen'])) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Account - Apothecare</title>
+    <link rel="shortcut icon" type="x-icon" href="../images/logo/Apothecare-minilogo-nobg.png">
     <link rel="stylesheet" href="../css/main.css" />
     <!-- Dit is voor de font-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet"/>
@@ -79,7 +99,7 @@ if (isset($_POST['uitloggen'])) {
         <h1>Mijn account</h1>
         <div class="account-gegevens">
           <h2>Gegevens van: <?php echo $voornaam . " "; echo $achternaam;?></h2>
-            <form action="account.php" method="post">
+            <form action="account.php" method="POST">
               <label for="voornaam">Voornaam</label>
               <input type="text" id="voornaam" name="voornaam" placeholder="Voer uw voornaam in" value="<?php echo $voornaam; ?>" required />
 
@@ -90,11 +110,11 @@ if (isset($_POST['uitloggen'])) {
               <input type="text" id="achternaam" name="achternaam" placeholder="Voer uw achternaam in" value="<?php echo $achternaam; ?>" required />
 
               <label for="email">E-mail</label>
-              <input type="email" id="email" name="email" placeholder="Voer uw e-mail in" value="<?php echo $email; ?>" required />
+              <input type="email" id="email" name="mail" placeholder="Voer uw e-mail in" value="<?php echo $email; ?>" required />
 
               <label for="telefoon">Telefoonnummer</label>
               <input type="tel" id="telefoon" name="telefoon" placeholder="Voer uw telefoonnummer in" value="<?php echo $telefoon_nr; ?>" />
-              <button type="submit" class="account-edit-button">Sla op</button>
+              <button type="submit" name="update-account" class="account-edit-button">Sla op</button>
             </form>
 
           <form method="POST" action="">
