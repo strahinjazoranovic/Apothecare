@@ -1,13 +1,26 @@
-When you want to use the website you need to have a database made. 
-Follow the steps and try to login to try if it works!
+To use the website, you must first set up the database. Follow these steps and test the login to ensure everything works correctly.
 
-1. Check if all of the files are in the localhost of xampp.
-2. Check if you started the xammp 'Apache' AND 'MySQL'.
-3. When MySQL has started press on 'Admin'. Now you will see the phpmyadmin.
-4. Create a new database by pressing on new on the left and call it 'apothecare'.
-   *MAKE SHURE THE DATABASE IS CALLED APOTHECARE OR THE WEBSITE WILL NOT LINK UP!!!*
-5. Press on your new made database and press on 'inport'.
-6. Press on 'Choose file' and find and select the other file named 'apothecare.sql' in the folder of this file.
-7. Scroll down and press on "Inport".
-8. CONGATS!!! The database has been inported and you can now use the website.
-9. Test if you did it right by making an account and loggin in.
+1. Verify Files – Ensure all necessary files are located in the htdocs folder of XAMPP.
+2. Start XAMPP Services – Open XAMPP and start both Apache and MySQL.
+3. Open phpMyAdmin – Once MySQL has started, click on the "Admin" button next to MySQL to open phpMyAdmin.
+4. Create the Database:
+   
+. In phpMyAdmin, click New on the left panel.
+
+. Name the new database apothecare (make sure to spell it exactly as apothecare, or the website will not connect!).
+
+5. Import the Database:
+   
+. Click on your newly created database.
+
+. Go to the Import tab.
+
+. Click Choose File and select apothecare.sql from the project folder.
+
+. Scroll down and press Import.
+
+6. Confirmation – Once the import is complete, the database is ready.
+
+7. Test the Website – Create an account and log in to ensure everything is working correctly.
+
+🎉 Congratulations! Your database is now set up, and the website should function properly.
