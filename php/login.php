@@ -67,14 +67,11 @@
     <!-- Dit is voor de font-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
   </head>
-  <body>
+  <body class="login-page">
 <!-- ingelogd popup -->
   <div class="popup" style="display: <?php echo $nieuw_account_popup; ?>;"><p>✅ Account succesvol aangemaakt! Log nu in.</p></div>
 <!-- header -->
-  <header>
-     <div class="logo">
-       <a href="../index.php"><img src="../images/logo/apothecare-nobg.png" alt="Logo"></a>
-     </div>
+  <header class="login-header">
 
      <nav>
        <ul>
@@ -85,14 +82,9 @@
      </nav>
 
      <div class="icons">
-       <div class="search">
-         <a href="javascript:void(0)" onclick="toggleSearch()">
-           <img src="../images/icons/search.svg" alt="Search Icon">
-         </a>
-         <form id="search-form" action="#" method="post" style="display:none;">
-           <input type="text" name="search" placeholder="Zoek..." onkeydown="submitSearch(event)">
-         </form>
-       </div>
+        <div class="search">
+          <img src="../images/icons/search.svg" alt="Search Icon">
+        </div>
        <div class="cart">
          <a href="winkelwagen.php">
            <img src="../images/icons/cart.svg" alt="Cart Icon">
@@ -141,9 +133,9 @@
     <div class="container1">
       <div class="login-box">
         <div id="imglogo">
-          <a href="../index.php"><img src="../images/logo/apothecare-nobg.png" class="logo" alt="logopng"></a>
-          </div>
-          <!-- login -->
+          <a href="../index.php"><img src="../images/logo/apothecare-nobg.png" alt="logopng"></a>
+        </div>
+
         <form method="POST">
           <label for="email">E-mail</label>
           <input type="email" name="mail" id="email" placeholder="Voer uw e-mail in" required />
@@ -161,6 +153,6 @@
         </p>
       </div>
     </div>
-    <script src="main.js"></script>
+    <script src="../js/main.js"></script>
   </body>
 </html>

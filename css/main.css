@@ -818,6 +818,13 @@ input[type="password"] {
 #imglogo {
   display: flex;
   justify-content: center;
+  margin-bottom: 20px; /* Ruimte tussen logo en invoervelden */
+}
+
+#imglogo img {
+  max-width: 400px; /* De gewenste maximale breedte voor het logo */
+  width: 100%; /* Zorg ervoor dat het logo zich aanpast aan de breedte van het container */
+  height: auto; /* Houd de hoogte in verhouding met de breedte */
 }
 
 .forgot {
@@ -884,10 +891,10 @@ input[type="password"] {
   }
 }
 
+.wachtwoordregels {
+  font-size: 0.75rem;
+}
 
-  .wachtwoordregels {
-    font-size: 0.75rem;
-  }
 .wachtwoordregels {
   font-size: 0.75rem;
 }
@@ -934,6 +941,54 @@ input[type="password"] {
   margin: 10px 0;
   font-size: 1.1rem;
 }
+
+.login-header {
+  position: relative;
+  height: 80px;
+  background-color: white;
+  z-index: 10;
+}
+
+body.login-page .login-header nav {
+  display: flex;
+  justify-content: flex-start; /* Verplaatst de links naar de linkerkant */
+  width: 100%; /* Zorgt ervoor dat de nav de hele breedte van de header gebruikt */
+}
+
+body.login-page .login-header nav ul {
+  display: flex;
+  justify-content: flex-start; /* Zorgt ervoor dat de lijstitems naar links uitgelijnd zijn */
+  padding-left: 0; /* Zorgt ervoor dat de lijstitems geen extra ruimte aan de linkerkant hebben */
+}
+
+body.login-page .login-header nav ul li {
+  margin-left: 20px; /* Voeg ruimte toe tussen de items als je dat wilt */
+}
+
+@media (max-width: 1024px) {
+  body.login-page .login-header nav {
+    justify-content: center; /* Zet de links terug naar het midden */
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  body.login-page .login-header nav {
+    display: none;
+  }
+
+  body.login-page header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin-top: 40px;
+  }
+
+}
+
+
 
 /* ======================
       BUTTON STYLES

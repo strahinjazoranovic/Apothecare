@@ -33,14 +33,9 @@
      </nav>
 
       <div class="icons">
-       <div class="search">
-         <a href="javascript:void(0)" onclick="toggleSearch()">
-           <img src="../images/icons/search.svg" alt="Search Icon">
-         </a>
-         <form id="search-form" action="#" method="post" style="display:none;">
-           <input type="text" name="search" placeholder="Zoek..." onkeydown="submitSearch(event)">
-         </form>
-       </div>
+        <div class="search">
+          <img src="../images/icons/search.svg" alt="Search Icon">
+        </div>
        <div class="cart">
          <a href="winkelwagen.php">
            <img src="../images/icons/cart.svg" alt="Cart Icon">

@@ -1,9 +1,4 @@
 // menu opener/closer header
-function toggleSearch() {
-  const form = document.getElementById('search-form');
-  form.style.display = form.style.display === 'none' ? 'block' : 'none';
-}
-
 function toggleMobileMenu() {
   const menu = document.getElementById('mobileMenu');
   const chatBot = document.getElementById('chatBot');
@@ -17,13 +12,7 @@ function toggleMobileMenu() {
   }
 }
 
-function submitSearch(e) {
-  if (e.key === 'Enter') {
-      e.target.form.submit();
-  }
-}
-
-// Extra: sluit menu bij klikken op een link
+// sluit menu bij klikken op een link
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.mobile-menu a').forEach(link => {
       link.addEventListener('click', () => {
