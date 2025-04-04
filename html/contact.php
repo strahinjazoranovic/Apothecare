@@ -23,7 +23,7 @@ session_start();
 <body>
 <div class="container">
     <header>
-        <a href="index.php"><img src="../images/logo/apothecare-nobg.png" class="logo" alt="logopng" /></a>
+        <a href="../index.php"><img src="../images/logo/apothecare-nobg.png" class="logo" alt="logopng" /></a>
         <nav>
             <ul>
                 <li><a href="producten.php">Producten</a></li>
