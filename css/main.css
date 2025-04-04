@@ -762,9 +762,10 @@ input[type="password"] {
 }
 
 /* ======================
-      LOGIN PAGE STYLES
+      PAGE STYLES for LOGIN and REGISTER
       ====================== */
-.login-box {
+
+.login-box, .register-box { 
   background: white;
   padding: clamp(18px, 3vw, 25px); /* Responsive padding */
   border-radius: 10px;
@@ -775,7 +776,8 @@ input[type="password"] {
 }
 
 .google-btn,
-.login-btn {
+.login-btn,
+.register-btn {
   width: 100%;
   padding: 4px;
   border-radius: 5px;
@@ -789,7 +791,8 @@ input[type="password"] {
 }
 
 .google-btn:hover,
-.login-btn:hover {
+.login-btn:hover,
+.register-btn:hover {
   background: #e0e0e0;
 }
 
@@ -839,64 +842,44 @@ input[type="password"] {
   color: black;
 }
 
-.nav-register nav {
+/* ======================
+      HEADER STYLES for LOGIN and REGISTER
+      ====================== */
+
+body .login-header nav, body .register-header nav {
+  display: flex;
+  justify-content: flex-start; /* Verplaatst de links naar de linkerkant */
+  width: 100%;
+}
+
+body .login-header nav ul, body .register-header nav ul {
+  display: flex;
   justify-content: flex-start;
+  padding-left: 0;
 }
 
-.nav-login nav {
-  justify-content: flex-start;
+body .login-header nav ul li, body .register-header nav ul li {
+  margin-left: 20px;
 }
 
-/* Stijl voor de pop-up */
-.popup {
-  left: 0;
-  right: 0;
-  margin-inline: auto; 
-  width: fit-content;
-  height: 4vw;
-  width: 40vw;
-  display: none;
-  position: absolute;
-  background-color: #36f679;
-  border: solid #2cc662 ;
-  border-width: 0 4px 4px 4px;
-  border-radius: 0 0 8px 8px ;
-  text-align: center;
-  padding: 10px;
-  animation: popup-animatie 10s ease-in-out forwards;
-  overflow: hidden;
-}
-
-.popup p {
-  font-size: 20px;
-  color: #000000;
-}
-
-@keyframes popup-animatie {
-  0% {
-    height: 0;
-    opacity: 0;
-  }
-  10% {
-    height: 4vw;
-    opacity: 1;
-  }
-  90% {
-    height: 4vw;
-    opacity: 1;
-  }
-  100% {
-    height: 0;
-    opacity: 0;
+@media (max-width: 1024px) {
+  body .login-header nav, body .register-header nav {
+    justify-content: center; /* Zet de links terug naar het midden */
   }
 }
 
-.wachtwoordregels {
-  font-size: 0.75rem;
-}
+@media (max-width: 600px) {
+  body .login-header nav, body .register-header nav {
+    display: none;
+  }
 
-.wachtwoordregels {
-  font-size: 0.75rem;
+  body header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin-top: 40px;
+  }
 }
 
 /* ======================
@@ -940,52 +923,6 @@ input[type="password"] {
   font-weight: 600;
   margin: 10px 0;
   font-size: 1.1rem;
-}
-
-.login-header {
-  position: relative;
-  height: 80px;
-  background-color: white;
-  z-index: 10;
-}
-
-body.login-page .login-header nav {
-  display: flex;
-  justify-content: flex-start; /* Verplaatst de links naar de linkerkant */
-  width: 100%; /* Zorgt ervoor dat de nav de hele breedte van de header gebruikt */
-}
-
-body.login-page .login-header nav ul {
-  display: flex;
-  justify-content: flex-start; /* Zorgt ervoor dat de lijstitems naar links uitgelijnd zijn */
-  padding-left: 0; /* Zorgt ervoor dat de lijstitems geen extra ruimte aan de linkerkant hebben */
-}
-
-body.login-page .login-header nav ul li {
-  margin-left: 20px; /* Voeg ruimte toe tussen de items als je dat wilt */
-}
-
-@media (max-width: 1024px) {
-  body.login-page .login-header nav {
-    justify-content: center; /* Zet de links terug naar het midden */
-  }
-
-}
-
-@media (max-width: 600px) {
-
-  body.login-page .login-header nav {
-    display: none;
-  }
-
-  body.login-page header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-    margin-top: 40px;
-  }
-
 }
 
 

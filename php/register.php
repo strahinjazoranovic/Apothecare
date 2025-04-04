@@ -43,11 +43,8 @@
     <!-- Dit is voor de font-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
 </head>
-<body>
-    <header>
-      <div class="logo">
-        <a href="../index.php"><img src="../images/logo/apothecare-nobg.png" alt="Logo"></a>
-      </div>
+<body class="login-page">
+    <header class="login-header">
 
       <nav>
         <ul>
@@ -67,7 +64,7 @@
           </a>
         </div>
         <div class="profile">
-          <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'register.php'; ?>" aria-label="User Account">
+          <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'login.php'; ?>" aria-label="User Account">
             <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
               <img src="../images/icons/user-found.svg" alt="user">
             <?php else: ?>
@@ -110,7 +107,7 @@
         <div class="login-box">
             <a href="login.php"><img src="../images/icons/back.svg"></a>
             <div id="imglogo">
-                <a href="../index.php"><img src="../images/logo/apothecare-nobg.png" class="logo" alt="logopng"></a>
+                <a href="../index.php"><img src="../images/logo/apothecare-nobg.png" alt="logopng"></a>
             </div>
 
             <form onsubmit="validatePassword(event)" method="POST">  
