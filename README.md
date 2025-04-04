@@ -5,19 +5,19 @@ To use the website, you must first set up the database. Follow these steps and t
 3. Open phpMyAdmin – Once MySQL has started, click on the "Admin" button next to MySQL to open phpMyAdmin.
 4. Create the Database:
    
-. In phpMyAdmin, click New on the left panel.
+      . In phpMyAdmin, click New on the left panel.
 
-. Name the new database apothecare (make sure to spell it exactly as apothecare, or the website will not connect!).
+      . Name the new database apothecare (make sure to spell it exactly as apothecare, or the website will not connect!).
 
 5. Import the Database:
    
-. Click on your newly created database.
+      . Click on your newly created database.
 
-. Go to the Import tab.
+      . Go to the Import tab.
 
-. Click Choose File and select apothecare.sql from the project folder.
+      . Click Choose File and select apothecare.sql from the project folder.
 
-. Scroll down and press Import.
+      . Scroll down and press Import.
 
 6. Confirmation – Once the import is complete, the database is ready.
 
