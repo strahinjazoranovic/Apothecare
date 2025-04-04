@@ -22,7 +22,7 @@ a {
 }
 
 /* ======================
-      Home page
+      HOME PAGE
       ====================== */
 #content {
   display: flex;
@@ -35,6 +35,113 @@ a {
 
 .red {
   color: red;
+}
+/* ======================
+      OVER PAGE
+      ====================== */
+
+.over-ons-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photo img {
+  width: 90%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 8px; 
+}
+
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.content .blok {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.content h2 {
+  color: #0077cc;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.content p {
+  font-size: 1rem;
+}
+
+.over-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.over-btn {
+  background-color: #0077cc;
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  text-align: center;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.over-btn:hover {
+  background-color: #005fa3;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+}
+
+/* Alleen de desktop-knop laten zien op breed scherm */
+.over-btn-desktop {
+  display: flex;
+}
+
+/* Mobiele knop standaard verbergen */
+.over-btn-mobile {
+  display: none;
+}
+
+/* Mobiele weergave */
+@media (max-width: 768px) {
+  .over-ons-container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .photo {
+    display: none;
+  }
+
+  .over-btn-desktop {
+    display: none;
+  }
+
+  .over-btn-mobile {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
 }
 
 /* ======================
@@ -299,7 +406,7 @@ input[type="password"] {
 }
 
 .account-edit-button:hover {
-  background-color: #575757;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
 }
 
   .uitloggen {
@@ -320,7 +427,7 @@ input[type="password"] {
   }
 
   .uitloggen:hover {
-    background-color: #7c0202;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   }
 
   /* ======================
@@ -653,7 +760,7 @@ input[type="password"] {
   border-radius: 0 0 8px 8px ;
   text-align: center;
   padding: 10px;
-  animation: popup-animatie 3s ease-in-out forwards;
+  animation: popup-animatie 10s ease-in-out forwards;
   overflow: hidden;
 }
 
@@ -664,20 +771,20 @@ input[type="password"] {
 
 @keyframes popup-animatie {
   0% {
-      height: 0;
-      opacity: 0;
+    height: 0;
+    opacity: 0;
   }
-  20% {
-      height: 4vw;
-      opacity: 1;
+  10% {
+    height: 4vw;
+    opacity: 1;
   }
-  80% {
-      height: 4vw;
-      opacity: 1;
+  90% {
+    height: 4vw;
+    opacity: 1;
   }
   100% {
-      height: 0;
-      opacity: 0;
+    height: 0;
+    opacity: 0;
   }
 }
 

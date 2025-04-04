@@ -7,13 +7,21 @@
 // Datum		        : projectweek - periode 3 - 2025
 //---------------------------------------------------------------------------------------------------//
   session_start();
+  //database connection
+  include("../DB_connect.php");
   // Als de gebruiker niet is ingelogd stuur door naar inlogpagina
   if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
   }
-  //database connection
-  include("../DB_connect.php");
+
+  //als er een account is aangemaakt zal er een popup komen door deze code  
+  if(isset($_SESSION['gegevens_bijwerken'])){
+    $gegevens_bijwerken_popup = "block";
+    unset($_SESSION['gegevens_bijwerken']);
+  } else {
+    $gegevens_bijwerken_popup = "none";
+  }
 
   //haalt gegevens uit database
   $sql = "SELECT * FROM user WHERE ID='{$_SESSION["user_id"]}';";
@@ -42,7 +50,7 @@
 
     $query = mysqli_query($conn, "UPDATE user SET voornaam = '$voornaam_update', tussenvoegsel = '$tussenvoegsel_update', achternaam = '$achternaam_update', email = '$mail_update', telefoon_nr = '$telefoon_update' WHERE ID = '{$_SESSION['user_id']}'");
     if($query){
-        $_SESSION['account_bijgewerkt'] = true;
+        $_SESSION['gegevens_bijwerken'] = "bijgewerkt";
         header("Location: " . $_SERVER['PHP_SELF']);
         exit();
     } else {
@@ -76,6 +84,8 @@ if (isset($_POST['uitloggen'])) {
   </head>
 
   <body>
+    <!-- ingelogd popup -->
+    <div class="popup" style="display: <?php echo $gegevens_bijwerken_popup; ?>;"><p>✅ Account succesvol bijgewerkt!</p></div>
     <div class="container">
       <header>
         <a href="../index.php"><img src="../images/logo/apothecare-nobg.png" class="logo" alt="logopng"/></a>
@@ -119,7 +129,8 @@ if (isset($_POST['uitloggen'])) {
 
               <label for="telefoon">Telefoonnummer</label>
               <input type="tel" id="telefoon" name="telefoon" placeholder="Voer uw telefoonnummer in" value="<?php echo $telefoon_nr; ?>" />
-              <button type="submit" name="update-account" class="account-edit-button">Sla op</button>
+              <button type="submit" name="update-account" class="account-edit-button">Opslaan</button>
+
             </form>
 
           <form method="POST" action="">

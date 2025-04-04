@@ -49,51 +49,42 @@
             <a href="#" aria-label="Search"><img src="../images/icons/search.svg" alt="search" /></a>
         </div>
       </header>
-
-      <div class="main-content">
-        <div class="image-section">
-          <div class="image-container">
-            <img src="/images/Apothekers.jpg" alt="Two pharmacists in white coats standing in front of a modern building" />
-          </div>
-          <div class="bottom-text">
-            <h2>Lorem ipsum dolor sit amet</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-              magna sapien, volutpat ac dapibus ut, porttitor quis odio.
-              Curabitur sed mauris at urna hendrerit sagittis. Vestibulum vel
-              ipsum eget erat posuere laoreet placerat et risus. Fusce
-              facilisis, sapien ut mattis tempor, odio ante volutpat nulla, vel
-              lacinia arcu massa eu tellus. Morbi sodales velit sit amet
-              imperdiet ultrices. Nulla suscipit accumsan convallis. In hac
-              habitasse platea dictumst. Nullam eros nunc, condimentum et tempor
-              ut, porttitor nec dui. Interdum et malesuada fames ac ante ipsum
-              primis in faucibus. Pellentesque a nisi sit amet neque bibendum
-              hendrerit. Donec fringilla erat a elit efficitur blandit. Vivamus
-              volutpat lobortis arcu ut porta. Proin non lorem sodales, porta
-              tortor in, porta enim. Maecenas tincidunt scelerisque feugiat.
-            </p>
-          </div>
-        </div>
-
-        <div class="text-section">
-          <h2>lorem ipsum dolor sit amet</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce magna
-            sapien, volutpat ac dapibus ut, porttitor quis odio. Curabitur sed
-            mauris at urna hendrerit sagittis. Vestibulum vel ipsum eget erat
-            posuere laoreet placerat et risus. Fusce facilisis, sapien ut mattis
-            tempor, odio ante volutpat nulla, vel lacinia arcu massa eu tellus.
-            Morbi sodales velit sit amet imperdiet ultrices. Nulla suscipit
-            accumsan convallis. In hac habitasse platea dictumst. Nullam eros
-            nunc, condimentum et tempor ut, porttitor nec dui. Interdum et
-            malesuada fames ac ante ipsum primis in faucibus. Pellentesque a
-            nisi sit amet neque bibendum hendrerit. Donec fringilla erat a elit
-            efficitur blandit. Vivamus volutpat lobortis arcu ut porta. Proin
-            non lorem sodales, porta tortor in, porta enim. Maecenas tincidunt
-            scelerisque feugiat.
-          </p>
-        </div>
-      </div>
     </div>
+
+    <div class="over-ons-container">
+  <div class="photo">
+    <img src="../images/over-ons-foto.png" alt="ApotheCare medewerker">
+    <div class="over-btn-container over-btn-desktop">
+      <a href="producten.php" class="over-btn">Bekijk Producten</a>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="blok">
+      <h2>Onze Geschiedenis</h2>
+      <p>
+        ApotheCare werd opgericht in 1893 toen dokter Cornelis Pillenius vond dat pillen kopen eenvoudiger moest worden.
+        Wat begon als een stoffig kastje vol mysterieuze poeders, groeide uit tot een digitale apotheek voor iedereen.
+      </p>
+    </div>
+    <div class="blok">
+      <h2>Onze Doelen</h2>
+      <p>
+        Wij willen een wereld waarin je je medicijnen snel, duidelijk en zonder stress kunt regelen.
+        Of het nou om een simpele pijnstiller gaat of een pil tegen je schoonmoederhoofdpijn — wij staan klaar.
+      </p>
+    </div>
+    <div class="blok">
+      <h2>Meer Uitleg</h2>
+      <p>
+        ApotheCare maakt gebruik van moderne technologie om medicatie makkelijk bereikbaar te maken.
+        Geen lange wachttijden of onduidelijke etiketten — gewoon duidelijk, snel en veilig. 
+      </p>
+    </div>
+    <div class="over-btn-container over-btn-mobile">
+      <a href="producten.php" class="over-btn">Bekijk Producten</a>
+    </div>
+  </div>
+</div>
   </body>
 </html>
