@@ -17,8 +17,7 @@
 
         $query = mysqli_query($conn, "Insert into user (voornaam, tussenvoegsel, achternaam, email, wachtwoord) Values ('$voornaam', '$tussenvoegsel', '$achternaam', '$mail', '$wachtwoord')");
         if($query){
-            $_SESSION['account_aanmaak'] = true
-            echo"<script>window.location.href = 'login.php';</script>";
+            echo"<script>window.location.href = 'login.php'; alert('Account aangemaakt');</script>";
         } else {
             echo"<script>alert('Account aanmaken mislukt probeer opnieuw of zoek contact op.'); </script>";
         }
@@ -72,13 +71,14 @@
                 <input type="email" name="mail" id="email" placeholder="Voer uw e-mail in" required>
 
                 <label for="password">Wachtwoord</label>
+                <p class="wachtwoordregels">* Wachtwoord moet minimaal 8 karakters bevatten <br> * Met 1 Speciaal teken</p> 
                 <input type="password" name="wachtwoord" id="password" placeholder="Voer uw wachtwoord in" required>
 
                 <label for="againpassword">Voer wachtwoord opnieuw in</label>
                 <input type="password" id="againpassword" placeholder="Voer uw wachtwoord opnieuw in" required>
-
+                
                 <p class="forgot">Wachtwoord vergeten?</p>
-
+                </div>
                 <button type="submit" name="register" class="button">Registreer nu</button>
             </form>
         </div>

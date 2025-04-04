@@ -138,7 +138,7 @@
   form {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 8px;
+    gap: 5px;
   }
 
   label {
@@ -351,6 +351,10 @@
 
   .nav-login   nav {
     justify-content: flex-start;
+  }
+
+  .wachtwoordregels {
+    font-size: 0.75rem;
   }
 
   /* ======================
