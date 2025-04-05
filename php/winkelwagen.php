@@ -63,9 +63,9 @@
           <img src="../images/icons/close.png" alt="Sluit menu">
         </div>
       <ul class="mobile-links">
-          <li><a href="#">Producten</a></li>
-          <li><a href="#">Over ons</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="producten.php">Producten</a></li>
+          <li><a href="over.php">Over ons</a></li>
+          <li><a href="contact.php">Contact</a></li>
         </ul>
         <div class="mobile-icons">
           <a href="winkelwagen.php"><img src="../images/icons/cart-wit.svg" alt="Cart Icon"></a>
