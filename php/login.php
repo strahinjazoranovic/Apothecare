@@ -68,8 +68,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
   </head>
   <body class="login-page">
-<!-- ingelogd popup -->
-  <div class="popup" style="display: <?php echo $nieuw_account_popup; ?>;"><p>✅ Account succesvol aangemaakt! Log nu in.</p></div>
+<!-- account aangemaakt popup -->
+  <div class="popup" style="display: <?php echo $nieuw_account_popup; ?>;">
+    <p>✅ Account succesvol aangemaakt! Log nu in.</p>
+  </div>
 <!-- header -->
   <header class="login-header">
 

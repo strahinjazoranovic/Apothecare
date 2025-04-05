@@ -25,24 +25,16 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// header search (was dubbel, gefixt)
-function toggleSearch() {
-  const form = document.getElementById('search-form');
-  form.style.display = form.style.display === 'block' ? 'none' : 'block';
-}
-
-function submitSearch(event) {
-  if (event.key === 'Enter') {
-      document.getElementById('search-form').submit();
+  // Controleer of de popup zichtbaar is
+  window.onload = function() {
+    // Wacht 10 seconden en verberg de popup
+    setTimeout(function() {
+      const popup = document.querySelector('.popup');
+      if (popup) {
+        popup.style.display = 'none';
+      }
+    }, 8000); // 8 seconden
   }
-}
-
-// This is the main JavaScript file for the project
-document.addEventListener('DOMContentLoaded', function () {
-  // Initialize cart functionality
-  initCart();
-});
-
 // hiermee check ik of het ingevulde wachtwoord hetzelfde is als die daarboven
 function checkPassword(event) {
   let password = document.getElementById("password").value;

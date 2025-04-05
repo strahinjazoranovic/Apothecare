@@ -959,6 +959,39 @@ input[type="password"] {
 }
 
 /* ======================
+  POPUP STYLES
+  ====================== */
+
+.popup {
+  position: fixed;
+  top: 10px; /* Popup dichter bij de bovenkant van het scherm */
+  left: 50%;
+  transform: translateX(-50%); /* Centrer de popup horizontaal */
+  background-color: #4CAF50; /* Groene achtergrond voor succes */
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  text-align: center;
+  z-index: 1000; /* Zorg ervoor dat de popup boven andere elementen komt */
+  display: none; /* De popup is standaard verborgen */
+  opacity: 0; /* Popup is onzichtbaar in eerste instantie */
+  animation: popup-fade-in 0.5s forwards; /* Fade-in animatie */
+}
+
+@keyframes popup-fade-in {
+  0% {
+    opacity: 0;
+    top: 0;
+  }
+  100% {
+    opacity: 1;
+    top: 20px;
+  }
+}
+
+/* ======================
       HEADER STYLES for LOGIN and REGISTER
       ====================== */
 

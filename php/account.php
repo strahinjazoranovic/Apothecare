@@ -84,8 +84,10 @@ if (isset($_POST['uitloggen'])) {
   </head>
 
   <body>
-    <!-- ingelogd popup -->
-    <div class="popup" style="display: <?php echo $gegevens_bijwerken_popup; ?>;"><p>✅ Account succesvol bijgewerkt!</p></div>
+  <!-- account succesvol aangepast popup -->
+    <div class="popup" style="display: <?php echo $gegevens_bijwerken_popup; ?>;">
+      <p>✅ Account succesvol aangepast!</p>
+    </div>
   <header>
     <div class="logo">
       <a href="index.php"><img src="../images/logo/apothecare-nobg.png" alt="Logo"></a>
