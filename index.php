@@ -82,13 +82,13 @@
         </div>
       </div>
     </header>
-    <div id="chatBotWindow"></div>
-      <div id="ChatBotClose"></div>
-      <div id="chatBot">
+    <div class="chatBotWindow"></div>
+      <div class="ChatBotClose"></div>
+      <div class="chatBot">
         Need help? chat with our bot <img src="images/icons/headphones.svg" />
     </div>
 
-    <div id="content">
+    <div class="content">
       <h1 class="apothecare-header">Welkom bij Apothe<span class="red">care<span></h1>
       <p class="apothecare-text">Uw online apotheek voor medicijnen en gezondheidsproducten.</p>
       <a href="php/producten.php" class="button-filter">Bekijk onze producten</a>

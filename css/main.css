@@ -22,140 +22,8 @@ a {
 }
 
 /* ======================
-      HOME PAGE
-      ====================== */
-#content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 60vh; /* Full viewport height */
-  text-align: center;
-}
-
-.red {
-  color: red;
-}
-/* ======================
-      OVER PAGE
-      ====================== */
-
-.over-ons-container {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.photo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.photo img {
-  width: 90%;
-  height: auto;
-  object-fit: cover;
-  margin-bottom: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  border-radius: 8px; 
-}
-
-
-.content {
-  display: flex;
-  flex-direction: column;
-}
-
-.content .blok {
-  background-color: #f4f4f4;
-  padding: 1rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.content h2 {
-  color: #0077cc;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.content p {
-  font-size: 1rem;
-}
-
-.over-btn-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-.over-btn {
-  background-color: #0077cc;
-  color: white;
-  text-decoration: none;
-  padding: 1rem 2.5rem;
-  font-size: 1.2rem;
-  text-align: center;
-  border: none;
-  border-radius: 2px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-}
-
-.over-btn:hover {
-  background-color: #005fa3;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  transform: translateY(-5px);
-}
-
-/* Alleen de desktop-knop laten zien op breed scherm */
-.over-btn-desktop {
-  display: flex;
-}
-
-/* Mobiele knop standaard verbergen */
-.over-btn-mobile {
-  display: none;
-}
-
-/* Mobiele weergave */
-@media (max-width: 768px) {
-  .over-ons-container {
-    grid-template-columns: 1fr;
-    padding: 1rem;
-  }
-
-  .photo {
-    display: none;
-  }
-
-  .over-btn-desktop {
-    display: none;
-  }
-
-  .over-btn-mobile {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-  }
-}
-
-/* ======================
-      LAYOUT CONTAINERS
-      ====================== */
-.container {
-  max-width: 1200px;
-  margin: 0 auto; /* Center the container horizontally */
-  padding: 0 0px;
-}
-
-/* ======================
-      HEADER & NAVIGATION
-      ====================== */
+  HEADER & NAVIGATION
+  ====================== */
 header {
   position: relative;
   height: 80px;
@@ -373,10 +241,43 @@ nav ul li a:hover {
     justify-content: flex-start; /* Zorgt ervoor dat alles bovenaan het scherm staat */
   }
 }
+
 /* ======================
-     Chatbot
-     ====================== */
-#chatBot {
+  Database connection page
+  ====================== */
+
+.db_error {
+  text-align: center;
+  font-size: xx-large;
+  color: #e63946;
+}
+
+.db_connected {
+  text-align: center;
+  font-size: xx-large;
+  color: #37e674;
+}
+
+.db_error span {
+  font-weight: bold;
+}
+
+/* ======================
+  HOME PAGE
+  ====================== */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh; /* Full viewport height */
+  text-align: center;
+}
+
+/* ======================
+  CHATBOT
+  ====================== */
+.chatBot {
   background-color: whitesmoke;
   border: 1px solid black;
   border-radius: 12px;
@@ -396,11 +297,11 @@ nav ul li a:hover {
 }
 
 /* Optional hover effect */
-#chatBot:hover {
+.chatBot:hover {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
-#chatBotWinow {
+.chatBotWinow {
   background-color: whitesmoke;
   border: 1px solid black;
   border-radius: 12px;
@@ -415,157 +316,120 @@ nav ul li a:hover {
   overflow: hidden;
 }
 
+.red {
+  color: red;
+}
 /* ======================
-      Database connection page
-      ====================== */
+  OVER PAGE
+  ====================== */
 
-.db_error {
-  text-align: center;
-  font-size: xx-large;
-  color: #e63946;
-}
-
-.db_connected {
-  text-align: center;
-  font-size: xx-large;
-  color: #37e674;
-}
-
-.db_error span {
-  font-weight: bold;
-}
-
-/* ======================
-      ACCOUNT PAGE STYLES
-      ====================== */
-.account-content {
-  display: flex;
-  gap: clamp(15px, 2vw, 30px); /* Responsive gap */
-  margin: 30px auto;
-  padding: 0 20px;
-}
-
-.account-section,
-.bestellingen-section {
-  flex: 1;
-  min-width: 0; /* Prevent flex items from overflowing */
-}
-
-/* Form containers */
-.account-gegevens,
-.bestellingen-container {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: clamp(20px, 3vw, 30px); /* Responsive padding */
-  margin-top: 20px;
-}
-
-/* Form styling */
-form {
+.over-ons-container {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 5px;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
 }
 
-label {
-  font-weight: bold;
-  display: block;
+.photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  margin-bottom: 5px;
-  font-size: 16px; /* Prevent zooming on mobile */
+.photo img {
+  width: 90%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 8px; 
 }
 
-.account-edit-button {
-  background-color: #000000;
-  border: 2px solid #1a1a1a;
-  border-radius: 15px;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  margin-top: 10px;
-  min-height: 60px;
-  min-width: 0;
-  padding: 16px 24px;
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.content .blok {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.content h2 {
+  color: #0077cc;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.content p {
+  font-size: 1rem;
+}
+
+.over-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.over-btn {
+  background-color: #0077cc;
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
   text-align: center;
-  transition: 0.1s;
-  width: 100%;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
-.account-edit-button:hover {
-  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+.over-btn:hover {
+  background-color: #005fa3;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
 }
 
-  .uitloggen {
-    background-color: #ff0000;
-    border: 2px solid #1a1a1a;
-    border-radius: 15px;
-    color: #ffffff;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: 10px;
-    min-height: 60px;
-    min-width: 0;
-    padding: 16px 24px;
-    text-align: center;
-    transition: 0.1s;
-    width: 100%;
+/* Alleen de desktop-knop laten zien op breed scherm */
+.over-btn-desktop {
+  display: flex;
+}
+
+/* Mobiele knop standaard verbergen */
+.over-btn-mobile {
+  display: none;
+}
+
+/* Mobiele weergave */
+@media (max-width: 768px) {
+  .over-ons-container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
   }
 
-  .uitloggen:hover {
-    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  .photo {
+    display: none;
   }
 
-  /* ======================
-/* ======================
-      ORDER HISTORY STYLES
-      ====================== */
-.bestelling {
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 15px;
-  margin-bottom: 20px;
-}
+  .over-btn-desktop {
+    display: none;
+  }
 
-.bestelling-id {
-  font-size: clamp(18px, 2vw, 20px); /* Responsive font size */
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.bestelling-beschrijving {
-  margin-bottom: 15px;
-  line-height: 1.6;
-  color: #555;
-  font-size: clamp(14px, 1.5vw, 16px); /* Responsive font size */
-}
-
-.bestelling-prijs {
-  font-size: clamp(16px, 1.8vw, 18px); /* Responsive font size */
-  font-weight: bold;
-  text-align: right;
-}
-
-.divider {
-  height: 1px;
-  background-color: #ddd;
-  margin: 15px 0;
+  .over-btn-mobile {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
 }
 
 /* ======================
-      SHOPPING CART STYLES
-      ====================== */
+  SHOPPING CART STYLES
+  ====================== */
 .main-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -760,6 +624,134 @@ input[type="password"] {
     width: 100%;
     margin-top: 10px;
   }
+}
+
+
+/* ======================
+  ACCOUNT PAGE STYLES
+  ====================== */
+.account-content {
+  display: flex;
+  gap: clamp(15px, 2vw, 30px); /* Responsive gap */
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.account-section,
+.bestellingen-section {
+  flex: 1;
+  min-width: 0; /* Prevent flex items from overflowing */
+}
+
+/* Form containers */
+.account-gegevens,
+.bestellingen-container {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: clamp(20px, 3vw, 30px); /* Responsive padding */
+  margin-top: 20px;
+}
+
+/* Form styling */
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  font-size: 16px; /* Prevent zooming on mobile */
+}
+
+.account-edit-button {
+  background-color: #000000;
+  border: 2px solid #1a1a1a;
+  border-radius: 15px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+  min-height: 60px;
+  min-width: 0;
+  padding: 16px 24px;
+  text-align: center;
+  transition: 0.1s;
+  width: 100%;
+}
+
+.account-edit-button:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+
+.uitloggen {
+  background-color: #ff0000;
+  border: 2px solid #1a1a1a;
+  border-radius: 15px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+  min-height: 60px;
+  min-width: 0;
+  padding: 16px 24px;
+  text-align: center;
+  transition: 0.1s;
+  width: 100%;
+}
+
+  .uitloggen:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  }
+
+/* ======================
+  ORDER HISTORY STYLES
+  ====================== */
+.bestelling {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.bestelling-id {
+  font-size: clamp(18px, 2vw, 20px); /* Responsive font size */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.bestelling-beschrijving {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #555;
+  font-size: clamp(14px, 1.5vw, 16px); /* Responsive font size */
+}
+
+.bestelling-prijs {
+  font-size: clamp(16px, 1.8vw, 18px); /* Responsive font size */
+  font-weight: bold;
+  text-align: right;
+}
+
+.divider {
+  height: 1px;
+  background-color: #ddd;
+  margin: 15px 0;
 }
 
 /* ======================
