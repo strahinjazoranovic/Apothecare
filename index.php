@@ -78,18 +78,59 @@
         </div>
       </div>
     </header>
-    <div class="chatBotWindow"></div>
-      <div class="ChatBotClose"></div>
-      <div class="chatBot">
-        Need help? chat with our bot <img src="images/icons/headphones.svg" />
+<!-- Main body -->
+<div class="home-container">
+  <div class="home-photo">
+    <img src="images/digitale-apotheek.png" alt="Digitale apotheek">
+    <div class="home-btn-container home-btn-desktop">
+      <a href="php/register.php" class="home-btn">Maak Account Aan</a>
+      <a href="php/producten.php" class="home-btn secondary-btn">Bekijk Producten</a>
+    </div>
+  </div>
+
+  <div class="content-home">
+    <!-- Welkom Sectie -->
+    <div class="blok-home">
+      <h1>Welkom bij <span class="apothe">Apothe</span><span class="care">Care</span></h1>
+      <p class="slogan">"De snelste en gemakkelijkste manier om je medicijnen te krijgen, altijd en overal."</p>
     </div>
 
-    <div class="content">
-      <h1 class="apothecare-header">Welkom bij Apothe<span class="red">care<span></h1>
-      <p class="apothecare-text">Uw online apotheek voor medicijnen en gezondheidsproducten.</p>
-      <a href="php/producten.php" class="button-filter">Bekijk onze producten</a>
-      <a href="php/register.php" class="button-filter">Maak een nieuwe account aan</a>
+    <!-- Eenvoudige Bestelling Sectie -->
+    <div class="blok-home">
+      <h2>Eenvoudig Medicijnen Bestellen</h2>
+      <p>
+        ApotheCare biedt je de mogelijkheid om snel en gemakkelijk medicijnen te bestellen, zonder gedoe. Of je nu last hebt van een lichte verkoudheid of meer complexe zorg nodig hebt, onze gebruiksvriendelijke online platformen helpen je om de juiste medicijnen direct in huis te krijgen.
+      </p>
+    </div>
 
-      <script src="js/main.js"></script>            
+    <!-- Ervaring en Technologie Sectie -->
+    <div class="blok-home">
+      <h2>Jarenlange Ervaring en Moderne Technologie</h2>
+      <p>
+        Met onze jarenlange ervaring in de farmaceutische sector combineren we traditionele zorg met moderne technologie. ApotheCare zorgt ervoor dat je altijd de juiste producten kunt vinden, van pijnstillers tot specialistische medicijnen. Dit wordt ondersteund door gedetailleerde productinformatie, gebruikersreviews en snelle leveringen.
+      </p>
+    </div>
+
+    <!-- Stressvrije Zorg Sectie -->
+    <div class="blok-home">
+      <h2>Toegankelijke en Stressvrije Zorg</h2>
+      <p>
+        Wij geloven dat zorg toegankelijk en stressvrij moet zijn. Daarom hebben we een systeem ontwikkeld waarmee je eenvoudig je medicatie kunt beheren en bestellen, waar je ook bent. Geen wachttijden, geen ingewikkelde formulieren, gewoon duidelijke en betrouwbare service.
+      </p>
+    </div>
+
+    <!-- Call to Action Knoppen -->
+    <div class="home-btn-container home-btn-mobile">
+      <a href="php/register" class="home-btn">Maak Account Aan</a>
+      <a href="php/producten.php" class="home-btn secondary-btn">Bekijk Producten</a>
+    </div>
+  </div>
+</div>
+
+<!-- chatbot -->
+  <div class="chatBot">
+    Need help? chat with our bot <img src="images/icons/headphones.svg" />
+  </div>
+  <script src="js/main.js"></script>            
 </body>
 </html>
