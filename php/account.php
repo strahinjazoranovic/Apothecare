@@ -86,39 +86,35 @@ if (isset($_POST['uitloggen'])) {
   <body>
     <!-- ingelogd popup -->
     <div class="popup" style="display: <?php echo $gegevens_bijwerken_popup; ?>;"><p>✅ Account succesvol bijgewerkt!</p></div>
-    <header>
-      <div class="logo">
-        <a href="../index.php"><img src="../images/logo/apothecare-nobg.png" alt="Logo"></a>
-      </div>
+  <header>
+    <div class="logo">
+      <a href="index.php"><img src="../images/logo/apothecare-nobg.png" alt="Logo"></a>
+    </div>
 
-      <nav>
-        <ul>
-          <li><a href="producten.php">Producten</a></li>
-          <li><a href="over.php">Over ons</a></li>
-          <li><a href="contact.php">Contact</a></li>
-        </ul>
-      </nav>
+    <nav>
+      <ul>
+        <li><a href="producten.php">Producten</a></li>
+        <li><a href="over.php">Over ons</a></li>
+        <li><a href="contact.php">Contact</a></li>
+      </ul>
+    </nav>
 
-     <div class="icons">
-       <div class="search">
-        <div class="search">
-          <img src="../images/icons/search.svg" alt="Search Icon">
-        </div>
-        <div class="cart">
-          <a href="winkelwagen.php">
-            <img src="../images/icons/cart.svg" alt="Cart Icon">
-          </a>
-        </div>
-        <div class="profile">
-          <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'login.php'; ?>" aria-label="User Account">
-            <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
-              <img src="../images/icons/user-found.svg" alt="user">
-            <?php else: ?>
-              <img src="../images/icons/user.svg" alt="user">
-            <?php endif; ?>
-          </a>
-        </div>
+    <div class="icons">
+      <div class="cart">
+        <a href="winkelwagen.php">
+          <img src="../images/icons/cart.svg" alt="Cart Icon">
+        </a>
       </div>
+      <div class="profile">
+        <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'login.php'; ?>" aria-label="User Account">
+          <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
+            <img src="../images/icons/user-found.svg" alt="user">
+          <?php else: ?>
+            <img src="../images/icons/user.svg" alt="user">
+          <?php endif; ?>
+        </a>
+      </div>
+    </div>
 
 <!-- Menu Icon voor mobiel -->
       <div class="menu-icon" onclick="toggleMobileMenu()">
@@ -131,14 +127,13 @@ if (isset($_POST['uitloggen'])) {
           <img src="../images/icons/close.png" alt="Sluit menu">
         </div>
       <ul class="mobile-links">
-        <li><a href="#">Producten</a></li>
-        <li><a href="#">Over ons</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+          <li><a href="#">Producten</a></li>
+          <li><a href="#">Over ons</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
         <div class="mobile-icons">
-          <a href="#"><img src="../images/icons/search-wit.svg" alt="Search Icon"></a>
           <a href="winkelwagen.php"><img src="../images/icons/cart-wit.svg" alt="Cart Icon"></a>
-          <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'login.php'; ?>">
+          <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'register.php'; ?>">
             <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
               <img src="../images/icons/user-found.svg" alt="user">
             <?php else: ?>

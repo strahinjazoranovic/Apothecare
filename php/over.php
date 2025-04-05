@@ -42,9 +42,6 @@
       </nav>
 
       <div class="icons">
-        <div class="search">
-          <img src="../images/icons/search.svg" alt="Search Icon">
-        </div>
         <div class="cart">
           <a href="winkelwagen.php">
             <img src="../images/icons/cart.svg" alt="Cart Icon">
@@ -77,7 +74,6 @@
           <li><a href="#">Contact</a></li>
         </ul>
         <div class="mobile-icons">
-          <a href="#"><img src="../images/icons/search-wit.svg" alt="Search Icon"></a>
           <a href="winkelwagen.php"><img src="../images/icons/cart-wit.svg" alt="Cart Icon"></a>
           <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'login.php'; ?>">
             <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
@@ -92,29 +88,29 @@
 
 <!-- Main body -->
     <div class="over-ons-container">
-      <div class="photo">
+      <div class="over-photo">
         <img src="../images/over-ons-foto.png" alt="ApotheCare medewerker">
         <div class="over-btn-container over-btn-desktop">
           <a href="producten.php" class="over-btn">Bekijk Producten</a>
         </div>
       </div>
 
-      <div class="content">
-        <div class="blok">
+      <div class="content-over">
+        <div class="blok-over">
           <h2>Onze Geschiedenis</h2>
           <p>
             ApotheCare werd opgericht in 1893 toen dokter Cornelis Pillenius vond dat pillen kopen eenvoudiger moest worden.
             Wat begon als een stoffig kastje vol mysterieuze poeders, groeide uit tot een digitale apotheek voor iedereen.
           </p>
         </div>
-        <div class="blok">
+        <div class="blok-over">
           <h2>Onze Doelen</h2>
           <p>
             Wij willen een wereld waarin je je medicijnen snel, duidelijk en zonder stress kunt regelen.
             Of het nou om een simpele pijnstiller gaat of een pil tegen je schoonmoederhoofdpijn — wij staan klaar.
           </p>
         </div>
-        <div class="blok">
+        <div class="blok-over">
           <h2>Meer Uitleg</h2>
           <p>
             ApotheCare maakt gebruik van moderne technologie om medicatie makkelijk bereikbaar te maken.

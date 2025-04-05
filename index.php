@@ -35,9 +35,6 @@
     </nav>
 
     <div class="icons">
-      <div class="search">
-        <img src="images/icons/search.svg" alt="Search Icon">
-      </div>
       <div class="cart">
         <a href="php/winkelwagen.php">
           <img src="images/icons/cart.svg" alt="Cart Icon">
@@ -70,7 +67,6 @@
           <li><a href="#">Contact</a></li>
         </ul>
         <div class="mobile-icons">
-          <a href="#"><img src="images/icons/search-wit.svg" alt="Search Icon"></a>
           <a href="winkelwagen.php"><img src="images/icons/cart-wit.svg" alt="Cart Icon"></a>
           <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'register.php'; ?>">
             <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
