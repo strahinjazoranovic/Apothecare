@@ -16,7 +16,7 @@
     <title>Apothecare - Winkelwagen</title>
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/winkelwagen.css" />
-    <link rel="shortcut icon" type="x-icon" href="../images/icons/cart.svg" />
+    <link rel="shortcut icon" type="x-icon" href="../images/icons/cart-favicon.png" />
     <!-- Dit is voor de font-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
