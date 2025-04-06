@@ -123,7 +123,7 @@
   <div class="product-grid">
     <?php while ($row = $result->fetch_assoc()) { ?>
       <div class="product-item">
-        <img src="<?php echo $row['image_url']; ?>" alt="<?php echo $row['naam']; ?>" width="400" height="400">
+        <img src="<?php echo "../images/producten-img/" . $row['image_url']; ?>" alt="<?php echo $row['naam']; ?>" width="400" height="400">
         <h2><?php echo $row['naam']; ?></h2>
         <p><?php echo $row['beschrijving']; ?></p>
         <p>Prijs: €<?php echo $row['prijs']; ?></p>
