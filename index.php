@@ -41,7 +41,7 @@
         </a>
       </div>
       <div class="profile">
-        <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'php/login.php'; ?>" aria-label="User Account">
+        <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'php/account.php' : 'php/login.php'; ?>" aria-label="User Account">
           <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
             <img src="images/icons/user-found.svg" alt="user">
           <?php else: ?>

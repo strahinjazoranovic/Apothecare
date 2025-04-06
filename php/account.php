@@ -11,7 +11,7 @@
   include("../DB_connect.php");
   // Als de gebruiker niet is ingelogd stuur door naar inlogpagina
   if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    echo "<script>window.location.href = 'login.php';</script>";
     exit();
   }
 
@@ -60,15 +60,13 @@
 
 // uitloggen
 if (isset($_POST['uitloggen'])) {
-    // Verwijder alle sessievariabelen
-    $_SESSION = [];
+  // Verwijder alle sessievariabelen
+  $_SESSION = [];
 
-    // Vernietig de sessie
-    session_destroy();
+  // Vernietig de sessie
+  session_destroy();
 
-    // Optioneel: Redirect naar de loginpagina
-    header("Location: login.php");
-    exit();
+  echo "<script>window.location.href = 'login.php';</script>";
 }
 ?>
 <!DOCTYPE html>

@@ -12,7 +12,7 @@
       // Controleer of de gebruiker is ingelogd
     if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) {
     // Als ingelogd, stuur door naar account.php
-    header('Location: account.php');
+    echo "<script>window.location.href = 'account.php';</script>";
     exit(); // Stop verdere uitvoering van de pagina
     }
 
@@ -26,7 +26,7 @@
         $query = mysqli_query($conn, "Insert into user (voornaam, tussenvoegsel, achternaam, email, wachtwoord) Values ('$voornaam', '$tussenvoegsel', '$achternaam', '$mail', '$wachtwoord')");
         if($query){
             $_SESSION['account_aanmaak'] = true;
-            header("Location: login.php");
+            echo "<script>window.location.href = 'login.php';</script>";
             exit();
         } else {
             echo"<script>alert('Account aanmaken mislukt probeer opnieuw of zoek contact op.'); </script>";

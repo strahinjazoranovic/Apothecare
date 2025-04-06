@@ -12,7 +12,7 @@
   // Controleer of de gebruiker is ingelogd
   if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) {
   // Als ingelogd, stuur door naar account.php
-  header('Location: account.php');
+  echo "<script>window.location.href = 'account.php';</script>";
   exit(); // Stop verdere uitvoering van de pagina
   }
 
