@@ -14,7 +14,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apothecare - Contact</title>
-    <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/main.css?v=1" />
   <!-- Dit is voor de icon die je bovenin in de tablad zit-->
   <link rel="shortcut icon" type="x-icon" href="images/logo/Apothecare-minilogo-nobg.png" />
   <!-- Dit is voor de font-->

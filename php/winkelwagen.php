@@ -14,7 +14,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Apothecare - Winkelwagen</title>
-    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/main.css?v=1" />
     <link rel="stylesheet" href="../css/winkelwagen.css" />
     <link rel="shortcut icon" type="x-icon" href="../images/icons/cart-favicon.png" />
     <!-- Dit is voor de font-->
