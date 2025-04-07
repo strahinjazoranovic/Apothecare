@@ -23,6 +23,20 @@
   } else {
     $nieuw_account_popup = "none";
   }
+    //als de ingevoerde email niet bestaat komt er een popup
+    if(isset($error_email)){
+      $verkeert_email = "block";
+      $error_email = "";
+    } else {
+      $verkeert_email = "none";
+    }
+    //als het ingevoerde wachtwoord niet overeen komt komt er een popup 
+  if(isset($error_ww)){
+    $verkeert_ww = "block";
+    $error_ww = "";
+  } else {
+    $verkeert_ww = "none";
+  }
 
   if(isset($_POST['login'])) {
     // Ingevulde velden in form
@@ -48,11 +62,11 @@
             echo"<script>window.location.href = 'account.php';</script>";
             // Hier kun je doorsturen naar een andere pagina
           } else {
-            echo "Onjuist wachtwoord.";
+            $error_ww = "error";
           }
         }
       } else {
-        echo "Geen gebruiker gevonden met dit e-mailadres.";
+        $error_email = "error";
       }
     } 
   }
@@ -71,6 +85,12 @@
 <!-- account aangemaakt popup -->
   <div class="popup" style="display: <?php echo $nieuw_account_popup; ?>;">
     <p>✅ Account succesvol aangemaakt! Log nu in.</p>
+  </div>
+  <div class="popup2" style="display: <?php echo $verkeert_email; ?>;">
+    <p>⛔ Email niet gevonden probeer opnieuw of neem contact op.</p>
+  </div>
+  <div class="popup2" style="display: <?php echo $verkeert_ww; ?>;">
+    <p>⛔ Onjuist wachtwoord.</p>
   </div>
 <!-- header -->
   <header class="login-header">

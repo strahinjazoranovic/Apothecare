@@ -962,14 +962,12 @@ input[type="password"] {
 /* ======================
   POPUP STYLES
   ====================== */
-
-.popup {
+.popup,
+.popup2 {
   position: fixed;
   top: 10px; /* Popup dichter bij de bovenkant van het scherm */
   left: 50%;
   transform: translateX(-50%); /* Centrer de popup horizontaal */
-  background-color: #4CAF50; /* Groene achtergrond voor succes */
-  color: white;
   padding: 15px;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -978,7 +976,17 @@ input[type="password"] {
   z-index: 1000; /* Zorg ervoor dat de popup boven andere elementen komt */
   display: none; /* De popup is standaard verborgen */
   opacity: 0; /* Popup is onzichtbaar in eerste instantie */
-  animation: popup-fade-in 0.5s forwards; /* Fade-in animatie */
+  animation: popup-fade-in 7s forwards;
+}
+
+.popup {
+  background-color: #4CAF50; /* Groene achtergrond voor succes */
+  color: white;
+}
+
+.popup2 {
+  background-color: #e50505; /* Groene achtergrond voor succes */
+  color: white;
 }
 
 @keyframes popup-fade-in {
@@ -986,9 +994,17 @@ input[type="password"] {
     opacity: 0;
     top: 0;
   }
-  100% {
+  10% {
     opacity: 1;
     top: 20px;
+  }
+  90% {
+    opacity: 1;
+    top: 20px;
+  }
+  100% {
+    opacity: 0;
+    top: 0;
   }
 }
 

@@ -121,7 +121,7 @@
 
     <!-- Call to Action Knoppen -->
     <div class="home-btn-container home-btn-mobile">
-      <a href="php/register" class="home-btn">Maak Account Aan</a>
+      <a href="php/register.php" class="home-btn">Maak Account Aan</a>
       <a href="php/producten.php" class="home-btn secondary-btn">Bekijk Producten</a>
     </div>
   </div>
