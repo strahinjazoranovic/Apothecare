@@ -73,6 +73,38 @@
       </div>
     </header>
 
+    <?php
+    // error berichten 
+    if(isset($_GET["error"])) {
+      if ($_GET["error"] == "emptyinput"){
+        echo "<div class='popup2'>
+              <p> ⚠️ Niet alle velden zijn ingevuld. Vul alles in of neem contact met ons op. </p>
+              </div>";
+      } else if ($_GET["error"] == "invaidemail") {
+        echo "<div class='popup2'>
+              <p> ⚠️ Ongeldig e-mailadres. Controleer of je het juist hebt ingevuld. </p>
+              </div>";
+      } else if ($_GET["error"] == "wwnietzelfde") {
+        echo "<div class='popup2'>
+              <p> 🔐 Wachtwoorden zijn niet hetzelfde. Controleer beide velden. </p>
+              </div>";
+      } else if ($_GET["error"] == "emailTaken") {
+        echo "<div class='popup2'>
+              <p> ⚠️ Dit e-mailadres is al in gebruik. Probeer een ander e-mailadres. </p>
+              </div>";
+      } else if ($_GET["error"] == "stmtfailed") {
+        echo "<div class='popup2'>
+              <p> 🛠️ Oeps! Er ging iets fout bij het verwerken. Probeer het nog eens. </p>
+              </div>";
+      } else if ($_GET["error"] == "wrongWay") {
+        echo "<div class='popup2'>
+              <p> 🕵️‍♂️ Je probeert een geheime plek te bezoeken... maar je hebt geen toegang. </p>
+              </div>";
+      }
+    }
+  
+    ?>
+
     <div class="container1">
         <div class="login-box">
             <a href="login.php"><img src="../assets/images/icons/back.svg"></a>
@@ -80,7 +112,7 @@
                 <a href="../index.php"><img src="../assets/images/logo/apothecare-nobg.png" alt="logopng"></a>
             </div>
 
-            <form action="components/register.inc.php" method="POST" action="">  
+            <form action="components/register.inc.php" method="POST">  
 
                 <label for="firstname">Voornaam</label>
                 <input type="text" name="voornaam" placeholder="Voer uw naam in" required>

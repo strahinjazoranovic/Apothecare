@@ -10,25 +10,34 @@
   //database connection
   include("../config/DB_connect.php");
   // Als de gebruiker niet is ingelogd stuur door naar inlogpagina
-  if (!isset($_SESSION['user_id'])) {
+  if (!isset($_SESSION['userid'])) {
     echo "<script>window.location.href = 'login.php';</script>";
     exit();
   }
 
-  //als er een account is aangemaakt zal er een popup komen door deze code  
-  if(isset($_SESSION['gegevens_bijwerken'])){
-    $gegevens_bijwerken_popup = "block";
-    unset($_SESSION['gegevens_bijwerken']);
-  } else {
-    $gegevens_bijwerken_popup = "none";
+  //als je ben ingeloged  
+  if(isset($_GET["error"])) {
+    if ($_GET["error"] == "none"){
+      echo "<div class='popup'>
+            <p> ✅ Account succesvol aangemaakt! Log nu in. </p>
+            </div>";
+    } else if ($_GET["error"] == "opgeslagen"){
+      echo "<div class='popup'>
+            <p> ✅ Account succesvol bijgewerkt!</p>
+            </div>";
+    } else if ($_GET["error"] == "nietOpgeslagen"){
+      echo "<div class='popup2'>
+            <p> ⚠️ Je account kon niet worden bijgewerkt. Probeer het opnieuw. </p>
+            </div>";
+    }
   }
 
   //haalt gegevens uit database
-  $sql = "SELECT * FROM user WHERE ID='{$_SESSION["user_id"]}';";
+  $sql = "SELECT * FROM user WHERE ID='{$_SESSION["userid"]}';";
   $result = mysqli_query($conn, $sql);
   $resultCheck = mysqli_num_rows($result);
 
-  if(isset ($_SESSION["user_id"])){
+  if(isset ($_SESSION["userid"])){
     if ($resultCheck > 0){
 
       while ($row = mysqli_fetch_assoc($result)) {
@@ -48,13 +57,13 @@
     $mail_update = $_POST['mail'];
     $telefoon_update = $_POST['telefoon'];
 
-    $query = mysqli_query($conn, "UPDATE user SET voornaam = '$voornaam_update', tussenvoegsel = '$tussenvoegsel_update', achternaam = '$achternaam_update', email = '$mail_update', telefoon_nr = '$telefoon_update' WHERE ID = '{$_SESSION['user_id']}'");
-    if($query){
-        $_SESSION['gegevens_bijwerken'] = "bijgewerkt";
-        header("Location: " . $_SERVER['PHP_SELF']);
+    $query2 = mysqli_query($conn, "UPDATE user SET voornaam = '$voornaam_update', tussenvoegsel = '$tussenvoegsel_update', achternaam = '$achternaam_update', email = '$mail_update', telefoon_nr = '$telefoon_update' WHERE ID = '{$_SESSION['']}'");
+    if($query2){
+        header("location: account.php?error=opgeslagen");
         exit();
     } else {
-        echo"<script>alert('Account bewerken mislukt probeer opnieuw of zoek contact op.'); </script>";
+      header("location: account.php?error=nietOpgeslagen");
+      exit();
     }
 }
 
@@ -66,7 +75,8 @@ if (isset($_POST['uitloggen'])) {
   // Vernietig de sessie
   session_destroy();
 
-  echo "<script>window.location.href = 'login.php';</script>";
+  header("location: login.php?error=uitgelogd");
+  exit();
 }
 ?>
 <!DOCTYPE html>
@@ -83,9 +93,6 @@ if (isset($_POST['uitloggen'])) {
 
   <body>
   <!-- account succesvol aangepast popup -->
-    <div class="popup" style="display: <?php echo $gegevens_bijwerken_popup; ?>;">
-      <p>✅ Account succesvol aangepast!</p>
-    </div>
   <header>
     <div class="logo">
       <a href="../index.php"><img src="../assets/images/logo/apothecare-nobg.png" alt="Logo"></a>

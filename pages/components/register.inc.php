@@ -15,7 +15,7 @@ if (isset($_POST["register"])) {
     require_once 'functions.inc.php';
 
     // als de variable leeg is stuurt de pagina je trug
-    if (emptyInputSignup($name, $achternaam, $email, $ww, $wwrepeat) !== false) {
+    if (emptyInputRegister($naam, $achternaam, $email, $ww, $wwrepeat) !== false) {
         header("location: ../register.php?error=emptyinput");
         exit();
     }
@@ -34,7 +34,7 @@ if (isset($_POST["register"])) {
 
      // Als de email al bestaat stuurt de pagina je terug
     if (emailExists($conn, $email) !== false) {
-        header("location: ../register.php?error=emailtaken");
+        header("location: ../register.php?error=emailTaken");
         exit();
     }
 
@@ -42,7 +42,7 @@ if (isset($_POST["register"])) {
 
 } else {
     // stuurt persoon terug als er niks te doen is op deze pagina.
-    header("location: ../register.php");
+    header("location: ../register.php?error=wrongWay");
     exit();
 }
 
