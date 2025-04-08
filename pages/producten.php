@@ -59,7 +59,7 @@
           <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
             <img src="../assets/images/icons/user-found.svg" alt="user">
           <?php else: ?>
-            <img src="../asset/images/icons/user.svg" alt="user">
+            <img src="../assets/images/icons/user.svg" alt="user">
           <?php endif; ?>
         </a>
       </div>
