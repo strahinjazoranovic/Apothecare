@@ -86,7 +86,7 @@ if (isset($_POST['uitloggen'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Account - Apothecare</title>
     <link rel="shortcut icon" type="x-icon" href="../assets/images/logo/Apothecare-minilogo-nobg.png">
-    <link rel="stylesheet" href="../assets/css/main.css?v=1" />
+    <link rel="stylesheet" href="../assets/css/main.css?v=3" />
     <!-- Dit is voor de font-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet"/>
   </head>
