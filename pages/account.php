@@ -57,12 +57,12 @@
     $mail_update = $_POST['mail'];
     $telefoon_update = $_POST['telefoon'];
 
-    $query2 = mysqli_query($conn, "UPDATE user SET voornaam = '$voornaam_update', tussenvoegsel = '$tussenvoegsel_update', achternaam = '$achternaam_update', email = '$mail_update', telefoon_nr = '$telefoon_update' WHERE ID = '{$_SESSION['']}'");
-    if($query2){
-        header("location: account.php?error=opgeslagen");
+    $query = mysqli_query($conn, "UPDATE user SET voornaam = '$voornaam_update', tussenvoegsel = '$tussenvoegsel_update', achternaam = '$achternaam_update', email = '$mail_update', telefoon_nr = '$telefoon_update' WHERE ID = '{$_SESSION['userid']}'");
+    if($query){
+        echo "<script>window.location.href = 'account.php?error=opgeslagen';</script>";
         exit();
     } else {
-      header("location: account.php?error=nietOpgeslagen");
+      echo "<script>window.location.href = 'account.php?error=nietOpgeslagen';</script>";
       exit();
     }
 }
@@ -75,7 +75,7 @@ if (isset($_POST['uitloggen'])) {
   // Vernietig de sessie
   session_destroy();
 
-  header("location: login.php?error=uitgelogd");
+  echo "<script>window.location.href = 'login.php?error=uitgelogd';</script>";
   exit();
 }
 ?>
@@ -155,7 +155,7 @@ if (isset($_POST['uitloggen'])) {
       <div class="account-section">
         <h1>Mijn account</h1>
         <div class="account-gegevens">
-          <h2>Gegevens van: <?php echo $voornaam . " "; echo $achternaam;?></h2>
+          <h2>Gegevens van: <?php echo $voornaam . " " . $tussenvoegsel . " " . $achternaam;?></h2>
             <form action="account.php" method="POST">
               <label for="voornaam">Voornaam</label>
               <input type="text" id="voornaam" name="voornaam" placeholder="Voer uw voornaam in" value="<?php echo $voornaam; ?>" required />

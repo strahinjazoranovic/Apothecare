@@ -12,13 +12,13 @@ if (isset($_POST["login"])) {
 
 
     if (emptyInputLogin($email, $ww) !== false) {
-        header("location: ../login.php?error=emptyinput");
+        echo "<script>window.location.href = '../login.php?error=emptyinput';</script>";
         exit();
     }
 
     loginUser($conn, $email, $ww);
 } else {
-    header("location: ../login.php?error=wrongWay");
+    echo "<script>window.location.href = '../login.php?error=wrongWay';</script>";
     exit();
 }
 

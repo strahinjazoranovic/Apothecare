@@ -128,7 +128,7 @@
 
                 <div class="passwd-wrap">
                 <label for="password">Wachtwoord</label>
-                <p class="wachtwoordregels">* Wachtwoord moet minimaal 8 karakters bevatten. <br> * Met 1 Speciaal teken. <br> * Met 1 letter en cijfer.</p> 
+                <ul class="wachtwoordregels"> <li>Wachtwoord moet minimaal 8 karakters bevatten.</li><li>Met minstens 1 Speciaal teken.</li><li>Met minstens 1 letter en cijfer.</li></ul> 
                 <input type="password" id="password" name="ww" placeholder="Voer uw wachtwoord in" minlength="8" pattern=".*[\d].*" pattern=".*[\W_].*" required>
                 <button type="button" id="show-password">
                   <img id="eye" src="../assets/images/icons/eye-show.svg" />

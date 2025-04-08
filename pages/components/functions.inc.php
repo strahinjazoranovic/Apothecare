@@ -36,7 +36,7 @@ function emailExists($conn, $email) {
     $sql = "SELECT * FROM user WHERE email = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../register.php?error=stmtfailed");
+        echo "<script>window.location.href = '../register.php?error=stmtfailed';</script>";
         exit();
     }
 
@@ -59,7 +59,7 @@ function createUser($conn, $naam, $tussenv, $achternaam, $email, $ww) {
     $sql = "INSERT INTO user (voornaam, tussenvoegsel, achternaam, email, wachtwoord) VALUES (?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../register.php?error=stmtfailed");
+        echo "<script>window.location.href = '../register.php?error=stmtfailed';</script>";
         exit();
     }
 
@@ -68,7 +68,7 @@ function createUser($conn, $naam, $tussenv, $achternaam, $email, $ww) {
     mysqli_stmt_bind_param($stmt, "sssss", $naam, $tussenv, $achternaam, $email, $db_ww);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header("location: ../login.php?error=none");
+    echo "<script>window.location.href = '../login.php?error=none';</script>";
     exit();
 }
 
@@ -86,7 +86,7 @@ function loginUser($conn, $email, $ww) {
     $emailExists = emailExists($conn, $email);
 
     if ($emailExists === false) {
-        header("location: ../login.php?error=wrongLogin");
+        echo "<script>window.location.href = '../login.php.php?error=wrongLogin';</script>";
         exit();
     }
 
@@ -99,12 +99,12 @@ function loginUser($conn, $email, $ww) {
     }
 
     if ($wwChecker === false) {
-        header("location: ../login.php?error=wrongLogin");
+        echo "<script>window.location.href = '../login.php?error=wrongLogin';</script>";
         exit();
     } else if ($wwChecker === true) {
         session_start();
         $_SESSION["userid"] = $emailExists["ID"];
-        header("location: ../account.php?error=none");
+        echo "<script>window.location.href = '../account.php?error=none';</script>";
         exit();
     }
 }
