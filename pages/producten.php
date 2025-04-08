@@ -7,7 +7,7 @@
 // Datum                : projectweek - periode 3 - 2025
 //---------------------------------------------------------------------------------------------------//
   session_start();
-  include '../DB_connect.php';
+  include '../config/DB_connect.php';
 // Haal de zoekterm en filteropties op
   $search = isset($_GET['search']) ? $_GET['search'] : '';
   $filter = isset($_GET['filter']) ? $_GET['filter'] : '';
@@ -29,8 +29,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Apothecare - Producten</title>
-  <link rel="stylesheet" href="../css/main.css?v=1" />
-  <link rel="shortcut icon" type="x-icon" href="../images/logo/Apothecare-minilogo-nobg.png" />
+  <link rel="stylesheet" href="../assets/css/main.css?v=1" />
+  <link rel="shortcut icon" type="x-icon" href="../assets/images/logo/Apothecare-minilogo-nobg.png" />
   <!-- Dit is voor de font-->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
 </head>
@@ -38,7 +38,7 @@
   <!-- header -->
   <header class="product-page">
     <div class="logo">
-      <a href="../index.php"><img src="../images/logo/apothecare-nobg.png" alt="Logo"></a>
+      <a href="../index.php"><img src="../assets/images/logo/apothecare-nobg.png" alt="Logo"></a>
     </div>
     <nav class="product-nav">
       <ul>
@@ -51,15 +51,15 @@
     <div class="icons product-icons">
       <div class="cart">
         <a href="winkelwagen.php">
-          <img src="../images/icons/cart.svg" alt="Cart Icon">
+          <img src="../assets/images/icons/cart.svg" alt="Cart Icon">
         </a>
       </div>
       <div class="profile">
         <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'login.php'; ?>" aria-label="User Account">
           <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
-            <img src="../images/icons/user-found.svg" alt="user">
+            <img src="../assets/images/icons/user-found.svg" alt="user">
           <?php else: ?>
-            <img src="../images/icons/user.svg" alt="user">
+            <img src="../asset/images/icons/user.svg" alt="user">
           <?php endif; ?>
         </a>
       </div>
@@ -67,13 +67,13 @@
 
     <!-- Menu Icon voor mobiel -->
     <div class="menu-icon" onclick="toggleMobileMenu()">
-      <img src="../images/icons/menu.png" alt="Menu Icon">
+      <img src="../assets/images/icons/menu.png" alt="Menu Icon">
     </div>
 
     <!-- Mobiel menu overlay -->
     <div class="mobile-menu" id="mobileMenu">
       <div class="close-menu" onclick="toggleMobileMenu()">
-        <img src="../images/icons/close.png" alt="Sluit menu">
+        <img src="../assets/images/icons/close.png" alt="Sluit menu">
       </div>
       <ul class="mobile-links">
         <li><a href="producten.php">Producten</a></li>
@@ -81,12 +81,12 @@
         <li><a href="contact.php">Contact</a></li>
       </ul>
       <div class="mobile-icons">
-        <a href="winkelwagen.php"><img src="../images/icons/cart-wit.svg" alt="Cart Icon"></a>
+        <a href="winkelwagen.php"><img src="../assets/images/icons/cart-wit.svg" alt="Cart Icon"></a>
         <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'login.php'; ?>">
           <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
-            <img src="../images/icons/user-found.svg" alt="user">
+            <img src="../assets/images/icons/user-found.svg" alt="user">
           <?php else: ?>
-            <img src="../images/icons/user-wit.svg" alt="user">
+            <img src="../asstes/images/icons/user-wit.svg" alt="user">
           <?php endif; ?>
         </a>
       </div>
@@ -123,7 +123,7 @@
   <div class="product-grid">
     <?php while ($row = $result->fetch_assoc()) { ?>
       <div class="product-item">
-        <img src="<?php echo "../images/producten-img/" . $row['image_url']; ?>" alt="<?php echo $row['naam']; ?>" width="400" height="400">
+        <img src="<?php echo "../uploads/producten-img/" . $row['image_url']; ?>" alt="<?php echo $row['naam']; ?>" width="400" height="400">
         <h2><?php echo $row['naam']; ?></h2>
         <p><?php echo $row['beschrijving']; ?></p>
         <p>Prijs: €<?php echo $row['prijs']; ?></p>
@@ -132,6 +132,6 @@
     <?php } ?>
   </div>
 
-  <script src="../js/main.js"></script>
+  <script src="../assets/js/main.js"></script>
 </body>
 </html>

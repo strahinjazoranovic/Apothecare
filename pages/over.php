@@ -14,11 +14,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Apothecare - Over ons</title>
-    <link rel="stylesheet" href="../css/main.css?v=1" />
+    <link rel="stylesheet" href="../assets/css/main.css?v=1" />
     <link
       rel="shortcut icon"
       type="x-icon"
-      href="../images/logo/Apothecare-minilogo-nobg.png"
+      href="../assets/images/logo/Apothecare-minilogo-nobg.png"
     />
     <!-- Dit is voor de font-->
     <link
@@ -30,7 +30,7 @@
 <!-- header -->
     <header>
       <div class="logo">
-        <a href="../index.php"><img src="../images/logo/apothecare-nobg.png" alt="Logo"></a>
+        <a href="../index.php"><img src="../assets/images/logo/apothecare-nobg.png" alt="Logo"></a>
       </div>
 
       <nav>
@@ -44,15 +44,15 @@
       <div class="icons">
         <div class="cart">
           <a href="winkelwagen.php">
-            <img src="../images/icons/cart.svg" alt="Cart Icon">
+            <img src="../assets/images/icons/cart.svg" alt="Cart Icon">
           </a>
         </div>
         <div class="profile">
           <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'login.php'; ?>" aria-label="User Account">
             <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
-              <img src="../images/icons/user-found.svg" alt="user">
+              <img src="../assets/images/icons/user-found.svg" alt="user">
             <?php else: ?>
-              <img src="../images/icons/user.svg" alt="user">
+              <img src="../assets/images/icons/user.svg" alt="user">
             <?php endif; ?>
           </a>
         </div>
@@ -60,13 +60,13 @@
 
 <!-- Menu Icon voor mobiel -->
       <div class="menu-icon" onclick="toggleMobileMenu()">
-        <img src="../images/icons/menu.png" alt="Menu Icon">
+        <img src="../assets/images/icons/menu.png" alt="Menu Icon">
       </div>
 
 <!-- Mobiel menu overlay -->
       <div class="mobile-menu" id="mobileMenu">
         <div class="close-menu" onclick="toggleMobileMenu()">
-          <img src="../images/icons/close.png" alt="Sluit menu">
+          <img src="../assets/images/icons/close.png" alt="Sluit menu">
         </div>
       <ul class="mobile-links">
           <li><a href="producten.php">Producten</a></li>
@@ -74,12 +74,12 @@
           <li><a href="contact.php">Contact</a></li>
         </ul>
         <div class="mobile-icons">
-          <a href="winkelwagen.php"><img src="../images/icons/cart-wit.svg" alt="Cart Icon"></a>
+          <a href="winkelwagen.php"><img src="../assets/images/icons/cart-wit.svg" alt="Cart Icon"></a>
           <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'login.php'; ?>">
             <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
-              <img src="../images/icons/user-found.svg" alt="user">
+              <img src="../assets/images/icons/user-found.svg" alt="user">
             <?php else: ?>
-              <img src="../images/icons/user-wit.svg" alt="user">
+              <img src="../assets/images/icons/user-wit.svg" alt="user">
             <?php endif; ?>
           </a>
         </div>
@@ -89,7 +89,7 @@
 <!-- Main body -->
     <div class="over-ons-container">
       <div class="over-photo">
-        <img src="../images/over-ons-foto.png" alt="ApotheCare medewerker">
+        <img src="../assets/images/over-ons-foto.png" alt="ApotheCare medewerker">
         <div class="over-btn-container over-btn-desktop">
           <a href="producten.php" class="over-btn">Bekijk Producten</a>
         </div>
@@ -123,5 +123,5 @@
       </div>
     </div>
   </body>
-  <script src="../js/main.js"></script>
+  <script src="../assets/js/main.js"></script>
 </html>

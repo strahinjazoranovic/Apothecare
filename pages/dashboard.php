@@ -14,8 +14,8 @@ session_start();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>apothedev - Admin Dashboard</title>
-    <link rel="stylesheet" href="../css/main.css?v=1" />
-    <link rel="shortcut icon" type="x-icon" href="../images/logo/Apothedev-Logo-nobg.png" />
+    <link rel="stylesheet" href="../assets/css/main.css?v=1" />
+    <link rel="shortcut icon" type="x-icon" href="../assets/images/logo/Apothedev-Logo-nobg.png" />
     <!-- Dit is voor de font-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
   </head>
@@ -23,7 +23,7 @@ session_start();
 <!-- header -->
     <header>
       <div class="logo">
-        <a href="../index.php"><img src="../images/logo/apothedev-nobg.png" alt="Logo"></a>
+        <a href="../index.php"><img src="../assets/images/logo/apothedev-nobg.png" alt="Logo"></a>
       </div>
 
       <nav>
@@ -37,15 +37,15 @@ session_start();
       <div class="icons">
         <div class="cart">
           <a href="winkelwagen.php">
-            <img src="../images/icons/cart.svg" alt="Cart Icon">
+            <img src="../assets/images/icons/cart.svg" alt="Cart Icon">
           </a>
         </div>
         <div class="profile">
           <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'login.php'; ?>" aria-label="User Account">
             <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
-              <img src="../images/icons/user-found.svg" alt="user">
+              <img src="../assets/images/icons/user-found.svg" alt="user">
             <?php else: ?>
-              <img src="../images/icons/user.svg" alt="user">
+              <img src="../assets/images/icons/user.svg" alt="user">
             <?php endif; ?>
           </a>
         </div>
@@ -53,13 +53,13 @@ session_start();
 
 <!-- Menu Icon voor mobiel -->
       <div class="menu-icon" onclick="toggleMobileMenu()">
-        <img src="../images/icons/menu.png" alt="Menu Icon">
+        <img src="../assets/images/icons/menu.png" alt="Menu Icon">
       </div>
 
 <!-- Mobiel menu overlay -->
       <div class="mobile-menu" id="mobileMenu">
         <div class="close-menu" onclick="toggleMobileMenu()">
-          <img src="../images/icons/close.png" alt="Sluit menu">
+          <img src="../assets/images/icons/close.png" alt="Sluit menu">
         </div>
       <ul class="mobile-links">
           <li><a href="producten.php">Producten</a></li>
@@ -67,12 +67,12 @@ session_start();
           <li><a href="contact.php">Contact</a></li>
         </ul>
         <div class="mobile-icons">
-          <a href="winkelwagen.php"><img src="../images/icons/cart-wit.svg" alt="Cart Icon"></a>
+          <a href="winkelwagen.php"><img src="../assets/images/icons/cart-wit.svg" alt="Cart Icon"></a>
           <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'login.php'; ?>">
             <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
-              <img src="../images/icons/user-found.svg" alt="user">
+              <img src="../assets/images/icons/user-found.svg" alt="user">
             <?php else: ?>
-              <img src="../images/icons/user-wit.svg" alt="user">
+              <img src="../assets/images/icons/user-wit.svg" alt="user">
             <?php endif; ?>
           </a>
         </div>
@@ -86,7 +86,7 @@ session_start();
 
       <div class="card-grid">
         <div class="card product-card">
-          <img src="../images/medicijnpakket.jpg" alt="Medicine package" />
+          <img src="../assets/images/medicijnpakket.jpg" alt="Medicine package" />
         </div>
 
         <div class="card add-product-card">
@@ -113,6 +113,6 @@ session_start();
           </div>
         </div>
       </div>
-    <script src="../js/main.js"></script>
+    <script src="../assets/js/main.js"></script>
   </body>
 </html>

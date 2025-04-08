@@ -6,78 +6,14 @@
 // Project		      : Apothecare
 // Datum		        : projectweek - periode 3 - 2025
 //---------------------------------------------------------------------------------------------------//
-  session_start();
-  include("../DB_connect.php");
-
-  // Controleer of de gebruiker is ingelogd
-  if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) {
-  // Als ingelogd, stuur door naar account.php
-  echo "<script>window.location.href = 'account.php';</script>";
-  exit(); // Stop verdere uitvoering van de pagina
-  }
-
-  //als er een account is aangemaakt zal er een popup komen door deze code  
-  if(isset($_SESSION['account_aanmaak'])){
-    $nieuw_account_popup = "block";
-    unset($_SESSION['account_aanmaak']);
-  } else {
-    $nieuw_account_popup = "none";
-  }
-    //als de ingevoerde email niet bestaat komt er een popup
-    if(isset($error_email)){
-      $verkeert_email = "block";
-      $error_email = "";
-    } else {
-      $verkeert_email = "none";
-    }
-    //als het ingevoerde wachtwoord niet overeen komt komt er een popup 
-  if(isset($error_ww)){
-    $verkeert_ww = "block";
-    $error_ww = "";
-  } else {
-    $verkeert_ww = "none";
-  }
-
-  if(isset($_POST['login'])) {
-    // Ingevulde velden in form
-    $mail = $_POST['mail'];
-    $wachtwoord = password_hash($_POST['wachtwoord'], PASSWORD_DEFAULT);
-
-    // Kijkt of de velden zijn ingevuld
-    if (!empty($mail) && !empty($wachtwoord)) {
-      // Kijkt voor de email in de database
-      $sql = "SELECT * FROM user WHERE email='$mail';";
-      $result = mysqli_query($conn, $sql);
-      $resultCheck = mysqli_num_rows($result);
-  
-      if ($resultCheck > 0){
-        // Haal de gegevens van de gebruiker op
-        while ($row = mysqli_fetch_assoc($result)) {
-          // Vergelijk het ingevoerde wachtwoord met de hash uit de database
-          if ($wachtwoord = $row['wachtwoord']) {
-            // Als het wachtwoord correct is sla de gebruiker ID in de sessie op
-            $_SESSION['user_id'] = $row['ID'];
-            $_SESSION['user_icon'] = true;
-            echo "Login succesvol!";
-            echo"<script>window.location.href = 'account.php';</script>";
-            // Hier kun je doorsturen naar een andere pagina
-          } else {
-            $error_ww = "error";
-          }
-        }
-      } else {
-        $error_email = "error";
-      }
-    } 
-  }
 ?>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Apothecare - Login</title>
-    <link rel="stylesheet" href="../css/main.css?v=1" />
-    <link rel="shortcut icon" type="x-icon" href="../images/logo/Apothecare-minilogo-nobg.png">
+    <link rel="stylesheet" href="../assets/css/main.css?v=1" />
+    <link rel="shortcut icon" type="x-icon" href="../assets/images/logo/Apothecare-minilogo-nobg.png">
     <!-- Dit is voor de font-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
   </head>
@@ -106,15 +42,15 @@
      <div class="icons">
        <div class="cart">
          <a href="winkelwagen.php">
-           <img src="../images/icons/cart.svg" alt="Cart Icon">
+           <img src="../assets/images/icons/cart.svg" alt="Cart Icon">
          </a>
        </div>
        <div class="profile">
          <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'register.php'; ?>" aria-label="User Account">
            <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
-             <img src="../images/icons/user-found.svg" alt="user">
+             <img src="../assets/images/icons/user-found.svg" alt="user">
            <?php else: ?>
-             <img src="../images/icons/user-plus.svg" alt="user">
+             <img src="../assets/images/icons/user-plus.svg" alt="user">
            <?php endif; ?>
          </a>
        </div>
@@ -122,13 +58,13 @@
 
 <!-- Menu Icon voor mobiel -->
      <div class="menu-icon" onclick="toggleMobileMenu()">
-       <img src="../images/icons/menu.png" alt="Menu Icon">
+       <img src="../assets/images/icons/menu.png" alt="Menu Icon">
      </div>
 
 <!-- Mobiel menu overlay -->
      <div class="mobile-menu" id="mobileMenu">
        <div class="close-menu" onclick="toggleMobileMenu()">
-         <img src="../images/icons/close.png" alt="Sluit menu">
+         <img src="../assets/images/icons/close.png" alt="Sluit menu">
        </div>
      <ul class="mobile-links">
          <li><a href="producten.php">Producten</a></li>
@@ -136,12 +72,12 @@
          <li><a href="contact.php">Contact</a></li>
        </ul>
        <div class="mobile-icons">
-         <a href="winkelwagen.php"><img src="../images/icons/cart-wit.svg" alt="Cart Icon"></a>
+         <a href="winkelwagen.php"><img src="../assets/images/icons/cart-wit.svg" alt="Cart Icon"></a>
          <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'register.php'; ?>">
            <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
-             <img src="../images/icons/user-found.svg" alt="user">
+             <img src="../assets/images/icons/user-found.svg" alt="user">
            <?php else: ?>
-             <img src="../images/icons/user-plus-wit.svg" alt="user">
+             <img src="../assets/images/icons/user-plus-wit.svg" alt="user">
            <?php endif; ?>
          </a>
        </div>
@@ -151,7 +87,7 @@
     <div class="container1">
       <div class="login-box">
         <div id="imglogo">
-          <a href="../index.php"><img src="../images/logo/apothecare-nobg.png" alt="logopng"></a>
+          <a href="../index.php"><img src="../assets/images/logo/apothecare-nobg.png" alt="logopng"></a>
         </div>
 
         <form method="POST">
@@ -171,6 +107,6 @@
         </p>
       </div>
     </div>
-    <script src="../js/main.js"></script>
+    <script src="../assets/js/main.js"></script>
   </body>
 </html>
