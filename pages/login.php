@@ -108,12 +108,18 @@
           <label for="email">E-mail</label>
           <input type="email" name="email" placeholder="Voer uw e-mail in" required />
 
-          <label for="password">Wachtwoord</label>
-          <input type="password" name="ww" placeholder="Voer uw wachtwoord in" required />
+          <div class="passwd-wrap">
+            <label for="password">Wachtwoord</label>
+            <p class="wachtwoordregels">* Wachtwoord moet minimaal 8 karakters bevatten. <br> * Met 1 Speciaal teken. <br> * Met 1 letter en cijfer.</p> 
+            <input type="password" id="password" name="ww" placeholder="Voer uw wachtwoord in" minlength="8" pattern=".*[\d].*" pattern=".*[\W_].*" required>
+            <button type="button" id="show-password">
+              <img id="eye" src="../assets/images/icons/eye-show.svg" />
+            </button>
+          </div>
 
           <p class="forgot">Forgot password?</p>
 
-          <button type="submit" name="login" class="button">Login</button>
+          <button type="submit" name="login" class="login-button">Login</button>
         </form>
         <p class="signup">
           Heb je geen account?

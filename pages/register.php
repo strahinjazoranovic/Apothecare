@@ -126,9 +126,14 @@
                 <label for="email">E-mail</label>
                 <input type="email" name="email" placeholder="Voer uw e-mail in" required>
 
+                <div class="passwd-wrap">
                 <label for="password">Wachtwoord</label>
                 <p class="wachtwoordregels">* Wachtwoord moet minimaal 8 karakters bevatten. <br> * Met 1 Speciaal teken. <br> * Met 1 letter en cijfer.</p> 
-                <input type="password" name="ww" placeholder="Voer uw wachtwoord in" minlength="8" pattern=".*[\d].*" pattern=".*[\W_].*" required>
+                <input type="password" id="password" name="ww" placeholder="Voer uw wachtwoord in" minlength="8" pattern=".*[\d].*" pattern=".*[\W_].*" required>
+                <button type="button" id="show-password">
+                  <img id="eye" src="../assets/images/icons/eye-show.svg" />
+                </button>
+                </div>
 
                 <label for="againpassword">Voer wachtwoord opnieuw in</label>
                 <input type="password" name="wwrepeat" placeholder="Voer uw wachtwoord opnieuw in" minlength="8"  pattern="^(?=.*[a-zA-Z])(?=.*\d)(?=.*[\W_]).{8,}$" required>

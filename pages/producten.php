@@ -127,7 +127,7 @@
         <h2><?php echo $row['naam']; ?></h2>
         <p><?php echo $row['beschrijving']; ?></p>
         <p>Prijs: €<?php echo $row['prijs']; ?></p>
-        <button>Voeg toe aan winkelmand</button>
+        <button class="product-button">Voeg toe aan winkelmand</button>
       </div>
     <?php } ?>
   </div>
