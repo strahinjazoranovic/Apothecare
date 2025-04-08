@@ -29,7 +29,7 @@ catch(mysqli_sql_exception){
 }
 
 if($conn){
-    echo"<p class='db_connected'>Database '$db_name' is connected!</p>";
+    // echo"<p class='db_connected'>Database '$db_name' is connected!</p>";
 } 
 ?>
 
