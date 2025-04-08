@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 06 apr 2025 om 17:49
+-- Gegenereerd op: 08 apr 2025 om 13:38
 -- Serverversie: 10.4.32-MariaDB
 -- PHP-versie: 8.2.12
 
@@ -77,7 +77,7 @@ CREATE TABLE `user` (
   `tussenvoegsel` varchar(50) NOT NULL,
   `achternaam` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `wachtwoord` varchar(50) NOT NULL,
+  `wachtwoord` varchar(250) NOT NULL,
   `telefoon_nr` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -86,8 +86,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`ID`, `voornaam`, `tussenvoegsel`, `achternaam`, `email`, `wachtwoord`, `telefoon_nr`) VALUES
-(1, 'Tejo', '', 'Veldman', 'tejoveldman@gmail.com', '$2y$10$i8RueXYxfBDSfUpL.PfDpOf3z4FGflUsKu5FSBhLKl6', ''),
-(2, 'anton', '', 'prajo', 'aprajo@mborijnland.nl', '$2y$10$xN5OHmqjjO4IR3LUhcjPQOd8lyE0DNoirEyLlPIgcry', '');
+(30, 'ja', '', 'be', 'ja@gmail.nl', 'e18d20c33fc1860873b0ab34a1915f138d6134141b9bf6a4310340ed2f2d92df', '');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -119,7 +118,7 @@ ALTER TABLE `producten`
 -- AUTO_INCREMENT voor een tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
