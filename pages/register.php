@@ -88,7 +88,7 @@
         echo "<div class='popup2'>
               <p> 🔐 Wachtwoorden zijn niet hetzelfde. Controleer beide velden. </p>
               </div>";
-      } else if ($_GET["error"] == "emailtaken") {
+      } else if ($_GET["error"] == "emailTaken") {
         echo "<div class='popup2'>
               <p> ⚠️ Dit e-mailadres is al in gebruik. Probeer een ander e-mailadres. </p>
               </div>";
@@ -96,9 +96,13 @@
         echo "<div class='popup2'>
               <p> 🛠️ Oeps! Er ging iets fout bij het verwerken. Probeer het nog eens. </p>
               </div>";
+      } else if ($_GET["error"] == "wrongWay") {
+        echo "<div class='popup2'>
+              <p> 🕵️‍♂️ Je probeert een geheime plek te bezoeken... maar je hebt geen toegang. </p>
+              </div>";
       }
     }
-    
+  
     ?>
 
     <div class="container1">

@@ -26,6 +26,18 @@
     echo "<div class='popup'>
           <p> ✅ Account succesvol aangemaakt! Log nu in. </p>
           </div>";
+  } else if ($_GET["error"] == "wrongWay") {
+    echo "<div class='popup2'>
+          <p> 🕵️‍♂️ Je probeert een geheime plek te bezoeken... maar je hebt geen toegang. </p>
+          </div>";
+  } else if ($_GET["error"] == "wrongLogin") {
+    echo "<div class='popup2'>
+          <p> 🚫 Verkeerde email of wachtwoord probeer opnieuw </p>
+          </div>";
+  } else if ($_GET["error"] == "uitgelogd") {
+    echo "<div class='popup'>
+          <p> ✅ Succesvol uitgelogd!</p>
+          </div>";
   }
 }
 
@@ -92,12 +104,12 @@
           <a href="../index.php"><img src="../assets/images/logo/apothecare-nobg.png" alt="logopng"></a>
         </div>
 
-        <form method="POST">
+        <form action="components/login.inc.php" method="POST">
           <label for="email">E-mail</label>
-          <input type="email" name="mail" id="email" placeholder="Voer uw e-mail in" required />
+          <input type="email" name="email" placeholder="Voer uw e-mail in" required />
 
           <label for="password">Wachtwoord</label>
-          <input type="password" name="wachtwoord" id="password" placeholder="Voer uw wachtwoord in" required />
+          <input type="password" name="ww" placeholder="Voer uw wachtwoord in" required />
 
           <p class="forgot">Forgot password?</p>
 
