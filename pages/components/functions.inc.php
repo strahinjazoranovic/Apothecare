@@ -68,7 +68,7 @@ function createUser($conn, $naam, $tussenv, $achternaam, $email, $ww) {
     mysqli_stmt_bind_param($stmt, "sssss", $naam, $tussenv, $achternaam, $email, $hashedWw);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header("location: ../account.php?error=none");
+    header("location: ../login.php?error=none");
     exit();
 }
 

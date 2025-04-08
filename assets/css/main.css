@@ -974,7 +974,7 @@ input[type="password"] {
   font-size: 1rem;
   text-align: center;
   z-index: 1000; /* Zorg ervoor dat de popup boven andere elementen komt */
-  display: none; /* De popup is standaard verborgen */
+  display: block; /* De popup is standaard verborgen */
   opacity: 0; /* Popup is onzichtbaar in eerste instantie */
   animation: popup-fade-in 7s forwards;
 }

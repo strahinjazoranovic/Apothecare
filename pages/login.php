@@ -19,15 +19,17 @@
   </head>
   <body class="login-page">
 <!-- account aangemaakt popup -->
-  <div class="popup" style="display: <?php echo $nieuw_account_popup; ?>;">
-    <p>✅ Account succesvol aangemaakt! Log nu in.</p>
-  </div>
-  <div class="popup2" style="display: <?php echo $verkeert_email; ?>;">
-    <p>⛔ Email niet gevonden probeer opnieuw of neem contact op.</p>
-  </div>
-  <div class="popup2" style="display: <?php echo $verkeert_ww; ?>;">
-    <p>⛔ Onjuist wachtwoord.</p>
-  </div>
+ <?php
+ 
+ if(isset($_GET["error"])) {
+  if ($_GET["error"] == "none"){
+    echo "<div class='popup'>
+          <p> ✅ Account succesvol aangemaakt! Log nu in. </p>
+          </div>";
+  }
+}
+
+ ?>
 <!-- header -->
   <header class="login-header">
 

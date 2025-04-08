@@ -15,7 +15,7 @@ if (isset($_POST["register"])) {
     require_once 'functions.inc.php';
 
     // als de variable leeg is stuurt de pagina je trug
-    if (emptyInputSignup($name, $achternaam, $email, $ww, $wwrepeat) !== false) {
+    if (emptyInputSignup($naam, $achternaam, $email, $ww, $wwrepeat) !== false) {
         header("location: ../register.php?error=emptyinput");
         exit();
     }
