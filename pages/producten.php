@@ -86,7 +86,7 @@
           <?php if (isset($_SESSION['userid']) && $_SESSION['userid'] == true): ?>
             <img src="../assets/images/icons/user-found.svg" alt="user">
           <?php else: ?>
-            <img src="../asstes/images/icons/user-wit.svg" alt="user">
+            <img src="../assets/images/icons/user-wit.svg" alt="user">
           <?php endif; ?>
         </a>
       </div>

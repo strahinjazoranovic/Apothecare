@@ -43,7 +43,10 @@
 
  ?>
 <!-- header -->
-  <header class="login-header">
+  <header>
+  <div class="logo">
+      <a href="../index.php"><img src="../assets/images/logo/apothecare-nobg.png" alt="Logo"></a>
+    </div>
 
      <nav>
        <ul>
@@ -55,7 +58,7 @@
 
      <div class="icons">
        <div class="cart">
-         <a href="winkelwagen.php">
+         <a href="">
            <img src="../assets/images/icons/cart.svg" alt="Cart Icon">
          </a>
        </div>
@@ -69,6 +72,7 @@
          </a>
        </div>
      </div>
+            
 
 <!-- Menu Icon voor mobiel -->
      <div class="menu-icon" onclick="toggleMobileMenu()">
@@ -77,31 +81,31 @@
 
 <!-- Mobiel menu overlay -->
      <div class="mobile-menu" id="mobileMenu">
-       <div class="close-menu" onclick="toggleMobileMenu()">
-         <img src="../assets/images/icons/close.png" alt="Sluit menu">
-       </div>
-     <ul class="mobile-links">
-         <li><a href="producten.php">Producten</a></li>
-         <li><a href="over.php">Over ons</a></li>
-         <li><a href="contact.php">Contact</a></li>
-       </ul>
-       <div class="mobile-icons">
-         <a href="winkelwagen.php"><img src="../assets/images/icons/cart-wit.svg" alt="Cart Icon"></a>
-         <a href="<?php echo (isset($_SESSION['userid']) && $_SESSION['userid'] == true) ? 'account.php' : 'register.php'; ?>">
-           <?php if (isset($_SESSION['userid']) && $_SESSION['userid'] == true): ?>
-             <img src="../assets/images/icons/user-found.svg" alt="user">
-           <?php else: ?>
-             <img src="../assets/images/icons/user-plus-wit.svg" alt="user">
-           <?php endif; ?>
-         </a>
-       </div>
-     </div>
-   </header>
+      <div class="close-menu" onclick="toggleMobileMenu()">
+        <img src="../assets/images/icons/close.png" alt="Sluit menu">
+      </div>
+      <ul class="mobile-links">
+        <li><a href="producten.php">Producten</a></li>
+        <li><a href="over.php">Over ons</a></li>
+        <li><a href="contact.php">Contact</a></li>
+      </ul>
+      <div class="mobile-icons">
+        <a href="winkelwagen.php"><img src="../assets/images/icons/cart-wit.svg" alt="Cart Icon"></a>
+        <a href="<?php echo (isset($_SESSION['userid']) && $_SESSION['userid'] == true) ? 'account.php' : 'login.php'; ?>">
+          <?php if (isset($_SESSION['userid']) && $_SESSION['userid'] == true): ?>
+            <img src="../assets/images/icons/user-found.svg" alt="user">
+          <?php else: ?>
+            <img src="../assets/images/icons/user-plus-wit.svg" alt="user">
+          <?php endif; ?>
+        </a>
+      </div>
+    </div>
+  </header>
 <!-- main body -->
     <div class="container1">
       <div class="login-box">
         <div id="imglogo">
-          <a href="../index.php"><img src="../assets/images/logo/apothecare-nobg.png" alt="logopng"></a>
+          <img src="../assets/images/logo/apothecare-nobg.png" alt="logopng">`
         </div>
 
         <form action="components/login.inc.php" method="POST">

@@ -18,7 +18,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
 </head>
 <body class="login-page">
-    <header class="login-header">
+    <header class="header">
+      <div class="logo">
+        <a href="../index.php"><img src="../assets/images/logo/apothecare-nobg.png" alt="Logo"></a>
+      </div>
 
       <nav>
         <ul>
@@ -109,7 +112,7 @@
         <div class="login-box">
             <a href="login.php"><img src="../assets/images/icons/back.svg"></a>
             <div id="imglogo">
-                <a href="../index.php"><img src="../assets/images/logo/apothecare-nobg.png" alt="logopng"></a>
+              <img src="../assets/images/logo/apothecare-nobg.png" alt="logopng">`
             </div>
 
             <form action="components/register.inc.php" method="POST">  

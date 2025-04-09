@@ -183,72 +183,6 @@ nav ul li a:hover {
   height: 40px;
 }
 
-/* Responsive styles */
-@media (max-width: 1024px) {
-  nav {
-    position: static;
-    transform: none;
-    margin-top: 20px;
-    text-align: center;
-  }
-
-  nav ul {
-    justify-content: center;
-  }
-
-  .icons {
-    position: static;
-    transform: none;
-    justify-content: center;
-    margin-top: 10px;
-  }
-
-  header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-  }
-
-  .logo {
-    display: none;
-  }
-}
-
-@media (max-width: 600px) {
-  nav,  /* Navigatie verdwijnt */
-  .icons { /* Icons verdwijnen */
-    display: none;
-    
-  }
-  
-  header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-    margin-top: 40px;
-  }
-
-  .menu-icon {
-    margin-top: -10px;
-    display: block;
-  }
-
-  .mobile-menu {
-    display: none; /* Standaard verborgen */
-  }
-
-  /* Wanneer menu knop geklikt wordt */
-  .mobile-menu.active {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start; /* Zorgt ervoor dat alles bovenaan het scherm staat */
-  }
-}
-
-
 /* ======================
   Database connection page
   ====================== */
@@ -370,32 +304,6 @@ nav ul li a:hover {
   display: none;
 }
 
-@media (max-width: 768px) {
-  .home-photo{
-    display: none;
-  }
-
-  .home-container {
-    grid-template-columns: 1fr;
-    padding: 1rem;
-  }
-
-  .home-btn-desktop {
-    display: none;
-  }
-
-  .home-btn-mobile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  .secondary-btn{
-    margin-bottom: 100px;
-  }
-}
 
 /* ======================
   CHATBOT
@@ -529,28 +437,6 @@ nav ul li a:hover {
   display: none;
 }
 
-/* Mobiele weergave */
-@media (max-width: 768px) {
-  .over-ons-container {
-    grid-template-columns: 1fr;
-    padding: 1rem;
-  }
-
-  .photo {
-    display: none;
-  }
-
-  .over-btn-desktop {
-    display: none;
-  }
-
-  .over-btn-mobile {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-  }
-}
-
 /* ======================
   SHOPPING CART STYLES
   ====================== */
@@ -577,19 +463,6 @@ nav ul li a:hover {
   gap: 30px;
 }
 
-@media (min-width: 992px) {
-  .winkelwagen-container {
-    flex-direction: row;
-  }
-
-  .cart-items {
-    flex: 3;
-  }
-
-  .order-summary {
-    flex: 1;
-  }
-}
 
 .cart-items {
   display: flex;
@@ -731,25 +604,6 @@ nav ul li a:hover {
   margin-top: 20px;
   transition: background-color 0.2s;
 }
-
-
-@media (max-width: 768px) {
-  .main-container {
-    padding: 15px;
-  }
-
-  .center-item {
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  .item-beschrijving {
-    order: 1;
-    width: 100%;
-    margin-top: 10px;
-  }
-}
-
 
 /* ======================
   ACCOUNT PAGE STYLES
@@ -1062,26 +916,6 @@ body .login-header nav ul li, body .register-header nav ul li {
   margin-left: 20px;
 }
 
-@media (max-width: 1024px) {
-  body .login-header nav, body .register-header nav {
-    justify-content: center; /* Zet de links terug naar het midden */
-  }
-}
-
-@media (max-width: 600px) {
-  body .login-header nav, body .register-header nav {
-    display: none;
-  }
-
-  body header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-    margin-top: 40px;
-  }
-}
-
 /* ======================
   PRODUCT PAGE 
   ====================== */
@@ -1212,27 +1046,6 @@ body .login-header nav ul li, body .register-header nav ul li {
 .product-filter-container input[type="submit"] {
   display: none; /* Hidden, use button to submit */
 }
-
-/* Media query for max-width 768px */
-@media (max-width: 768px) {
-  .product-filter-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .product-grid {
-    padding: 0;
-  }
-}
-
-/* Media query for max-width 600px */
-@media (max-width: 600px) {
-  .product-filter-container {
-    flex-direction: column-reverse; /* Zorgt ervoor dat de zoekbalk boven de filterbalk komt */
-  }
-}
-
-
 /* ======================
       IMAGE CONTAINERS
       ====================== */
@@ -1253,6 +1066,25 @@ body .login-header nav ul li, body .register-header nav ul li {
 /* ======================
       RESPONSIVE BREAKPOINTS
       ====================== */
+/* Media query for max-width 768px */
+@media (max-width: 768px) {
+  .product-filter-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .product-grid {
+    padding: 0;
+  }
+}
+
+/* Media query for max-width 600px */
+@media (max-width: 600px) {
+  .product-filter-container {
+    flex-direction: column-reverse; /* Zorgt ervoor dat de zoekbalk boven de filterbalk komt */
+  }
+}
+
 @media (min-width: 768px) {
   /* Tablet and desktop styles */
   .winkel-item {
@@ -1276,11 +1108,177 @@ body .login-header nav ul li, body .register-header nav ul li {
   .apothecare-text {
     font-size: 13px;
   }
+
+  select, input{
+    width: 20%;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .product-filter-container {
+    padding: 2px;
+  }
 }
 
-@media (max-width: 650px) {
-  /* Mobile styles */
-  .logo {
-    display: none; /* Hide logo on mobile */
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  nav {
+    position: static;
+    transform: none;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  nav ul {
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .icons {
+    position: static;
+    transform: none;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  nav,  /* Navigatie verdwijnt */
+  .icons { /* Icons verdwijnen */
+    display: none;
+    
+  }
+  
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin-top: 40px;
+  }
+
+  .menu-icon {
+    margin-top: -10px;
+    display: block;
+  }
+
+  .mobile-menu {
+    display: none; /* Standaard verborgen */
+  }
+
+  /* Wanneer menu knop geklikt wordt */
+  .mobile-menu.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Zorgt ervoor dat alles bovenaan het scherm staat */
+  }
+}
+
+@media (max-width: 768px) {
+  .home-photo{
+    display: none;
+  }
+
+  .home-container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .home-btn-desktop {
+    display: none;
+  }
+
+  .home-btn-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .secondary-btn{
+    margin-bottom: 100px;
+  }
+}
+
+/* Mobiele weergave */
+@media (max-width: 768px) {
+  .over-ons-container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .photo {
+    display: none;
+  }
+
+  .over-btn-desktop {
+    display: none;
+  }
+
+  .over-btn-mobile {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .winkelwagen-container {
+    flex-direction: row;
+  }
+
+  .cart-items {
+    flex: 3;
+  }
+
+  .order-summary {
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    padding: 15px;
+  }
+
+  .center-item {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .item-beschrijving {
+    order: 1;
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 1024px) {
+  body .login-header nav, body .register-header nav {
+    justify-content: center; /* Zet de links terug naar het midden */
+  }
+}
+
+@media (max-width: 600px) {
+  body .login-header nav, body .register-header nav {
+    display: none;
+  }
+
+  body header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin-top: 40px;
   }
 }
