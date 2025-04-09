@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apothecare - Register</title>
-    <link rel="stylesheet" href="../assets/css/main.css?v=1" />
+    <link rel="stylesheet" href="../assets/css/main.css?v=3" />
     <link rel="shortcut icon" type="x-icon" href="../assets/images/logo/Apothecare-minilogo-nobg.png">
     <!-- Dit is voor de font-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
@@ -128,7 +128,7 @@
 
                 <div class="passwd-wrap">
                 <label for="password">Wachtwoord</label>
-                <p class="wachtwoordregels">* Wachtwoord moet minimaal 8 karakters bevatten. <br> * Met 1 Speciaal teken. <br> * Met 1 letter en cijfer.</p> 
+                <ul class="wachtwoordregels"> <li>Wachtwoord moet minimaal 8 karakters bevatten.</li><li>Met minstens 1 Speciaal teken.</li><li>Met minstens 1 letter en cijfer.</li></ul> 
                 <input type="password" id="password" name="ww" placeholder="Voer uw wachtwoord in" minlength="8" pattern=".*[\d].*" pattern=".*[\W_].*" required>
                 <button type="button" id="show-password">
                   <img id="eye" src="../assets/images/icons/eye-show.svg" />
