@@ -64,11 +64,6 @@
         </a>
       </div>
     </div>
-    <div class="home-footer">
-  <div class="footer">
-    <p>&copy; 2025 ApotheCare. Alle rechten voorbehouden.</p>
-    <p>Ontwikkeld door Strahinja Zoraonvic,Tejo Veldman, Siham hammich,en Ebenezer boateng & Saleh saleh</p>
-  </div>
 
     <!-- Menu Icon voor mobiel -->
     <div class="menu-icon" onclick="toggleMobileMenu()">
@@ -135,6 +130,11 @@
         <button class="product-button">Voeg toe aan winkelmand</button>
       </div>
     <?php } ?>
+  </div>
+  <div class="home-footer">
+  <div class="footer">
+    <p>&copy; 2025 ApotheCare. Alle rechten voorbehouden.</p>
+    <p>Ontwikkeld door Strahinja Zoraonvic,Tejo Veldman, Siham hammich,en Ebenezer boateng & Saleh saleh</p>
   </div>
 
   <script src="../assets/js/main.js"></script>
