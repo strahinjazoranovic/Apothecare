@@ -10,25 +10,34 @@
   //database connection
   include("../config/DB_connect.php");
   // Als de gebruiker niet is ingelogd stuur door naar inlogpagina
-  if (!isset($_SESSION['user_id'])) {
+  if (!isset($_SESSION['userid'])) {
     echo "<script>window.location.href = 'login.php';</script>";
     exit();
   }
 
-  //als er een account is aangemaakt zal er een popup komen door deze code  
-  if(isset($_SESSION['gegevens_bijwerken'])){
-    $gegevens_bijwerken_popup = "block";
-    unset($_SESSION['gegevens_bijwerken']);
-  } else {
-    $gegevens_bijwerken_popup = "none";
+  //als je ben ingeloged  
+  if(isset($_GET["error"])) {
+    if ($_GET["error"] == "none"){
+      echo "<div class='popup'>
+            <p> ✅ Account succesvol aangemaakt! Log nu in. </p>
+            </div>";
+    } else if ($_GET["error"] == "opgeslagen"){
+      echo "<div class='popup'>
+            <p> ✅ Account succesvol bijgewerkt!</p>
+            </div>";
+    } else if ($_GET["error"] == "nietOpgeslagen"){
+      echo "<div class='popup2'>
+            <p> ⚠️ Je account kon niet worden bijgewerkt. Probeer het opnieuw. </p>
+            </div>";
+    }
   }
 
   //haalt gegevens uit database
-  $sql = "SELECT * FROM user WHERE ID='{$_SESSION["user_id"]}';";
+  $sql = "SELECT * FROM user WHERE ID='{$_SESSION["userid"]}';";
   $result = mysqli_query($conn, $sql);
   $resultCheck = mysqli_num_rows($result);
 
-  if(isset ($_SESSION["user_id"])){
+  if(isset ($_SESSION["userid"])){
     if ($resultCheck > 0){
 
       while ($row = mysqli_fetch_assoc($result)) {
@@ -48,13 +57,13 @@
     $mail_update = $_POST['mail'];
     $telefoon_update = $_POST['telefoon'];
 
-    $query = mysqli_query($conn, "UPDATE user SET voornaam = '$voornaam_update', tussenvoegsel = '$tussenvoegsel_update', achternaam = '$achternaam_update', email = '$mail_update', telefoon_nr = '$telefoon_update' WHERE ID = '{$_SESSION['user_id']}'");
+    $query = mysqli_query($conn, "UPDATE user SET voornaam = '$voornaam_update', tussenvoegsel = '$tussenvoegsel_update', achternaam = '$achternaam_update', email = '$mail_update', telefoon_nr = '$telefoon_update' WHERE ID = '{$_SESSION['userid']}'");
     if($query){
-        $_SESSION['gegevens_bijwerken'] = "bijgewerkt";
-        header("Location: " . $_SERVER['PHP_SELF']);
+        echo "<script>window.location.href = 'account.php?error=opgeslagen';</script>";
         exit();
     } else {
-        echo"<script>alert('Account bewerken mislukt probeer opnieuw of zoek contact op.'); </script>";
+      echo "<script>window.location.href = 'account.php?error=nietOpgeslagen';</script>";
+      exit();
     }
 }
 
@@ -66,7 +75,8 @@ if (isset($_POST['uitloggen'])) {
   // Vernietig de sessie
   session_destroy();
 
-  echo "<script>window.location.href = 'login.php';</script>";
+  echo "<script>window.location.href = 'login.php?error=uitgelogd';</script>";
+  exit();
 }
 ?>
 <!DOCTYPE html>
@@ -76,16 +86,13 @@ if (isset($_POST['uitloggen'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Account - Apothecare</title>
     <link rel="shortcut icon" type="x-icon" href="../assets/images/logo/Apothecare-minilogo-nobg.png">
-    <link rel="stylesheet" href="../assets/css/main.css?v=1" />
+    <link rel="stylesheet" href="../assets/css/main.css?v=3" />
     <!-- Dit is voor de font-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet"/>
   </head>
 
   <body>
   <!-- account succesvol aangepast popup -->
-    <div class="popup" style="display: <?php echo $gegevens_bijwerken_popup; ?>;">
-      <p>✅ Account succesvol aangepast!</p>
-    </div>
   <header>
     <div class="logo">
       <a href="../index.php"><img src="../assets/images/logo/apothecare-nobg.png" alt="Logo"></a>
@@ -106,8 +113,8 @@ if (isset($_POST['uitloggen'])) {
         </a>
       </div>
       <div class="profile">
-        <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'login.php'; ?>" aria-label="User Account">
-          <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
+        <a href="<?php echo (isset($_SESSION['userid']) && $_SESSION['userid'] == true) ? 'account.php' : 'login.php'; ?>" aria-label="User Account">
+          <?php if (isset($_SESSION['userid']) && $_SESSION['userid'] == true): ?>
             <img src="../assets/images/icons/user-found.svg" alt="user">
           <?php else: ?>
             <img src="../assets/images/icons/user.svg" alt="user">
@@ -133,8 +140,8 @@ if (isset($_POST['uitloggen'])) {
         </ul>
         <div class="mobile-icons">
           <a href="winkelwagen.php"><img src="../assets/images/icons/cart-wit.svg" alt="Cart Icon"></a>
-          <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'register.php'; ?>">
-            <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
+          <a href="<?php echo (isset($_SESSION['userid']) && $_SESSION['userid'] == true) ? 'account.php' : 'register.php'; ?>">
+            <?php if (isset($_SESSION['userid']) && $_SESSION['userid'] == true): ?>
               <img src="../assets/images/icons/user-found.svg" alt="user">
             <?php else: ?>
               <img src="../assets/images/icons/user-wit.svg" alt="user">
@@ -148,7 +155,7 @@ if (isset($_POST['uitloggen'])) {
       <div class="account-section">
         <h1>Mijn account</h1>
         <div class="account-gegevens">
-          <h2>Gegevens van: <?php echo $voornaam . " "; echo $achternaam;?></h2>
+          <h2>Gegevens van: <?php echo $voornaam . " " . $tussenvoegsel . " " . $achternaam;?></h2>
             <form action="account.php" method="POST">
               <label for="voornaam">Voornaam</label>
               <input type="text" id="voornaam" name="voornaam" placeholder="Voer uw voornaam in" value="<?php echo $voornaam; ?>" required />

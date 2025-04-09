@@ -14,7 +14,7 @@ session_start();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>apothedev - Admin Dashboard</title>
-    <link rel="stylesheet" href="../assets/css/main.css?v=1" />
+    <link rel="stylesheet" href="../assets/css/main.css?v=3" />
     <link rel="shortcut icon" type="x-icon" href="../assets/images/logo/Apothedev-Logo-nobg.png" />
     <!-- Dit is voor de font-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
@@ -41,8 +41,8 @@ session_start();
           </a>
         </div>
         <div class="profile">
-          <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'login.php'; ?>" aria-label="User Account">
-            <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
+          <a href="<?php echo (isset($_SESSION['userid']) && $_SESSION['userid'] == true) ? 'account.php' : 'login.php'; ?>" aria-label="User Account">
+            <?php if (isset($_SESSION['userid']) && $_SESSION['userid'] == true): ?>
               <img src="../assets/images/icons/user-found.svg" alt="user">
             <?php else: ?>
               <img src="../assets/images/icons/user.svg" alt="user">
@@ -68,8 +68,8 @@ session_start();
         </ul>
         <div class="mobile-icons">
           <a href="winkelwagen.php"><img src="../assets/images/icons/cart-wit.svg" alt="Cart Icon"></a>
-          <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'login.php'; ?>">
-            <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
+          <a href="<?php echo (isset($_SESSION['userid']) && $_SESSION['userid'] == true) ? 'account.php' : 'login.php'; ?>">
+            <?php if (isset($_SESSION['userid']) && $_SESSION['userid'] == true): ?>
               <img src="../assets/images/icons/user-found.svg" alt="user">
             <?php else: ?>
               <img src="../assets/images/icons/user-wit.svg" alt="user">

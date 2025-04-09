@@ -84,3 +84,20 @@ function validatePassword(event) {
       event.preventDefault(); // Voorkomt dat het formulier wordt verzonden
   }  
 }
+
+// Show password
+const show_pw_btn = document.querySelector('#show-password');
+const show_pw_icon = document.querySelector('#show-password img');
+const pw_input = document.querySelector('#password');
+
+show_pw_btn.addEventListener('click', () => {
+  pw_input.type = pw_input.type === 'password' ? 'text' : 'password';
+
+  const currentSrc = show_pw_icon.src;
+
+  if (currentSrc.endsWith('eye-show.svg')) {
+    show_pw_icon.src = '../assets/images/icons/eye-off.svg';
+  } else {
+    show_pw_icon.src = '../assets/images/icons/eye-show.svg';
+  }
+});

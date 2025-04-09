@@ -15,26 +15,26 @@ if (isset($_POST["register"])) {
     require_once 'functions.inc.php';
 
     // als de variable leeg is stuurt de pagina je trug
-    if (emptyInputSignup($name, $achternaam, $email, $ww, $wwrepeat) !== false) {
-        header("location: ../register.php?error=emptyinput");
+    if (emptyInputRegister($naam, $achternaam, $email, $ww, $wwrepeat) !== false) {
+        echo "<script>window.location.href = '../register.php?error=emptyinput';</script>";
         exit();
     }
 
     // Als de email geen valid email is stuurt de pagina je terug
     if (invalidEmail($email) !== false) {
-        header("location: ../register.php?error=invaidemail");
+        echo "<script>window.location.href = '../register.php?error=invalidemail';</script>";
         exit();
     }
 
     // Als de wachtwoorden niet het zelfde zijn stuurt de pagina je terug
     if (wwMatch($ww, $wwrepeat) !== false) {
-        header("location: ../register.php?error=wwnietzelfde");
+        echo "<script>window.location.href = '../register.php?error=wwnietzelfde';</script>";
         exit();
     }
 
      // Als de email al bestaat stuurt de pagina je terug
     if (emailExists($conn, $email) !== false) {
-        header("location: ../register.php?error=emailtaken");
+        echo "<script>window.location.href = '../register.php?error=emailTaken';</script>";
         exit();
     }
 
@@ -42,7 +42,7 @@ if (isset($_POST["register"])) {
 
 } else {
     // stuurt persoon terug als er niks te doen is op deze pagina.
-    header("location: ../register.php");
+    echo "<script>window.location.href = '../register.php?error=wrongWay';</script>";
     exit();
 }
 
