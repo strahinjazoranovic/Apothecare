@@ -156,7 +156,7 @@ if (isset($_POST['uitloggen'])) {
         <h1>Mijn account</h1>
         <div class="account-gegevens">
           <h2>Gegevens van: <?php echo $voornaam . " " . $tussenvoegsel . " " . $achternaam;?></h2>
-            <form action="account.php" method="POST">
+            <form class="account-form" action="account.php" method="POST">
               <label for="voornaam">Voornaam</label>
               <input type="text" id="voornaam" name="voornaam" placeholder="Voer uw voornaam in" value="<?php echo $voornaam; ?>" required />
 

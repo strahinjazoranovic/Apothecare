@@ -6,23 +6,49 @@
 // Project              : Apothecare
 // Datum                : projectweek - periode 3 - 2025
 //---------------------------------------------------------------------------------------------------//
-  session_start();
-  include '../config/DB_connect.php';
-// Haal de zoekterm en filteropties op
-  $search = isset($_GET['search']) ? $_GET['search'] : '';
-  $filter = isset($_GET['filter']) ? $_GET['filter'] : '';
-// Bouw de SQL-query voor de producten met filters
-  $sql = "SELECT * FROM producten WHERE naam LIKE '%$search%'";
 
-// Voeg filter toe op pilsoort als dat nodig is
-  if ($filter) {
-    $sql .= " AND pilsoort = '$filter'";
+session_start();
+include '../config/DB_connect.php';
+
+// product aan winkelwagen toevoegen
+if (isset($_POST['opslaanWinkelwagen'])) {
+  $product = $_POST['product'];
+  // Controleer of winkelwagen al bestaat
+  if (!isset($_SESSION['winkelwagen'])) {
+    $_SESSION['winkelwagen'] = [];
   }
 
-  $sql .= " ORDER BY naam ASC"; // Voeg sorteervolgorde toe, pas dit aan naar wens
+  // Als het product al in de winkelwagen zit, toon foutmelding
+  if (in_array($product, $_SESSION['winkelwagen'])) {
+    echo "<div class='popup2'> 
+            <p>Dit product zit al in je winkelwagen.</p> 
+          </div>";
+  } else {
+    // Voeg toe als het nog niet in de winkelwagen zit
+    $_SESSION['winkelwagen'][] = $product;
+    echo "<div class='popup'> 
+            <p>Product toegevoegd aan je winkelwagen.</p> 
+          </div>";
+  }
+}
 
-  $result = $conn->query($sql);
+// Haal de zoekterm en filteropties op
+$search = isset($_GET['search']) ? $_GET['search'] : '';
+$filter = isset($_GET['filter']) ? $_GET['filter'] : '';
+
+// Bouw de SQL-query voor de producten met filters
+$sql = "SELECT * FROM producten WHERE naam LIKE '%$search%'";
+
+// Voeg filter toe op pilsoort als dat nodig is
+if ($filter) {
+  $sql .= " AND pilsoort = '$filter'";
+}
+
+$sql .= " ORDER BY naam ASC"; // Voeg sorteervolgorde toe, pas dit aan naar wens
+
+$result = $conn->query($sql);
 ?>
+
 
 <html lang="en">
 <head>
@@ -127,7 +153,10 @@
         <h2><?php echo $row['naam']; ?></h2>
         <p><?php echo $row['beschrijving']; ?></p>
         <p>Prijs: €<?php echo $row['prijs']; ?></p>
-        <button class="product-button">Voeg toe aan winkelmand</button>
+        <form method="post" >
+          <input type="hidden" name="product" value="<?php echo $row['naam']; ?>">
+          <button type="submit" class="product-button" name="opslaanWinkelwagen">Voeg toe aan winkelmand</button>
+        </form>
       </div>
     <?php } ?>
   </div>
