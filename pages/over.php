@@ -117,11 +117,19 @@
             Geen lange wachttijden of onduidelijke etiketten — gewoon duidelijk, snel en veilig. 
           </p>
         </div>
+        
         <div class="over-btn-container over-btn-mobile">
           <a href="producten.php" class="over-btn">Bekijk Producten</a>
         </div>
+
+
       </div>
     </div>
+    <div class="home-footer">
+  <div class="footer">
+    <p>&copy; 2025 ApotheCare. Alle rechten voorbehouden.</p>
+    <p>Ontwikkeld door Strahinja Zoraonvic,Tejo Veldman, Siham hammich,en Ebenezer boateng & Saleh saleh</p>
+  </div>
   </body>
   <script src="../assets/js/main.js"></script>
 </html>
