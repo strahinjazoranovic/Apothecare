@@ -35,8 +35,8 @@
           </a>
         </div>
         <div class="profile">
-          <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'login.php'; ?>" aria-label="User Account">
-            <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
+          <a href="<?php echo (isset($_SESSION['userid']) && $_SESSION['userid'] == true) ? 'account.php' : 'login.php'; ?>" aria-label="User Account">
+            <?php if (isset($_SESSION['userid']) && $_SESSION['userid'] == true): ?>
               <img src="../assets/images/icons/user-found.svg" alt="user">
             <?php else: ?>
               <img src="../assets/images/icons/user.svg" alt="user">
@@ -62,8 +62,8 @@
         </ul>
         <div class="mobile-icons">
           <a href="winkelwagen.php"><img src="../assets/images/icons/cart-wit.svg" alt="Cart Icon"></a>
-          <a href="<?php echo (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true) ? 'account.php' : 'login.php'; ?>">
-            <?php if (isset($_SESSION['user_icon']) && $_SESSION['user_icon'] == true): ?>
+          <a href="<?php echo (isset($_SESSION['userid']) && $_SESSION['userid'] == true) ? 'account.php' : 'login.php'; ?>">
+            <?php if (isset($_SESSION['userid']) && $_SESSION['userid'] == true): ?>
               <img src="../assets/images/icons/user-found.svg" alt="user">
             <?php else: ?>
               <img src="../assets/images/icons/user-wit.svg" alt="user">
@@ -126,12 +126,17 @@
                 <label for="email">E-mail</label>
                 <input type="email" name="email" placeholder="Voer uw e-mail in" required>
 
+                <div class="passwd-wrap">
                 <label for="password">Wachtwoord</label>
-                <p class="wachtwoordregels">* Wachtwoord moet minimaal 8 karakters bevatten <br> * Met 1 Speciaal teken</p> 
-                <input type="password" name="ww" placeholder="Voer uw wachtwoord in" required>
+                <p class="wachtwoordregels">* Wachtwoord moet minimaal 8 karakters bevatten. <br> * Met 1 Speciaal teken. <br> * Met 1 letter en cijfer.</p> 
+                <input type="password" id="password" name="ww" placeholder="Voer uw wachtwoord in" minlength="8" pattern=".*[\d].*" pattern=".*[\W_].*" required>
+                <button type="button" id="show-password">
+                  <img id="eye" src="../assets/images/icons/eye-show.svg" />
+                </button>
+                </div>
 
                 <label for="againpassword">Voer wachtwoord opnieuw in</label>
-                <input type="password" name="wwrepeat" placeholder="Voer uw wachtwoord opnieuw in" required>
+                <input type="password" name="wwrepeat" placeholder="Voer uw wachtwoord opnieuw in" minlength="8"  pattern="^(?=.*[a-zA-Z])(?=.*\d)(?=.*[\W_]).{8,}$" required>
                 
                 <p class="forgot">Wachtwoord vergeten?</p>
                 <button type="submit" name="register" class="login-button" >Registreer nu</button>

@@ -919,13 +919,6 @@ input[type="password"] {
   margin-right: 10px;
 }
 
-/* Dit is voor de foto naast google login */
-.google-logo {
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-}
-
 .free {
   color: purple;
 }
@@ -957,6 +950,47 @@ input[type="password"] {
 
 .forgot:hover {
   color: black;
+}
+
+.login-button {
+  background-color: #0077cc;
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  text-align: center;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #005fa3;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+.passwd-wrap {
+  position: relative;
+}
+
+#show-password {
+  position: absolute;
+  margin-top: -26px;
+  right: 1rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 1.5rem;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: transparent;
+}
+
+#show-password img {
+  width: 100%;
+  height: auto;
 }
 
 /* ======================
@@ -1161,7 +1195,7 @@ body .login-header nav ul li, body .register-header nav ul li {
 }
 
 /* Buttons */
-button {
+.product-button {
   background-color: #0077cc;
   color: white;
   border: none;
@@ -1170,7 +1204,7 @@ button {
   border-radius: 4px;
 }
 
-button:hover {
+.product-button:hover {
   background-color: #005fa3;
 }
 
