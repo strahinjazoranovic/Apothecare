@@ -133,8 +133,8 @@
   </div>
   <div class="home-footer">
   <div class="footer">
-    <p>&copy; 2025 ApotheCare. Alle rechten voorbehouden.</p>
-    <p>Ontwikkeld door Strahinja Zoraonvic,Tejo Veldman, Siham hammich,en Ebenezer boateng & Saleh saleh</p>
+    <p>&copy; 2025 ApotheCare. Alle rechten voorbehouden</p>
+    <p>Ontwikkeld door Strahinja Zoranovic, Tejo Veldman, Siham Hammich, Ebenezer Boateng en Saleh Saleh</p>
   </div>
 
   <script src="../assets/js/main.js"></script>
