@@ -7,6 +7,15 @@
 // Datum		        : projectweek - periode 3 - 2025
 //---------------------------------------------------------------------------------------------------//
   session_start();
+  include '../config/DB_connect.php';
+
+  if (isset($_SESSION["winkelwagen"])) {
+    print_r($_SESSION["winkelwagen"]);
+  } 
+
+  if (isset($_POST["checkout"])) {
+    $_SESSION["winkelwagen"] = [];
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -86,8 +95,10 @@
             <div class="winkel-item cart-item" data-price="29.99">
               <div class="center-item">
                 <img src="../assets/images/placeholder-product-img.png" alt="Product photo" class="winkel-img"/>
-                <h5 class="item-naam">Medicijn naam</h5>
+                <h5 class="item-naam">Placeholder product</h5>
               </div>
+
+              <!-- item(s) -->
               <div class="center-item">
                 <div class="quantity-control">
                   <button class="quantity-btn minus-btn"><i class="fas fa-minus"></i></button>
@@ -106,6 +117,7 @@
                   <button class="remove-btn"><i class="fas fa-trash"></i></button>
                 </div>
               </div>
+
             </div>
           </div>
          
@@ -123,7 +135,9 @@
               <span>Total:</span>
               <span class="total-price">€32.99</span>
             </div>
-            <button class="checkout-btn">Checkout</button>
+            <form method="post">
+              <button type="submit" name="checkout" class="checkout-btn">Checkout</button>
+            </form>  
           </div>
         </div>
       </div>
