@@ -1249,6 +1249,44 @@ body .login-header nav ul li, body .register-header nav ul li {
   height: auto; /* Maintain aspect ratio */
   display: block;
 }
+/* ======================
+  FOOTER STYLES
+  ====================== */
+  .home-footer {
+    background-color: #f8f9fa;
+    padding: 30px 0;
+    margin-top: 40px;
+    border-top: 1px solid #e9ecef;
+    text-align: center; /* Center align text */
+  }
+  
+  .footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center; /* Center align text */
+    font-family: 'Arial', sans-serif;
+    
+    font-size: 14px;
+    line-height: 1.6;
+    
+  }
+  
+  .footer p {
+    text-align: center; /* Center align text */
+    margin: 10px 0;
+    display: block;
+  }
+  
+  /* Optioneel: donkere modus */
+ 
+
+@media (max-width: 768px) {
+  footer .footer-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
 
 /* ======================
       RESPONSIVE BREAKPOINTS
