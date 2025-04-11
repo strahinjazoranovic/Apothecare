@@ -86,7 +86,7 @@ function loginUser($conn, $email, $ww) {
     $emailExists = emailExists($conn, $email);
 
     if ($emailExists === false) {
-        echo "<script>window.location.href = '../login.php.php?error=wrongLogin';</script>";
+        echo "<script>window.location.href = '../login.php?error=wrongLogin';</script>";
         exit();
     }
 
