@@ -83,30 +83,6 @@
         <h1 class="title">Winkelwagen</h1>
         <div class="winkelwagen-container">
           <div class="cart-items">
-            <div class="winkel-item cart-item" data-price="29.99">
-              <div class="center-item">
-                <img src="../assets/images/placeholder-product-img.png" alt="Product photo" class="winkel-img"/>
-                <h5 class="item-naam">Medicijn naam</h5>
-              </div>
-              <div class="center-item">
-                <div class="quantity-control">
-                  <button class="quantity-btn minus-btn"><i class="fas fa-minus"></i></button>
-                  <input type="number" class="quantity-input" min="1" value="1">
-                  <button class="quantity-btn plus-btn"><i class="fas fa-plus"></i></button>
-                </div>
-                <div class="item-text">
-                  <p class="item-beschrijving">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </p>
-                </div>
-                <div class="item-price">
-                  <span>€<span class="price-amount">29.99</span></span>
-                </div>
-                <div class="remove">
-                  <button class="remove-btn"><i class="fas fa-trash"></i></button>
-                </div>
-              </div>
-            </div>
           </div>
          
           <div class="order-summary">

@@ -14,24 +14,12 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
- 
-    <!-- Basis metadata voor de pagina -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-    <!-- Paginatitel die in de browser tab verschijnt -->
     <title>Apothecare - Contact</title>
-   
-    <!-- Link naar het hoofd CSS bestand -->
     <link rel="stylesheet" href="../assets/css/main.css?v=3" />
-   
-    <!-- Favicon (icoontje in browser tabblad) -->
     <link rel="shortcut icon" type="x-icon" href="../images/logo/Apothecare-minilogo-nobg.png" />
-   
-    <!-- Google Fonts - Poppins font familie -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
-   
-    <!-- JavaScript voor de uitklapbare FAQ functionaliteit -->
     <script>
         // Wacht tot de DOM volledig geladen is
         document.addEventListener('DOMContentLoaded', function() {
@@ -63,9 +51,7 @@ session_start();
     </script>
 </head>
 <body>
-<!-- Hoofd container voor de hele pagina -->
 <div class="container">
-    <!-- Header sectie met logo, navigatie en iconen -->
     <header>
     <div class="logo">
       <a href="../index.php"><img src="../assets/images/logo/apothecare-nobg.png" alt="Logo"></a>
@@ -96,25 +82,19 @@ session_start();
     </div>
     </header>
  
-    <!-- Hoofdinhoud van de contactpagina -->
     <div class="contact-content">
-        <!-- Sectie met veelgestelde vragen -->
         <section class="faq-section">
             <h2>Veelgestelde vragen</h2>
            
-            <!-- Eerste FAQ item -->
             <div class="faq-item">
-                <!-- Klikbare vraag met pijltje -->
                 <div class="faq-question">
                     <span class="arrow">▶</span> Hoe kan ik mijn bestelling volgen?
                 </div>
-                <!-- Antwoord dat initieel verborgen is -->
                 <div class="faq-answer" style="display: none;">
                     <p>Na het plaatsen van uw bestelling ontvangt u een trackingnummer per e-mail waarmee u uw pakket kunt volgen.</p>
                 </div>
             </div>
            
-            <!-- Tweede FAQ item -->
             <div class="faq-item">
                 <div class="faq-question">
                     <span class="arrow">▶</span> Wat zijn de levertijden?
@@ -124,7 +104,7 @@ session_start();
                 </div>
             </div>
            
-            <!-- Derde FAQ item -->
+
             <div class="faq-item">
                 <div class="faq-question">
                     <span class="arrow">▶</span> Kan ik een product retourneren?
@@ -134,32 +114,27 @@ session_start();
                 </div>
             </div>
         </section>
- 
-        <!-- Contactformulier sectie -->
+
         <section class="contact-form">
             <h2>Neem contact met ons op</h2>
            
-            <!-- Formulier dat naar verwerk_contact.php wordt gestuurd -->
-            <form action="verwerk_contact.php" method="post">
-                <!-- Naam invoerveld -->
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="2c4a7c7e-89b1-49cb-ae64-c875f9bb9a5c">
                 <div class="form-group">
                     <label for="naam">Naam:</label>
-                    <input type="text" id="naam" name="naam" required>
+                    <input type="text" id="naam" name="naam" reqiured>
                 </div>
                
-                <!-- E-mail invoerveld -->
                 <div class="form-group">
                     <label for="email">E-mail:</label>
                     <input type="email" id="email" name="email" required>
                 </div>
                
-                <!-- Vraag tekstarea -->
                 <div class="form-group">
                     <label for="vraag">Uw vraag:</label>
-                    <textarea id="vraag" name="vraag" rows="5" required></textarea>
+                    <textarea id="vraag" name="vraag" rows="5"></textarea>
                 </div>
                
-                <!-- Verzendknop -->
                 <button type="submit" class="submit-btn">Versturen</button>
             </form>
         </section>

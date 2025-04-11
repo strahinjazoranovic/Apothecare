@@ -133,9 +133,6 @@
   </div>
 
 <!-- chatbot -->
-  <div class="chatBot">
-    Need help? chat with our bot <img src="assets/images/icons/headphones.svg" />
-  </div>
   <script src="assets/js/main.js"></script>            
 </body>
 </html>
